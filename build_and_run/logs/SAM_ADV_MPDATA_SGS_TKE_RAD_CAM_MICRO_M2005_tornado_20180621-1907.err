@@ -1,0 +1,13 @@
+At line 259 of file /Users/bfildier/beforeReloadingBackup/SAM6.11.1/SRC/hbuffer.f90 (unit = 55)
+Fortran runtime error: Cannot open file './OUT_STAT/RCE_240x1x32sub1x1.stat': File exists
+
+Error termination. Backtrace:
+#0  0x107d65579
+#1  0x107d66235
+#2  0x107d66999
+#3  0x107e2a7da
+#4  0x107e2aa1d
+#5  0x106aebf31
+#6  0x106afaf18
+#7  0x106beff1e
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO IEEE_UNDERFLOW_FLAG IEEE_DENORMAL

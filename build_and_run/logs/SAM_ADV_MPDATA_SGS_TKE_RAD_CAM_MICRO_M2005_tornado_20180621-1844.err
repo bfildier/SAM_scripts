@@ -1,0 +1,37 @@
+At line 259 of file /Users/bfildier/beforeReloadingBackup/SAM6.11.1/SRC/hbuffer.f90 (unit = 55)
+Fortran runtime error: Cannot open file './OUT_STAT/RCE_240x1x32sub1x1.stat': No such file or directory
+
+Error termination. Backtrace:
+#0  0x10301b579
+#1  0x10301c235
+#2  0x10301c999
+#3  0x1030e07da
+#4  0x1030e0a1d
+#5  0x101d9ff31
+#6  0x101daef18
+#7  0x101ea3f1e
+At line 259 of file /Users/bfildier/beforeReloadingBackup/SAM6.11.1/SRC/hbuffer.f90 (unit = 55)
+Fortran runtime error: Cannot open file './OUT_STAT/RCE_240x1x32sub1x1.stat': File exists
+
+Error termination. Backtrace:
+#0  0x1044c3579
+#1  0x1044c4235
+#2  0x1044c4999
+#3  0x1045887da
+#4  0x104588a1d
+#5  0x103246f31
+#6  0x103255f18
+#7  0x10334af1e
+At line 259 of file /Users/bfildier/beforeReloadingBackup/SAM6.11.1/SRC/hbuffer.f90 (unit = 55)
+Fortran runtime error: Cannot open file './OUT_STAT/RCE_240x1x32sub1x1.stat': File exists
+
+Error termination. Backtrace:
+#0  0x10e882579
+#1  0x10e883235
+#2  0x10e883999
+#3  0x10e9477da
+#4  0x10e947a1d
+#5  0x10d60bf31
+#6  0x10d61af18
+#7  0x10d70ff1e
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO IEEE_UNDERFLOW_FLAG IEEE_DENORMAL

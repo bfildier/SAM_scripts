@@ -1,0 +1,12 @@
+At line 259 of file /Users/bfildier/beforeReloadingBackup/SAM6.11.1/SRC/hbuffer.f90 (unit = 55)
+Fortran runtime error: Cannot open file './OUT_STAT/RCE_MPDATAxTKExCAMxM2005_4000x4000x15_240x1x32_RCE.stat': No such file or directory
+
+Error termination. Backtrace:
+#0  0x101f1e579
+#1  0x101f1f235
+#2  0x101f1f999
+#3  0x101fe37da
+#4  0x101fe3a1d
+#5  0x100ca4f31
+#6  0x100cb3f18
+#7  0x100da8f1e

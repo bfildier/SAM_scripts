@@ -1,0 +1,1167 @@
+ number of MPI tasks:           1
+           **************************************************
+           **************************************************
+           *                                                *
+           *      *****          **       ***          **   *
+           *    ***   ***       ****      ****       ****   *
+           *   ***     ***     *** ***    *****     *****   *
+           *    ***           ***   ***   *** **   ** ***   *
+           *       ***       ***     ***  ***  ** **  ***   *
+           *          ***    ***     ***  ***   ***   ***   *
+           *   ***     ***   ***********  ***         ***   *
+           *    ***   ***    ***     ***  ***         ***   *
+           *      *****      ***     ***  ***         ***   *
+           *                                                *
+           **************************************************
+           **************************************************
+           ***       System for Atmospheric Modeling      ***
+           ***                    SAM                     ***
+                     Version 6.11.1  (Mar 2017)  
+           **************************************************
+           ***     (C) Marat Khairoutdinov                ***
+           *** School of Marine and Atmospheric Sciences  ***
+           ***       Stony Brook University               ***
+           **************************************************
+           ***       The model can be used only with      ***
+           ***         permission from the author!        ***
+           ***       No transfer to any third party       ***
+           ***                is allowed!                 ***
+           **************************************************
+           **************************************************
+           ***       DATE 06/22/18 TIME 11:23:42          ***
+           **************************************************
+
+ ****************************************************
+ ****** No MICRO_M2005 namelist in prm file *********
+ ****************************************************
+
+ surface pressure:    1006.90997    
+ Initial Sounding:
+  k      z    rho     rhoi    s      h     h*      qt      u      v     adz
+  32  8581.9  0.492  0.506 324.17 324.94 325.96   0.31   0.00   0.00  10.00    
+  31  8081.9  0.519  0.533 323.35 324.39 325.79   0.42   0.00   0.00  10.00    
+  30  7581.9  0.548  0.563 322.42 323.80 325.70   0.55   0.00   0.00  10.00    
+  29  7081.9  0.578  0.593 321.34 323.17 325.63   0.73   0.00   0.00  10.00    
+  28  6581.9  0.609  0.625 320.08 322.54 325.56   0.98   0.00   0.00  10.00    
+  27  6081.9  0.642  0.659 318.64 321.96 325.47   1.33   0.00   0.00  10.00    
+  26  5581.9  0.677  0.694 317.06 321.47 325.41   1.76   0.00   0.00  10.00    
+  25  5081.9  0.713  0.731 315.39 321.13 325.46   2.30   0.00   0.00  10.00    
+  24  4581.9  0.751  0.770 313.65 320.97 325.68   2.93   0.00   0.00  10.00    
+  23  4081.9  0.789  0.809 311.88 321.05 326.15   3.67   0.00   0.00  9.572    
+  22  3624.6  0.826  0.845 310.28 321.41 326.90   4.45   0.00   0.00  8.677    
+  21  3214.2  0.861  0.878 308.81 321.99 327.75   5.27   0.00   0.00  7.790    
+  20  2845.7  0.893  0.909 307.46 322.74 328.64   6.11   0.00   0.00  6.993    
+  19  2514.9  0.923  0.937 306.21 323.59 329.55   6.95   0.00   0.00  6.278    
+  18  2217.9  0.950  0.963 305.05 324.53 330.41   7.79   0.00   0.00  5.636    
+  17  1951.3  0.975  0.987 303.99 325.48 331.24   8.60   0.00   0.00  5.059    
+  16  1711.9  0.998  1.009 303.02 326.44 332.03   9.37   0.00   0.00  4.542    
+  15  1497.1  1.019  1.029 302.14 327.38 332.79  10.09   0.00   0.00  4.077    
+  14  1304.2  1.038  1.047 301.34 328.33 333.49  10.79   0.00   0.00  3.660    
+  13  1131.0  1.055  1.064 300.63 329.28 334.22  11.46   0.00   0.00  3.286    
+  12   975.6  1.071  1.078 300.03 330.26 335.01  12.09   0.00   0.00  2.950    
+  11   836.0  1.085  1.092 299.53 331.25 335.90  12.69   0.00   0.00  2.648    
+  10   710.8  1.097  1.103 299.13 332.20 336.91  13.23   0.00   0.00  2.377    
+   9   598.3  1.109  1.114 298.82 333.05 338.04  13.69   0.00   0.00  2.134    
+   8   497.3  1.118  1.123 298.61 333.73 339.29  14.05   0.00   0.00  1.916    
+   7   406.7  1.127  1.131 298.45 334.24 340.61  14.31   0.00   0.00  1.720    
+   6   325.3  1.135  1.139 298.34 334.61 341.93  14.51   0.00   0.00  1.544    
+   5   252.3  1.142  1.145 298.26 334.90 343.22  14.65   0.00   0.00  1.386    
+   4   186.7  1.148  1.151 298.20 335.11 344.46  14.76   0.00   0.00  1.244    
+   3   127.8  1.154  1.157 298.15 335.38 345.63  14.89   0.00   0.00  1.117    
+   2    75.0  1.159  1.161 298.12 335.71 346.74  15.03   0.00   0.00  1.028    
+   1    25.0  1.163  1.165 298.23 337.60 348.35  15.75   0.00   0.00  1.000    
+  k      z    rho     rhoi    s      h     h*      qt      u      v     adz     N
+
+   k      z      dz     pres   presi   Tabs     tp     tpl      qt      Qc     Qi    REL
+  32  8581.87  500.00  339.53  351.82  240.32  327.26  327.26  0.3092  0.0000  0.0000   43.32
+  31  8081.87  500.00  364.33  377.29  244.38  326.15  326.15  0.4151  0.0000  0.0000   42.43
+  30  7581.87  500.00  390.50  404.16  248.34  324.93  324.93  0.5500  0.0000  0.0000   41.93
+  29  7081.87  500.00  418.09  432.49  252.15  323.53  323.53  0.7305  0.0000  0.0000   42.56
+  28  6581.87  500.00  447.18  462.36  255.77  321.93  321.93  0.9828  0.0000  0.0000   44.88
+  27  6081.87  500.00  477.84  493.85  259.22  320.14  320.14  1.3252  0.0000  0.0000   48.54
+  26  5581.87  500.00  510.17  527.03  262.52  318.21  318.21  1.7648  0.0000  0.0000   52.85
+  25  5081.87  500.00  544.23  561.99  265.73  316.21  316.21  2.2961  0.0000  0.0000   56.98
+  24  4581.87  500.00  580.10  598.80  268.88  314.17  314.17  2.9270  0.0000  0.0000   60.82
+  23  4081.87  478.62  617.87  635.85  272.00  312.13  312.13  3.6677  0.0000  0.0000   64.29
+  22  3624.63  433.85  654.14  671.01  274.87  310.32  310.32  4.4484  0.0000  0.0000   66.95
+  21  3214.16  389.48  688.15  703.90  277.41  308.69  308.69  5.2708  0.0000  0.0000   69.59
+  20  2845.66  349.65  719.88  734.53  279.65  307.20  307.20  6.1126  0.0000  0.0000   72.14
+  19  2514.86  313.89  749.37  762.94  281.63  305.85  305.85  6.9541  0.0000  0.0000   74.50
+  18  2217.88  281.79  776.67  789.20  283.38  304.61  304.61  7.7886  0.0000  0.0000   76.79
+  17  1951.28  252.97  801.86  813.39  284.92  303.49  303.49  8.5968  0.0000  0.0000   78.89
+  16  1711.95  227.10  825.03  835.62  286.29  302.48  302.48  9.3652  0.0000  0.0000   80.71
+  15  1497.09  203.87  846.30  856.00  287.51  301.56  301.56 10.0927  0.0000  0.0000   82.34
+  14  1304.20  183.02  865.77  874.64  288.60  300.73  300.73 10.7931  0.0000  0.0000   83.93
+  13  1131.05  164.30  883.56  891.65  289.58  300.01  300.01 11.4568  0.0000  0.0000   85.29
+  12   975.60  147.50  899.78  907.15  290.49  299.40  299.40 12.0923  0.0000  0.0000   86.43
+  11   836.05  132.41  914.55  921.24  291.36  298.89  298.89 12.6876  0.0000  0.0000   87.21
+  10   710.77  118.87  927.96  934.04  292.18  298.50  298.50 13.2273  0.0000  0.0000   87.54
+   9   598.31  106.71  940.14  945.64  292.98  298.19  298.19 13.6893  0.0000  0.0000   87.28
+   8   497.34   95.80  951.17  956.15  293.75  297.98  297.98 14.0486  0.0000  0.0000   86.34
+   7   406.71   86.00  961.15  965.66  294.48  297.83  297.83 14.3140  0.0000  0.0000   84.90
+   6   325.34   77.21  970.18  974.26  295.16  297.73  297.73 14.5055  0.0000  0.0000   83.21
+   5   252.29   69.31  978.35  982.03  295.80  297.65  297.65 14.6509  0.0000  0.0000   81.47
+   4   186.72   62.22  985.71  989.04  296.38  297.60  297.60 14.7635  0.0000  0.0000   79.81
+   3   127.85   55.86  992.36  995.36  296.91  297.56  297.56 14.8880  0.0000  0.0000   78.41
+   2    75.00   51.42  998.36 1001.21  297.39  297.53  297.53 15.0316  0.0000  0.0000   77.31
+   1    25.00   50.00 1004.05 1006.91  297.98  297.64  297.64 15.7461  0.0000  0.0000   78.54
+   k      z      dz     pres   presi   Tabs     tp     tpl      qt      Qc     Qi    REL
+ Smagorinsky SGS Closure
+ Initializeing forcing data...
+ sounding data: nsnd=           3   nzsnd=          64
+ Observed sounding interval (days):   0.00000000       2000.00000    
+
+ Case: RCE
+ Caseid: 0
+ New Run.
+ Day:   0.00000000    
+ Model type: CEM
+ Finish at timestep:         240
+ Finish on day:   4.16666679E-02
+
+ Statistics file ouput frequency:           40  steps
+ Statistics file sampling: every           20  steps
+ printouts frequency:          40  steps
+ Adams-Bashforth scheme order:           3
+
+ Global Grid:         240           1          32
+ Local Grid:         240           1          32
+ Grid spacing (m) dx, dy, dz:   4000.00000       4000.00000       50.0000000    
+ Domain dimensions (m):   960000.000       4000.00000       8581.86816    
+ dowallx= F
+ dowally= F
+
+ Timestep (sec):   15.0000000    
+ domain translation velocities ug, vg:   0.00000000       0.00000000    
+
+ do column model F
+ do convective parameterization F
+ do spange damping at the domain top:  T
+ maintain grad. of scalars at the top: F
+ clouds are allowed: T
+ precipitation is allowed: T
+ smoke cloud F
+ SGS scheme is on: T
+ larger-scale subsidence is on: F
+ larger-scale tendency is on: F
+ coriolis force is allowed: F
+ vertical coriolis force is allowed: F
+ longwave radiation: T
+ shortwave radiation: T
+ do seasonal solar cycle: F
+ do perpetual sun: T
+ compute effective radius for liquid: T
+ compute effective radius for ice: T
+ doradsimple =  F
+ doradhomo = F
+ dosolarconstant =  F
+ solar_constant =    685.000000    
+ zenith_angle =    51.7000008    
+ doradlon =  F
+ doradlat =  F
+ Latitude0:   0.00000000    
+ Longitude0:   0.00000000    
+ rundatadir = ./RUNDATA
+ factor to change present CO2 concentration: nxco2=   1.00000000    
+ surface flux parameterization is on: T
+ Surface type: OCEAN
+  sensible heat flux prescribed: F
+  latent heat flux prescribed: F
+  surface stress prescribed: F
+ dosfchomo =  F
+ doisccp =  F
+ domodis =  F
+ domisr =  F
+ dosimfilesout= F
+ dodynamicocean = F
+ SLM= F
+ doseawater= F
+ salt_factor (satur. correction for salty water)=   1.00000000    
+ dotracers = F
+ output_sep = F
+ perturb_type =            0
+ doSAMconditionals = F
+ dosatupdnconditionals = F
+ doscamiopdata = F
+ iopfile:
+ dozero_out_day0 = F
+ nsave2D =           40
+ nsave2Dstart =            0
+ nsave2Dend =    999999999
+ save2Dbin =  F
+ nsave3D =           40
+ nsave3Dstart =            0
+ nsave3Dend =    999999999
+ save3Dbin =  F
+ qnsave3D =    0.00000000    
+ docolumn =  F
+ doensemble =  F
+ nensemble =            0
+ nstatmom =            1
+ nstatmomstart =    999999999
+ nstatmomend =    999999999
+ savemombin =  F
+ nmovie =           60
+ nmoviestart =            0
+ nmovieend =        25920
+ Added          109  arrays to statistics for M2005 microphysics
+ Number of statistics profiles:         332
+ Statistics profiles to save:
+PRES       U          V          UOBS       VOBS       WOBS       RHO        MSE     
+DSE        SSE        THETAE     THETA      THETAV     THETAL     TABS       TABSOBS 
+TL         QT         QV         QVOBS      TTEND      QTEND      QCL        QCI     
+QPL        QPI        QN         QP         QNFR       FRACT      QSAT       QCOND   
+PRECIP     RELH       TLFLUX     TLFLUXS    TVFLUX     QCFLUX     QIFLUX     SW      
+SWSB       UW         UWSB       VW         VWSB       RADLWUP    RADLWDN    RADSWUP 
+RADSWDN    RADQRLW    RADQRSW    RADQR      RADQRS     RADQRC     Q1C        Q1CC    
+Q1CS       Q1LS       Q2         Q2C        Q2S        Q2LS       U2         V2      
+W2         TL2        TQ         QT2        QC2        QI2        QS2        S2      
+W3         AUP        WSKEW      TKE        TKES       TK         TKH        HLADV   
+HLDIFF     HLLAT      HLRAD      QTADV      QTDIFF     QTSINK     QTSRC      QPADV   
+QPDIFF     QPFALL     QPSRC      QPEVP      SHEAR      SHEARS     BUOYA      BUOYAS  
+ADVTR      PRESSTR    ADVTRS     DIFTR      DISSIP     DISSIPS    WUADV      WVADV   
+WUPRES     WVPRES     WUANIZ     WVANIZ     WUSHEAR    WVSHEAR    WUBUOY     WVBUOY  
+WUDIFF     WVDIFF     W2ADV      W2PRES     W2REDIS    W2BUOY     W2DIFF     TWGRAD  
+TWADV      TWDIFF     TWBUOY     TWPRES     TWPREC     QWGRAD     QWADV      QWDIFF  
+QWBUOY     QWPRES     QWPREC     T2ADVTR    T2GRAD     T2DISSIP   T2DIFTR    T2PREC  
+Q2ADVTR    Q2GRAD     Q2DISSIP   Q2DIFTR    Q2PREC     HYDRO      MCUP       MCDNS   
+MCDNU      MC         CORE       CORECL     COREDN     COREDNCL   MCRUP      MCRDNS  
+MCRDNU     MCR        QVTEND     QHTEND     QNUDGE     THTEND     TVTEND     TNUDGE  
+WSTAR3     UADV       VADV       UDIFF      VDIFF      UNUDGE     VNUDGE     ULSADVV 
+VLSADVV    USTOR      VSTOR      UTENDCOR   URESID     VTENDCOR   VRESID     HLSTOR  
+QTSTOR     RADQRCLW   RADQRCSW   CLD        WCLD       UCLD       VCLD       MSECLD  
+DSECLD     TLCLD      TACLD      TVCLD      TVCLDA     QTCLD      QNCLD      QPCLD   
+SCLD       WCLDA      TLWCLD     TVWCLD     SWCLD      QTWCLD     QCWCLD     QIWCLD  
+HFCLD      HFCLDA     UCLDA      VCLDA      UPGFCLD    VPGFCLD    WPGFCLD    UWCLD   
+VWCLD      UWSBCLD    VWSBCLD    MFCLD      MFHCLD     MFHCLDA    MFTLCLD    MFTLCLDA
+MFTVCLD    MFTVCLDA   MFQTCLD    MFQTCLDA   RUWCLD     RVWCLD     RWWCLD     QTFLUX  
+QTO        QTO2       QTOADV     QTODIFF    QTOLSADV   QTOMPHY    QTOSED     QTOFLXR 
+QTOFLXS    QTOSDFLX   QR         QRADV      QRDIFF     QRLSADV    QRMPHY     QRSED   
+QRFLXR     QRFLXS     QRSDFLX    QRFRAC     TAUQR      QROEFFR    NR         NRADV   
+NRDIFF     NRLSADV    NRMPHY     NRSED      NRFLXR     NRFLXS     NRSDFLX    QI      
+QIADV      QIDIFF     QILSADV    QIMPHY     QISED      QIFLXR     QIFLXS     QISDFLX 
+QIFRAC     TAUQI      QIOEFFR    NI         NIADV      NIDIFF     NILSADV    NIMPHY  
+NISED      NIFLXR     NIFLXS     NISDFLX    QS         QSADV      QSDIFF     QSLSADV 
+QSMPHY     QSSED      QSFLXR     QSFLXS     QSSDFLX    QSFRAC     TAUQS      QSOEFFR 
+NS         NSADV      NSDIFF     NSLSADV    NSMPHY     NSSED      NSFLXR     NSFLXS  
+NSSDFLX    QG         QGADV      QGDIFF     QGLSADV    QGMPHY     QGSED      QGFLXR  
+QGFLXS     QGSDFLX    QGFRAC     TAUQG      QGOEFFR    NG         NGADV      NGDIFF  
+NGLSADV    NGMPHY     NGSED      NGFLXR     NGFLXS     NGSDFLX    QC         TAUQC   
+QCOEFFR    QVCLD      QCCLD      QTOCLD     QRCLD      NRCLD      QICLD      NICLD   
+QSCLD      NSCLD      QGCLD      NGCLD   
+NSTEP =       0 NCYCLE= 0 CFL=0.000 CFLH=0.000 CFLZ=0.000 CFL_sgs=0.000
+ DAY =    0.00000000    
+ NSTEP=           0
+ div:   0.00000000       0.00000000    
+ SST=   300.00000000000000     
+ surface pressure=   1006.90997    
+ u:   0.00000000       0.00000000    
+ v:   0.00000000       0.00000000    
+ w:   0.00000000       0.00000000    
+ p:   0.00000000       0.00000000    
+ t:   298.044220       324.170471    
+ tabs:   240.317749       298.080383    
+ qv:   3.09199997E-04   1.57461017E-02
+ tke:   0.00000000       0.00000000    
+ tk:   0.00000000       0.00000000    
+ tkh:   0.00000000       0.00000000    
+ qcl:   0.00000000       0.00000000    
+ qci:   0.00000000       0.00000000    
+ QTO:   3.09199997E-04   1.57461017E-02
+ QR:   0.00000000       0.00000000    
+ NR:   0.00000000       0.00000000    
+ QI:   0.00000000       0.00000000    
+ NI:   0.00000000       0.00000000    
+ QS:   0.00000000       0.00000000    
+ NS:   0.00000000       0.00000000    
+ QG:   0.00000000       0.00000000    
+ NG:   0.00000000       0.00000000    
+ qpl:   0.00000000       0.00000000    
+ qpi:   0.00000000       0.00000000    
+ qrad(K/day):   0.00000000       0.00000000    
+ shf:   0.00000000       0.00000000    
+ lhf:   0.00000000       0.00000000    
+ uw:   0.00000000       0.00000000    
+ vw:   0.00000000       0.00000000    
+ sst:   300.000000       300.000000    
+ precinst (mm/h):   0.00000000       0.00000000    
+ total water budget:
+ before (mm):         41.14142063703
+ after (mm):          41.14142063703
+ evaporation (mm):     0.00000000000
+ precipitation (mm):   0.00000000000
+ large-scale (mm):     0.00000000000
+ Imbalance (mm)       0.00000000000
+  imbalance (rel error):   0.0000000000000000     
+ evap (mm/day):   0.0000000000000000     
+ prec (mm/day):   0.0000000000000000     
+ ls (mm/day):   0.0000000000000000     
+ imbalance (mm/day)   0.0000000000000000     
+  _______________________________________________________
+  _______ initializing aerosol optical properties _______
+  _______________________________________________________
+  aer_optics_initialize : nrh_opac =   8
+  aer_optics_initialize : nbnd =  19
+  _______ hygroscopic growth in visible band _______
+  SO4
+     rh    ext (m^2 g-1)      ssa      asm
+  0.000            5.581    1.000    0.650
+  0.801           13.614    1.000    0.742
+  0.836           16.185    1.000    0.750
+  0.858           17.971    1.000    0.755
+  0.873           19.389    1.000    0.759
+  0.885           20.585    1.000    0.762
+  0.896           21.630    1.000    0.764
+  0.904           23.093    1.000    0.766
+  0.912           24.959    1.000    0.769
+  0.919           26.745    1.000    0.771
+  0.925           28.462    1.000    0.772
+  0.930           30.121    1.000    0.774
+  0.935           31.730    1.000    0.775
+  0.940           33.293    1.000    0.777
+  0.944           34.817    1.000    0.778
+  0.948           36.305    1.000    0.779
+  0.952           38.717    1.000    0.781
+  0.956           41.820    1.000    0.782
+  0.959           44.986    1.000    0.783
+  0.963           48.213    1.000    0.784
+  0.966           51.498    1.000    0.785
+  0.969           54.841    1.000    0.786
+  0.971           58.241    1.000    0.787
+  0.974           61.695    1.000    0.788
+  0.977           65.207    1.000    0.789
+  0.979           68.771    1.000    0.789
+  0.982           75.009    1.000    0.790
+  0.984           82.961    1.000    0.791
+  0.986           91.458    1.000    0.791
+  0.988          100.506    1.000    0.791
+  0.990          110.113    1.000    0.792
+  0.992          120.296    1.000    0.792
+  0.994          131.074    1.000    0.793
+  0.996          142.463    1.000    0.793
+  0.998          154.473    1.000    0.794
+  1.000          166.810    1.000    0.794
+  SSLT
+     rh    ext (m^2 g-1)      ssa      asm
+  0.000            0.395    1.000    0.752
+  0.801            1.495    1.000    0.825
+  0.836            1.689    1.000    0.828
+  0.858            1.818    1.000    0.829
+  0.873            1.918    1.000    0.831
+  0.885            2.000    1.000    0.831
+  0.896            2.072    1.000    0.832
+  0.904            2.173    1.000    0.833
+  0.912            2.303    1.000    0.834
+  0.919            2.425    1.000    0.835
+  0.925            2.540    1.000    0.836
+  0.930            2.650    1.000    0.836
+  0.935            2.755    1.000    0.837
+  0.940            2.856    1.000    0.838
+  0.944            2.953    1.000    0.838
+  0.948            3.047    1.000    0.839
+  0.952            3.215    1.000    0.839
+  0.956            3.436    1.000    0.840
+  0.959            3.660    1.000    0.841
+  0.963            3.885    1.000    0.841
+  0.966            4.113    1.000    0.842
+  0.969            4.343    1.000    0.842
+  0.971            4.575    1.000    0.843
+  0.974            4.808    1.000    0.843
+  0.977            5.044    1.000    0.844
+  0.979            5.281    1.000    0.844
+  0.982            5.740    1.000    0.845
+  0.984            6.339    1.000    0.846
+  0.986            6.977    1.000    0.847
+  0.988            7.656    1.000    0.848
+  0.990            8.376    1.000    0.849
+  0.992            9.138    1.000    0.849
+  0.994            9.943    1.000    0.850
+  0.996           10.793    1.000    0.851
+  0.998           11.688    1.000    0.852
+  1.000           12.607    1.000    0.852
+  OCPHI
+     rh    ext (m^2 g-1)      ssa      asm
+  0.000            3.421    0.965    0.621
+  0.801            8.298    0.986    0.710
+  0.836            9.396    0.987    0.717
+  0.858           10.130    0.988    0.722
+  0.873           10.698    0.989    0.725
+  0.885           11.168    0.989    0.727
+  0.896           11.573    0.990    0.729
+  0.904           12.145    0.990    0.732
+  0.912           12.870    0.991    0.734
+  0.919           13.551    0.991    0.737
+  0.925           14.195    0.991    0.739
+  0.930           14.808    0.992    0.741
+  0.935           15.394    0.992    0.742
+  0.940           15.956    0.992    0.744
+  0.944           16.498    0.993    0.745
+  0.948           17.022    0.993    0.747
+  0.952           17.884    0.993    0.749
+  0.956           18.985    0.994    0.751
+  0.959           20.091    0.994    0.752
+  0.963           21.200    0.994    0.754
+  0.966           22.312    0.994    0.756
+  0.969           23.427    0.995    0.758
+  0.971           24.546    0.995    0.759
+  0.974           25.667    0.995    0.761
+  0.977           26.793    0.995    0.762
+  0.979           27.922    0.996    0.764
+  0.982           29.780    0.996    0.765
+  0.984           32.068    0.996    0.767
+  0.986           34.448    0.996    0.769
+  0.988           36.918    0.997    0.771
+  0.990           39.477    0.997    0.773
+  0.992           42.126    0.997    0.774
+  0.994           44.865    0.997    0.776
+  0.996           47.696    0.998    0.777
+  0.998           50.617    0.998    0.779
+  1.000           53.574    0.998    0.781
+ CEM.trace: number of levels=         281
+ gas traces vertical profiles (g/g):
+   z    o3   n2o   ch4   cfc11   cfc12
+   25.00      0.4813E-07   0.000       0.000       0.000       0.000    
+   75.00      0.4838E-07   0.000       0.000       0.000       0.000    
+   127.8      0.4864E-07   0.000       0.000       0.000       0.000    
+   186.7      0.4893E-07   0.000       0.000       0.000       0.000    
+   252.3      0.4926E-07   0.000       0.000       0.000       0.000    
+   325.3      0.4963E-07   0.000       0.000       0.000       0.000    
+   406.7      0.5003E-07   0.000       0.000       0.000       0.000    
+   497.3      0.5049E-07   0.000       0.000       0.000       0.000    
+   598.3      0.5099E-07   0.000       0.000       0.000       0.000    
+   710.8      0.5155E-07   0.000       0.000       0.000       0.000    
+   836.0      0.5218E-07   0.000       0.000       0.000       0.000    
+   975.6      0.5288E-07   0.000       0.000       0.000       0.000    
+   1131.      0.5339E-07   0.000       0.000       0.000       0.000    
+   1304.      0.5391E-07   0.000       0.000       0.000       0.000    
+   1497.      0.5449E-07   0.000       0.000       0.000       0.000    
+   1712.      0.5514E-07   0.000       0.000       0.000       0.000    
+   1951.      0.5585E-07   0.000       0.000       0.000       0.000    
+   2218.      0.5644E-07   0.000       0.000       0.000       0.000    
+   2515.      0.5703E-07   0.000       0.000       0.000       0.000    
+   2846.      0.5769E-07   0.000       0.000       0.000       0.000    
+   3214.      0.5821E-07   0.000       0.000       0.000       0.000    
+   3625.      0.5862E-07   0.000       0.000       0.000       0.000    
+   4082.      0.5933E-07   0.000       0.000       0.000       0.000    
+   4582.      0.6133E-07   0.000       0.000       0.000       0.000    
+   5082.      0.6325E-07   0.000       0.000       0.000       0.000    
+   5582.      0.6475E-07   0.000       0.000       0.000       0.000    
+   6082.      0.6633E-07   0.000       0.000       0.000       0.000    
+   6582.      0.6833E-07   0.000       0.000       0.000       0.000    
+   7082.      0.7033E-07   0.000       0.000       0.000       0.000    
+   7582.      0.7233E-07   0.000       0.000       0.000       0.000    
+   8082.      0.7474E-07   0.000       0.000       0.000       0.000    
+   8582.      0.7924E-07   0.000       0.000       0.000       0.000    
+ done...
+ CO2 VMR =    3.54999996E-04
+ CO2 MMR =    5.39252942E-04
+ Eccentricity    1.67040695E-02
+ radiation: perpetual sun, solin=   413.806915    
+NSTEP =       1 NCYCLE= 1 CFL=0.000 CFLH=0.000 CFLZ=0.000 CFL_sgs=0.000
+ Collecting statistics...
+NSTEP =       2 NCYCLE= 1 CFL=0.000 CFLH=0.000 CFLZ=0.000 CFL_sgs=0.006
+NSTEP =       3 NCYCLE= 1 CFL=0.000 CFLH=0.000 CFLZ=0.000 CFL_sgs=0.006
+ Collecting statistics...
+NSTEP =       4 NCYCLE= 1 CFL=0.000 CFLH=0.000 CFLZ=0.000 CFL_sgs=0.006
+NSTEP =       5 NCYCLE= 1 CFL=0.000 CFLH=0.000 CFLZ=0.000 CFL_sgs=0.006
+ Collecting statistics...
+NSTEP =       6 NCYCLE= 1 CFL=0.000 CFLH=0.000 CFLZ=0.000 CFL_sgs=0.006
+NSTEP =       7 NCYCLE= 1 CFL=0.000 CFLH=0.000 CFLZ=0.000 CFL_sgs=0.006
+ Collecting statistics...
+NSTEP =       8 NCYCLE= 1 CFL=0.000 CFLH=0.000 CFLZ=0.000 CFL_sgs=0.006
+NSTEP =       9 NCYCLE= 1 CFL=0.000 CFLH=0.000 CFLZ=0.000 CFL_sgs=0.006
+ Collecting statistics...
+NSTEP =      10 NCYCLE= 1 CFL=0.000 CFLH=0.000 CFLZ=0.000 CFL_sgs=0.006
+NSTEP =      11 NCYCLE= 1 CFL=0.000 CFLH=0.000 CFLZ=0.000 CFL_sgs=0.006
+ Collecting statistics...
+NSTEP =      12 NCYCLE= 1 CFL=0.000 CFLH=0.000 CFLZ=0.000 CFL_sgs=0.006
+NSTEP =      13 NCYCLE= 1 CFL=0.000 CFLH=0.000 CFLZ=0.000 CFL_sgs=0.006
+ Collecting statistics...
+NSTEP =      14 NCYCLE= 1 CFL=0.000 CFLH=0.000 CFLZ=0.000 CFL_sgs=0.006
+NSTEP =      15 NCYCLE= 1 CFL=0.000 CFLH=0.000 CFLZ=0.000 CFL_sgs=0.006
+ Collecting statistics...
+NSTEP =      16 NCYCLE= 1 CFL=0.000 CFLH=0.000 CFLZ=0.000 CFL_sgs=0.006
+NSTEP =      17 NCYCLE= 1 CFL=0.000 CFLH=0.000 CFLZ=0.000 CFL_sgs=0.006
+ Collecting statistics...
+NSTEP =      18 NCYCLE= 1 CFL=0.000 CFLH=0.000 CFLZ=0.000 CFL_sgs=0.006
+NSTEP =      19 NCYCLE= 1 CFL=0.000 CFLH=0.000 CFLZ=0.000 CFL_sgs=0.006
+ Collecting statistics...
+NSTEP =      20 NCYCLE= 1 CFL=0.000 CFLH=0.000 CFLZ=0.000 CFL_sgs=0.006
+NSTEP =      21 NCYCLE= 1 CFL=0.000 CFLH=0.000 CFLZ=0.000 CFL_sgs=0.006
+ Collecting statistics...
+NSTEP =      22 NCYCLE= 1 CFL=0.000 CFLH=0.000 CFLZ=0.000 CFL_sgs=0.006
+NSTEP =      23 NCYCLE= 1 CFL=0.000 CFLH=0.000 CFLZ=0.000 CFL_sgs=0.006
+ Collecting statistics...
+NSTEP =      24 NCYCLE= 1 CFL=0.000 CFLH=0.000 CFLZ=0.000 CFL_sgs=0.006
+NSTEP =      25 NCYCLE= 1 CFL=0.000 CFLH=0.000 CFLZ=0.000 CFL_sgs=0.006
+ Collecting statistics...
+NSTEP =      26 NCYCLE= 1 CFL=0.000 CFLH=0.000 CFLZ=0.000 CFL_sgs=0.006
+NSTEP =      27 NCYCLE= 1 CFL=0.000 CFLH=0.000 CFLZ=0.000 CFL_sgs=0.006
+ Collecting statistics...
+NSTEP =      28 NCYCLE= 1 CFL=0.000 CFLH=0.000 CFLZ=0.000 CFL_sgs=0.006
+NSTEP =      29 NCYCLE= 1 CFL=0.000 CFLH=0.000 CFLZ=0.000 CFL_sgs=0.006
+ Collecting statistics...
+NSTEP =      30 NCYCLE= 1 CFL=0.000 CFLH=0.000 CFLZ=0.000 CFL_sgs=0.006
+ radiation: perpetual sun, solin=   413.806915    
+NSTEP =      31 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =      32 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+NSTEP =      33 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =      34 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+NSTEP =      35 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =      36 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+NSTEP =      37 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =      38 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+NSTEP =      39 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+ Collecting statistics...
+ Writting radiation restart file...
+ Saved radiation restart file. nstep=          40
+ Writting statistics:nstatsteps=          20
+ Writting history file 0                                                                               
+ Writing restart file ...
+ Restart file was saved. nstep=          40
+ Writting 2D data. file:./OUT_2D/RCE_0_1.2Dcom                                                                                                  
+ Appending 3D data. file:./OUT_3D/RCE_0_1.com2D                                                                                                  
+NSTEP =      40 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+ DAY =    6.94444450E-03
+ NSTEP=          40
+ div:   9.34051059E-10  -7.12589099E-10
+ SST=   300.00000000000000     
+ surface pressure=   1006.90997    
+ u:  -6.11133501E-02   5.96811622E-02
+ v:   0.00000000       0.00000000    
+ w:  -2.78290547E-03   2.47036270E-03
+ p: -0.363445073      0.333106905    
+ t:   298.057068       324.172913    
+ tabs:   240.320190       298.093445    
+ qv:   3.09199997E-04   1.58744343E-02
+ tke:   0.00000000       3.31994966E-02
+ tk:   0.00000000      0.911036432    
+ tkh:   0.00000000      0.911036432    
+ qcl:   0.00000000       0.00000000    
+ qci:   0.00000000       0.00000000    
+ QTO:   3.09199997E-04   1.58744343E-02
+ QR:   0.00000000       0.00000000    
+ NR:   0.00000000       0.00000000    
+ QI:   0.00000000       0.00000000    
+ NI:   0.00000000       0.00000000    
+ QS:   0.00000000       0.00000000    
+ NS:   0.00000000       0.00000000    
+ QG:   0.00000000       0.00000000    
+ NG:   0.00000000       0.00000000    
+ qpl:   0.00000000       0.00000000    
+ qpi:   0.00000000       0.00000000    
+ qrad(K/day):  -1.65147734      0.327998370    
+ shf:   5.12264872       5.65508556    
+ lhf:   56.0742874       56.3159218    
+ uw:  -9.55392243E-05   9.79884353E-05
+ vw:  -0.00000000      -0.00000000    
+ sst:   300.000000       300.000000    
+ precinst (mm/h):   0.00000000       0.00000000    
+ total water budget:
+ before (mm):         41.15462852596
+ after (mm):          41.15496436863
+ evaporation (mm):     0.00033584149
+ precipitation (mm):   0.00000000000
+ large-scale (mm):     0.00000000000
+ Imbalance (mm)       0.00000000118
+  imbalance (rel error):   2.8624943738408298E-011
+ evap (mm/day):   1.9344469658826711     
+ prec (mm/day):   0.0000000000000000     
+ ls (mm/day):   0.0000000000000000     
+ imbalance (mm/day)   6.7856362875526322E-006
+CPU TIME =       0.6870 OVER     0.17 MODEL HOURS
+NSTEP =      41 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =      42 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+NSTEP =      43 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =      44 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+NSTEP =      45 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =      46 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+NSTEP =      47 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =      48 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+NSTEP =      49 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =      50 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+NSTEP =      51 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =      52 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+NSTEP =      53 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =      54 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+NSTEP =      55 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =      56 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+NSTEP =      57 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =      58 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+NSTEP =      59 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+ Collecting statistics...
+ appending OUT_MOVIES/*.raw files. nstep=          60
+NSTEP =      60 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+ radiation: perpetual sun, solin=   413.806915    
+NSTEP =      61 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =      62 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+NSTEP =      63 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =      64 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+NSTEP =      65 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =      66 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+NSTEP =      67 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =      68 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+NSTEP =      69 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =      70 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+NSTEP =      71 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =      72 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+NSTEP =      73 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =      74 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+NSTEP =      75 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =      76 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+NSTEP =      77 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =      78 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+NSTEP =      79 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+ Collecting statistics...
+ Writting radiation restart file...
+ Saved radiation restart file. nstep=          80
+ Writting statistics:nstatsteps=          20
+ Writting history file 0                                                                               
+ Writing restart file ...
+ Restart file was saved. nstep=          80
+ Writting 2D data. file:./OUT_2D/RCE_0_1.2Dcom                                                                                                  
+ Appending 3D data. file:./OUT_3D/RCE_0_1.com2D                                                                                                  
+NSTEP =      80 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+ DAY =    1.38888890E-02
+ NSTEP=          80
+ div:   9.73159331E-10  -7.21001925E-10
+ SST=   300.00000000000000     
+ surface pressure=   1006.90997    
+ u: -0.112977147      0.107709624    
+ v:   0.00000000       0.00000000    
+ w:  -4.88151144E-03   4.36352612E-03
+ p: -0.355224013      0.307132065    
+ t:   298.072235       324.175354    
+ tabs:   240.322632       298.108124    
+ qv:   3.09199997E-04   1.59846954E-02
+ tke:   0.00000000       3.20217200E-02
+ tk:   0.00000000      0.894730687    
+ tkh:   0.00000000      0.894730687    
+ qcl:   0.00000000       0.00000000    
+ qci:   0.00000000       0.00000000    
+ QTO:   3.09199997E-04   1.59846954E-02
+ QR:   0.00000000       0.00000000    
+ NR:   0.00000000       0.00000000    
+ QI:   0.00000000       0.00000000    
+ NI:   0.00000000       0.00000000    
+ QS:   0.00000000       0.00000000    
+ NS:   0.00000000       0.00000000    
+ QG:   0.00000000       0.00000000    
+ NG:   0.00000000       0.00000000    
+ qpl:   0.00000000       0.00000000    
+ qpi:   0.00000000       0.00000000    
+ qrad(K/day):  -1.62877321      0.327568203    
+ shf:   5.07739258       5.56297445    
+ lhf:   55.1552315       55.5231247    
+ uw:  -1.74312328E-04   1.81291674E-04
+ vw:  -0.00000000      -0.00000000    
+ sst:   300.000000       300.000000    
+ precinst (mm/h):   0.00000000       0.00000000    
+ total water budget:
+ before (mm):         41.16796118076
+ after (mm):          41.16829191305
+ evaporation (mm):     0.00033074796
+ precipitation (mm):   0.00000000000
+ large-scale (mm):     0.00000000000
+ Imbalance (mm)      -0.00000001566
+  imbalance (rel error):  -3.8040294615361094E-010
+ evap (mm/day):   1.9051082266814774     
+ prec (mm/day):   0.0000000000000000     
+ ls (mm/day):   0.0000000000000000     
+ imbalance (mm/day)  -9.0204710431820989E-005
+CPU TIME =       0.4689 OVER     0.17 MODEL HOURS
+NSTEP =      81 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =      82 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+NSTEP =      83 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =      84 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+NSTEP =      85 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =      86 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+NSTEP =      87 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =      88 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+NSTEP =      89 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =      90 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+ radiation: perpetual sun, solin=   413.806915    
+NSTEP =      91 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =      92 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+NSTEP =      93 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =      94 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+NSTEP =      95 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =      96 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+NSTEP =      97 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =      98 NCYCLE= 1 CFL=0.001 CFLH=0.000 CFLZ=0.001 CFL_sgs=0.005
+NSTEP =      99 NCYCLE= 1 CFL=0.001 CFLH=0.001 CFLZ=0.001 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     100 NCYCLE= 1 CFL=0.001 CFLH=0.001 CFLZ=0.001 CFL_sgs=0.005
+NSTEP =     101 NCYCLE= 1 CFL=0.001 CFLH=0.001 CFLZ=0.001 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     102 NCYCLE= 1 CFL=0.001 CFLH=0.001 CFLZ=0.001 CFL_sgs=0.005
+NSTEP =     103 NCYCLE= 1 CFL=0.001 CFLH=0.001 CFLZ=0.001 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     104 NCYCLE= 1 CFL=0.001 CFLH=0.001 CFLZ=0.001 CFL_sgs=0.005
+NSTEP =     105 NCYCLE= 1 CFL=0.001 CFLH=0.001 CFLZ=0.001 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     106 NCYCLE= 1 CFL=0.001 CFLH=0.001 CFLZ=0.001 CFL_sgs=0.005
+NSTEP =     107 NCYCLE= 1 CFL=0.001 CFLH=0.001 CFLZ=0.001 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     108 NCYCLE= 1 CFL=0.001 CFLH=0.001 CFLZ=0.001 CFL_sgs=0.005
+NSTEP =     109 NCYCLE= 1 CFL=0.001 CFLH=0.001 CFLZ=0.001 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     110 NCYCLE= 1 CFL=0.001 CFLH=0.001 CFLZ=0.001 CFL_sgs=0.005
+NSTEP =     111 NCYCLE= 1 CFL=0.001 CFLH=0.001 CFLZ=0.001 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     112 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+NSTEP =     113 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     114 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+NSTEP =     115 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     116 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+NSTEP =     117 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     118 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+NSTEP =     119 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+ Collecting statistics...
+ Writting radiation restart file...
+ Saved radiation restart file. nstep=         120
+ appending OUT_MOVIES/*.raw files. nstep=         120
+ Writting statistics:nstatsteps=          20
+ Writting history file 0                                                                               
+ Writing restart file ...
+ Restart file was saved. nstep=         120
+ Writting 2D data. file:./OUT_2D/RCE_0_1.2Dcom                                                                                                  
+ Appending 3D data. file:./OUT_3D/RCE_0_1.com2D                                                                                                  
+NSTEP =     120 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+ DAY =    2.08333340E-02
+ NSTEP=         120
+ div:   6.43922249E-10  -5.71162673E-10
+ SST=   300.00000000000000     
+ surface pressure=   1006.90997    
+ u: -0.158696786      0.150336236    
+ v:   0.00000000       0.00000000    
+ w:  -6.45350572E-03   6.03964878E-03
+ p: -0.356176913      0.301646560    
+ t:   298.074158       324.177795    
+ tabs:   240.325073       298.121429    
+ qv:   3.09199997E-04   1.60839763E-02
+ tke:   0.00000000       3.13465856E-02
+ tk:   0.00000000      0.885248363    
+ tkh:   0.00000000      0.885248363    
+ qcl:   0.00000000       0.00000000    
+ qci:   0.00000000       0.00000000    
+ QTO:   3.09199997E-04   1.60839763E-02
+ QR:   0.00000000       0.00000000    
+ NR:   0.00000000       0.00000000    
+ QI:   0.00000000       0.00000000    
+ NI:   0.00000000       0.00000000    
+ QS:   0.00000000       0.00000000    
+ NS:   0.00000000       0.00000000    
+ QG:   0.00000000       0.00000000    
+ NG:   0.00000000       0.00000000    
+ qpl:   0.00000000       0.00000000    
+ qpi:   0.00000000       0.00000000    
+ qrad(K/day):  -1.62874258      0.327153534    
+ shf:   5.03637075       5.49447966    
+ lhf:   54.3285294       54.8205528    
+ uw:  -2.43744493E-04   2.55852967E-04
+ vw:  -0.00000000      -0.00000000    
+ sst:   300.000000       300.000000    
+ precinst (mm/h):   0.00000000       0.00000000    
+ total water budget:
+ before (mm):         41.18109818194
+ after (mm):          41.18142421839
+ evaporation (mm):     0.00032605275
+ precipitation (mm):   0.00000000000
+ large-scale (mm):     0.00000000000
+ Imbalance (mm)      -0.00000001631
+  imbalance (rel error):  -3.9595617429581547E-010
+ evap (mm/day):   1.8780638347525380     
+ prec (mm/day):   0.0000000000000000     
+ ls (mm/day):   0.0000000000000000     
+ imbalance (mm/day)  -9.3922791165740302E-005
+CPU TIME =       0.4600 OVER     0.17 MODEL HOURS
+ radiation: perpetual sun, solin=   413.806915    
+NSTEP =     121 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     122 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+NSTEP =     123 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     124 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+NSTEP =     125 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     126 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+NSTEP =     127 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     128 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+NSTEP =     129 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     130 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+NSTEP =     131 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     132 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+NSTEP =     133 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     134 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+NSTEP =     135 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     136 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+NSTEP =     137 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     138 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+NSTEP =     139 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     140 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+NSTEP =     141 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     142 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+NSTEP =     143 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     144 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+NSTEP =     145 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     146 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+NSTEP =     147 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     148 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+NSTEP =     149 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     150 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+ radiation: perpetual sun, solin=   413.806915    
+NSTEP =     151 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     152 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+NSTEP =     153 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     154 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+NSTEP =     155 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     156 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+NSTEP =     157 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     158 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+NSTEP =     159 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+ Collecting statistics...
+ Writting radiation restart file...
+ Saved radiation restart file. nstep=         160
+ Writting statistics:nstatsteps=          20
+ Writting history file 0                                                                               
+ Writing restart file ...
+ Restart file was saved. nstep=         160
+ Writting 2D data. file:./OUT_2D/RCE_0_1.2Dcom                                                                                                  
+ Appending 3D data. file:./OUT_3D/RCE_0_1.com2D                                                                                                  
+NSTEP =     160 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+ DAY =    2.77777780E-02
+ NSTEP=         160
+ div:   7.09405867E-10  -8.76752893E-10
+ SST=   300.00000000000000     
+ surface pressure=   1006.90997    
+ u: -0.201858580      0.190080225    
+ v:   0.00000000       0.00000000    
+ w:  -7.73827126E-03   7.72675918E-03
+ p: -0.359278500      0.289776683    
+ t:   298.072113       324.180237    
+ tabs:   240.327515       298.135986    
+ qv:   3.09199997E-04   1.61761884E-02
+ tke:   0.00000000       3.12350336E-02
+ tk:   0.00000000      0.883671761    
+ tkh:   0.00000000      0.883671761    
+ qcl:   0.00000000       0.00000000    
+ qci:   0.00000000       0.00000000    
+ QTO:   3.09199997E-04   1.61761884E-02
+ QR:   0.00000000       0.00000000    
+ NR:   0.00000000       0.00000000    
+ QI:   0.00000000       0.00000000    
+ NI:   0.00000000       0.00000000    
+ QS:   0.00000000       0.00000000    
+ NS:   0.00000000       0.00000000    
+ QG:   0.00000000       0.00000000    
+ NG:   0.00000000       0.00000000    
+ qpl:   0.00000000       0.00000000    
+ qpi:   0.00000000       0.00000000    
+ qrad(K/day):  -1.65794587      0.326330185    
+ shf:   4.99177408       5.43633366    
+ lhf:   53.5611610       54.1977081    
+ uw:  -3.05739988E-04   3.20280844E-04
+ vw:  -0.00000000      -0.00000000    
+ sst:   300.000000       300.000000    
+ precinst (mm/h):   0.00000000       0.00000000    
+ total water budget:
+ before (mm):         41.19405420941
+ after (mm):          41.19437593863
+ evaporation (mm):     0.00032170648
+ precipitation (mm):   0.00000000000
+ large-scale (mm):     0.00000000000
+ Imbalance (mm)       0.00000002274
+  imbalance (rel error):   5.5192525550001427E-010
+ evap (mm/day):   1.8530293303920191     
+ prec (mm/day):   0.0000000000000000     
+ ls (mm/day):   0.0000000000000000     
+ imbalance (mm/day)   1.3096058773951619E-004
+CPU TIME =       0.5026 OVER     0.17 MODEL HOURS
+NSTEP =     161 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     162 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+NSTEP =     163 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     164 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+NSTEP =     165 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     166 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+NSTEP =     167 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     168 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+NSTEP =     169 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     170 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+NSTEP =     171 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     172 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+NSTEP =     173 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     174 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+NSTEP =     175 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     176 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+NSTEP =     177 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     178 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+NSTEP =     179 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+ Collecting statistics...
+ appending OUT_MOVIES/*.raw files. nstep=         180
+NSTEP =     180 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+ radiation: perpetual sun, solin=   413.806915    
+NSTEP =     181 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     182 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+NSTEP =     183 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     184 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+NSTEP =     185 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     186 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+NSTEP =     187 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     188 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+NSTEP =     189 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     190 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+NSTEP =     191 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     192 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+NSTEP =     193 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     194 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+NSTEP =     195 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     196 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+NSTEP =     197 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     198 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+NSTEP =     199 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+ Collecting statistics...
+ Writting radiation restart file...
+ Saved radiation restart file. nstep=         200
+ Writting statistics:nstatsteps=          20
+ Writting history file 0                                                                               
+ Writing restart file ...
+ Restart file was saved. nstep=         200
+ Writting 2D data. file:./OUT_2D/RCE_0_1.2Dcom                                                                                                  
+ Appending 3D data. file:./OUT_3D/RCE_0_1.com2D                                                                                                  
+NSTEP =     200 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+ DAY =    3.47222239E-02
+ NSTEP=         200
+ div:   7.27595761E-10  -6.64385880E-10
+ SST=   300.00000000000000     
+ surface pressure=   1006.90997    
+ u: -0.245694026      0.230178207    
+ v:   0.00000000       0.00000000    
+ w:  -9.24344920E-03   9.41918138E-03
+ p: -0.385619491      0.300318599    
+ t:   298.072815       324.182678    
+ tabs:   240.329956       298.149841    
+ qv:   3.09199997E-04   1.62640531E-02
+ tke:   0.00000000       3.12600099E-02
+ tk:   0.00000000      0.884025037    
+ tkh:   0.00000000      0.884025037    
+ qcl:   0.00000000       0.00000000    
+ qci:   0.00000000       0.00000000    
+ QTO:   3.09199997E-04   1.62640531E-02
+ QR:   0.00000000       0.00000000    
+ NR:   0.00000000       0.00000000    
+ QI:   0.00000000       0.00000000    
+ NI:   0.00000000       0.00000000    
+ QS:   0.00000000       0.00000000    
+ NS:   0.00000000       0.00000000    
+ QG:   0.00000000       0.00000000    
+ NG:   0.00000000       0.00000000    
+ qpl:   0.00000000       0.00000000    
+ qpi:   0.00000000       0.00000000    
+ qrad(K/day):  -1.67108989      0.325904220    
+ shf:   4.94915247       5.39041901    
+ lhf:   52.8312111       53.6662674    
+ uw:  -3.66702327E-04   3.80877522E-04
+ vw:  -0.00000000      -0.00000000    
+ sst:   300.000000       300.000000    
+ precinst (mm/h):   0.00000000       0.00000000    
+ total water budget:
+ before (mm):         41.20684263051
+ after (mm):          41.20716029507
+ evaporation (mm):     0.00031767388
+ precipitation (mm):   0.00000000000
+ large-scale (mm):     0.00000000000
+ Imbalance (mm)      -0.00000000932
+  imbalance (rel error):  -2.2624681090825664E-010
+ evap (mm/day):   1.8298015325126473     
+ prec (mm/day):   0.0000000000000000     
+ ls (mm/day):   0.0000000000000000     
+ imbalance (mm/day)  -5.3700427997786793E-005
+CPU TIME =       0.4800 OVER     0.17 MODEL HOURS
+NSTEP =     201 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     202 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+NSTEP =     203 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     204 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+NSTEP =     205 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     206 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+NSTEP =     207 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     208 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+NSTEP =     209 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     210 NCYCLE= 1 CFL=0.002 CFLH=0.001 CFLZ=0.002 CFL_sgs=0.005
+ radiation: perpetual sun, solin=   413.806915    
+NSTEP =     211 NCYCLE= 1 CFL=0.003 CFLH=0.001 CFLZ=0.003 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     212 NCYCLE= 1 CFL=0.003 CFLH=0.001 CFLZ=0.003 CFL_sgs=0.005
+NSTEP =     213 NCYCLE= 1 CFL=0.003 CFLH=0.001 CFLZ=0.003 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     214 NCYCLE= 1 CFL=0.003 CFLH=0.001 CFLZ=0.003 CFL_sgs=0.005
+NSTEP =     215 NCYCLE= 1 CFL=0.003 CFLH=0.001 CFLZ=0.003 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     216 NCYCLE= 1 CFL=0.003 CFLH=0.001 CFLZ=0.003 CFL_sgs=0.005
+NSTEP =     217 NCYCLE= 1 CFL=0.003 CFLH=0.001 CFLZ=0.003 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     218 NCYCLE= 1 CFL=0.003 CFLH=0.001 CFLZ=0.003 CFL_sgs=0.005
+NSTEP =     219 NCYCLE= 1 CFL=0.003 CFLH=0.001 CFLZ=0.003 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     220 NCYCLE= 1 CFL=0.003 CFLH=0.001 CFLZ=0.003 CFL_sgs=0.005
+NSTEP =     221 NCYCLE= 1 CFL=0.003 CFLH=0.001 CFLZ=0.003 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     222 NCYCLE= 1 CFL=0.003 CFLH=0.001 CFLZ=0.003 CFL_sgs=0.005
+NSTEP =     223 NCYCLE= 1 CFL=0.003 CFLH=0.001 CFLZ=0.003 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     224 NCYCLE= 1 CFL=0.003 CFLH=0.001 CFLZ=0.003 CFL_sgs=0.005
+NSTEP =     225 NCYCLE= 1 CFL=0.003 CFLH=0.001 CFLZ=0.003 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     226 NCYCLE= 1 CFL=0.003 CFLH=0.001 CFLZ=0.003 CFL_sgs=0.005
+NSTEP =     227 NCYCLE= 1 CFL=0.003 CFLH=0.001 CFLZ=0.003 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     228 NCYCLE= 1 CFL=0.003 CFLH=0.001 CFLZ=0.003 CFL_sgs=0.005
+NSTEP =     229 NCYCLE= 1 CFL=0.003 CFLH=0.001 CFLZ=0.003 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     230 NCYCLE= 1 CFL=0.003 CFLH=0.001 CFLZ=0.003 CFL_sgs=0.005
+NSTEP =     231 NCYCLE= 1 CFL=0.003 CFLH=0.001 CFLZ=0.003 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     232 NCYCLE= 1 CFL=0.003 CFLH=0.001 CFLZ=0.003 CFL_sgs=0.005
+NSTEP =     233 NCYCLE= 1 CFL=0.003 CFLH=0.001 CFLZ=0.003 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     234 NCYCLE= 1 CFL=0.003 CFLH=0.001 CFLZ=0.003 CFL_sgs=0.005
+NSTEP =     235 NCYCLE= 1 CFL=0.003 CFLH=0.001 CFLZ=0.003 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     236 NCYCLE= 1 CFL=0.003 CFLH=0.001 CFLZ=0.003 CFL_sgs=0.005
+NSTEP =     237 NCYCLE= 1 CFL=0.003 CFLH=0.001 CFLZ=0.003 CFL_sgs=0.005
+ Collecting statistics...
+NSTEP =     238 NCYCLE= 1 CFL=0.003 CFLH=0.001 CFLZ=0.003 CFL_sgs=0.005
+NSTEP =     239 NCYCLE= 1 CFL=0.003 CFLH=0.001 CFLZ=0.003 CFL_sgs=0.005
+ Collecting statistics...
+ Writting radiation restart file...
+ Saved radiation restart file. nstep=         240
+ appending OUT_MOVIES/*.raw files. nstep=         240
+ Writting statistics:nstatsteps=          20
+ Writting history file 0                                                                               
+ Writing restart file ...
+ Restart file was saved. nstep=         240
+ Writting 2D data. file:./OUT_2D/RCE_0_1.2Dcom                                                                                                  
+ Appending 3D data. file:./OUT_3D/RCE_0_1.com2D                                                                                                  
+NSTEP =     240 NCYCLE= 1 CFL=0.003 CFLH=0.001 CFLZ=0.003 CFL_sgs=0.005
+ DAY =    4.16666679E-02
+ NSTEP=         240
+ div:   5.74800652E-10  -5.74800652E-10
+ SST=   300.00000000000000     
+ surface pressure=   1006.90997    
+ u: -0.291277558      0.272372335    
+ v:   0.00000000       0.00000000    
+ w:  -1.08263427E-02   1.12504270E-02
+ p: -0.420414805      0.321283132    
+ t:   298.075134       324.185120    
+ tabs:   240.332397       298.163239    
+ qv:   3.09199997E-04   1.63530689E-02
+ tke:   0.00000000       3.14039551E-02
+ tk:   0.00000000      0.886058092    
+ tkh:   0.00000000      0.886058092    
+ qcl:   0.00000000       0.00000000    
+ qci:   0.00000000       0.00000000    
+ QTO:   3.09199997E-04   1.63530689E-02
+ QR:   0.00000000       0.00000000    
+ NR:   0.00000000       0.00000000    
+ QI:   0.00000000       0.00000000    
+ NI:   0.00000000       0.00000000    
+ QS:   0.00000000       0.00000000    
+ NS:   0.00000000       0.00000000    
+ QG:   0.00000000       0.00000000    
+ NG:   0.00000000       0.00000000    
+ qpl:   0.00000000       0.00000000    
+ qpi:   0.00000000       0.00000000    
+ qrad(K/day):  -1.68248057      0.325491339    
+ shf:   4.90784836       5.35419559    
+ lhf:   52.0911827       53.2590981    
+ uw:  -4.28711035E-04   4.40156960E-04
+ vw:  -0.00000000      -0.00000000    
+ sst:   300.000000       300.000000    
+ precinst (mm/h):   0.00000000       0.00000000    
+ total water budget:
+ before (mm):         41.21947505353
+ after (mm):          41.21978894270
+ evaporation (mm):     0.00031391437
+ precipitation (mm):   0.00000000000
+ large-scale (mm):     0.00000000000
+ Imbalance (mm)      -0.00000002520
+  imbalance (rel error):  -6.1139395417508941E-010
+ evap (mm/day):   1.8081467711599544     
+ prec (mm/day):   0.0000000000000000     
+ ls (mm/day):   0.0000000000000000     
+ imbalance (mm/day)  -1.4516083047057954E-004
+ Finished with SAM, exiting...
+ program is finished...
