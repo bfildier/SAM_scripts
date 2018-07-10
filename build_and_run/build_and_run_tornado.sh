@@ -2,7 +2,7 @@
 
 # What to do in this script
 setdomain=true
-build=false
+build=true
 setcase=true
 setrunscript=true
 run=false
