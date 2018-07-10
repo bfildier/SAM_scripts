@@ -2,16 +2,31 @@
 
 # What to do in this script
 setdomain=true
-build=true
+build=false
 setcase=true
 setrunscript=true
 run=false
+
+#experiment=STD
+experiment=EDMF
 
 machine=tornado
 CURRENTDIR=$PWD
 SCRIPTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 # Define MODELDIR and OUTPUTDIR
 . ${SCRIPTDIR}/../load_dirnames.sh ${machine}
+
+#------------- Activate the right version of the model ------------#
+
+cd ${MODELDIR}
+if [ "$experiment" == "STD" ]; then
+    git checkout master
+elif [ "$experiment" == "EDMF" ]; then
+    git checkout edmf
+else
+    echo "bad experiment specification"
+    exit 1
+fi
 
 #------------------------------------------------------------------#
 #             Set up domains, subdomains and processors            #
@@ -106,7 +121,7 @@ doperpetual='.true.'
 #------------------------------ Case ------------------------------#
 casename=RCE
 caseid=\"${ADV}x${SGS}x${RAD}x${MICRO}_`echo $dx | bc -l`x\
-`echo $dy | bc -l`x`echo $dt | bc -l`_${nx}x${ny}x${nz}\"
+`echo $dy | bc -l`x`echo $dt | bc -l`_${nx}x${ny}x${nz}_${experiment}\"
 
 #-------------------------- Parameter File ------------------------#
 refprmfilename=prm_template
