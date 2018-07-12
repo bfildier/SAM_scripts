@@ -2,7 +2,7 @@
 
 # What to do in this script
 setdomain=true
-build=false
+build=true
 setcase=true
 setrunscript=true
 run=false
@@ -19,14 +19,18 @@ SCRIPTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 #------------- Activate the right version of the model ------------#
 
 cd ${MODELDIR}
-if [ "$experiment" == "STD" ]; then
-    git checkout master
-elif [ "$experiment" == "EDMF" ]; then
-    git checkout edmf
-else
-    echo "bad experiment specification"
-    exit 1
-fi
+
+#-- if model is compatible with edmf
+git checkout edmf
+
+#if [ "$experiment" == "STD" ]; then
+#    git checkout master
+#elif [ "$experiment" == "EDMF" ]; then
+#    git checkout edmf
+#else
+#    echo "bad experiment specification"
+#    exit 1
+#fi
 
 #------------------------------------------------------------------#
 #             Set up domains, subdomains and processors            #
@@ -72,16 +76,25 @@ SGS=TKE
 SGSDIR=SGS_${SGS}        # SGS scheme
 RAD=CAM
 RADDIR=RAD_${RAD}        # Radiation scheme
-MICRO=M2005
+#MICRO=M2005
+MICRO=SAM1MOM
 MICRODIR=MICRO_${MICRO}  # Microphysics scheme
 
 #Set up the model for single/multi processor
 if [ "$HOSTNAME" == "tornado" ]; then
     mv SRC/task_util_NOMPI.f9000 SRC/task_util_NOMPI.f90 2> /dev/null
     mv SRC/task_util_MPI.f90 SRC/task_util_MPI.f9000 2> /dev/null
+    # If on EDMF branch, edits to statistics.f90 not compatible with serial mode
+    sed -i '' "s/^include 'mpif.h'/!include 'mpif.h'/" SRC/statistics.f90
+    sed -i '' "s/^call MPI_/!call MPI_/" SRC/statistics.f90
+    sed -i '' "s/^MPI_/!MPI_/" SRC/statistics.f90
 elif [ "$HOSTNAME" =~ "edison*" || "$HOSTNAME" =~ "cori*" ]; then
     mv SRC/task_util_NOMPI.f90 SRC/task_util_NOMPI.f9000 2> /dev/null
     mv SRC/task_util_MPI.f9000 SRC/task_util_MPI.f90 2> /dev/null
+    # If on EDMF branch, set back edits to statistics.f90
+    sed -i "s/!include 'mpif.h'/include 'mpif.h'/" SRC/statistics.f90
+    sed -i "s/^!call MPI_/call MPI_/" SRC./statistics.f90
+    sed -i "s/^!MPI_/MPI_/" SRC/statistics.f90
 fi
 
 if [ "$build" == "true" ]; then
@@ -118,6 +131,11 @@ nelapse=$nstop  # when to stop the model for intermediate runs
 doseasons='.false.'
 doperpetual='.true.'
 
+#------------------------------ EDMF ------------------------------#
+if [ "$experiment" == "EDMF" ]; then
+    doedmf=".true."
+fi
+
 #------------------------------ Case ------------------------------#
 casename=RCE
 caseid=\"${ADV}x${SGS}x${RAD}x${MICRO}_`echo $dx | bc -l`x\
@@ -141,6 +159,10 @@ if [ "$setcase" == "true" ]; then
     sed -i '' "s/nelapse  =.*/nelapse  = ${nelapse}/" prm
     sed -i '' "s/doseasons = .*/doseasons = ${doseasons}/" prm
     sed -i '' "s/doperpetual = .*/doperpetual = ${doperpetual}/" prm
+    
+    if [ "$experiment" == "EDMF" ]; then
+        sed -i '' "s/doedmf = .*/doedmf = ${doedmf}/" prm
+    fi 
     cd ..
 else
     echo "case setting phase passed"
