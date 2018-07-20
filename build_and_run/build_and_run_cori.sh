@@ -84,7 +84,7 @@ elif [[ "$HOSTNAME" =~ edison* || "$HOSTNAME" =~ cori* ]]; then
     mv SRC/task_util_MPI.f9000 SRC/task_util_MPI.f90 2> /dev/null
     # If on EDMF branch, set back edits to statistics.f90
     sed -i "s/!include 'mpif.h'/include 'mpif.h'/" SRC/statistics.f90
-    sed -i "s/^!call MPI_/call MPI_/" SRC./statistics.f90
+    sed -i "s/^!call MPI_/call MPI_/" SRC/statistics.f90
     sed -i "s/^!MPI_/MPI_/" SRC/statistics.f90
 fi
 
