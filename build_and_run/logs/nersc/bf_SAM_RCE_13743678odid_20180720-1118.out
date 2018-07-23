@@ -1,0 +1,3566 @@
+nid02517
+nid02517
+nid02517
+nid02517
+nid02517
+nid02517
+nid02517
+nid02517
+nid02517
+nid02517
+nid02517
+nid02517
+nid02517
+nid02517
+nid02517
+nid02517
+nid02517
+nid02517
+nid02517
+nid02517
+nid02517
+nid02517
+nid02517
+nid02517
+nid02517
+nid02517
+nid02517
+nid02517
+nid02517
+nid02517
+nid02517
+nid02517
+ number of MPI tasks:          32
+           **************************************************
+           **************************************************
+           *                                                *
+           *      *****          **       ***          **   *
+           *    ***   ***       ****      ****       ****   *
+           *   ***     ***     *** ***    *****     *****   *
+           *    ***           ***   ***   *** **   ** ***   *
+           *       ***       ***     ***  ***  ** **  ***   *
+           *          ***    ***     ***  ***   ***   ***   *
+           *   ***     ***   ***********  ***         ***   *
+           *    ***   ***    ***     ***  ***         ***   *
+           *      *****      ***     ***  ***         ***   *
+           *                                                *
+           **************************************************
+           **************************************************
+           ***       System for Atmospheric Modeling      ***
+           ***                    SAM                     ***
+                     Version 6.10.10 (May 2016)  
+           **************************************************
+           ***     (C) Marat Khairoutdinov                ***
+           *** School of Marine and Atmospheric Sciences  ***
+           ***       Stony Brook University               ***
+           **************************************************
+           ***       The model can be used only with      ***
+           ***         permission from the author!        ***
+           ***       No transfer to any third party       ***
+           ***                is allowed!                 ***
+           **************************************************
+           **************************************************
+           ***       DATE 07/20/18 TIME 11:25:46          ***
+           **************************************************
+ 
+ 
+ surface pressure:    1006.910    
+ Initial Sounding:
+  k      z    rho     rhoi    s      h     h*      qt      u      v     adz
+  64 26982.8  0.027  0.029 487.50 487.50 493.91   0.00   0.00   0.00  21.79    
+  63 25893.4  0.032  0.035 472.60 472.60 475.91  -0.00   0.00   0.00  20.80    
+  62 24903.1  0.038  0.041 459.04 459.04 460.80   0.00   0.00   0.00  18.91    
+  61 24002.8  0.044  0.048 448.17 448.17 449.35   0.00   0.00   0.00  17.19    
+  60 23184.4  0.051  0.055 437.84 437.84 438.59   0.00   0.00   0.00  15.62    
+  59 22440.4  0.058  0.062 428.08 428.08 428.56   0.00   0.00   0.00  14.20    
+  58 21764.0  0.066  0.070 419.18 419.18 419.49   0.00   0.00   0.00  12.91    
+  57 21149.1  0.074  0.077 411.76 411.76 411.99   0.00   0.00   0.00  11.74    
+  56 20590.1  0.081  0.085 405.63 405.64 405.82   0.00   0.00   0.00  10.67    
+  55 20081.9  0.088  0.092 400.64 400.64 400.81   0.00   0.00   0.00  10.08    
+  54 19581.9  0.096  0.100 395.80 395.81 395.96   0.00   0.00   0.00  10.00    
+  53 19081.9  0.105  0.109 390.77 390.77 390.91   0.00   0.00   0.00  10.00    
+  52 18581.9  0.114  0.119 385.49 385.50 385.61   0.00   0.00   0.00  10.00    
+  51 18081.9  0.124  0.130 379.86 379.87 379.97   0.00   0.00   0.00  10.00    
+  50 17581.9  0.135  0.141 374.84 374.85 374.94   0.00   0.00   0.00  10.00    
+  49 17081.9  0.148  0.154 369.59 369.60 369.67   0.00   0.00   0.00  10.00    
+  48 16581.9  0.161  0.168 364.54 364.55 364.61   0.01   0.00   0.00  10.00    
+  47 16081.9  0.175  0.183 359.11 359.12 359.17   0.01   0.00   0.00  10.00    
+  46 15581.9  0.191  0.200 353.67 353.69 353.73   0.01   0.00   0.00  10.00    
+  45 15081.9  0.209  0.218 348.06 348.07 348.10   0.01   0.00   0.00  10.00    
+  44 14581.9  0.228  0.238 342.79 342.81 342.83   0.01   0.00   0.00  10.00    
+  43 14081.9  0.248  0.258 338.12 338.13 338.16   0.01   0.00   0.00  10.00    
+  42 13581.9  0.269  0.279 334.44 334.46 334.48   0.01   0.00   0.00  10.00    
+  41 13081.9  0.289  0.299 331.70 331.72 331.75   0.01   0.00   0.00  10.00    
+  40 12581.9  0.310  0.320 329.81 329.84 329.88   0.01   0.00   0.00  10.00    
+  39 12081.9  0.330  0.341 328.51 328.56 328.62   0.02   0.00   0.00  10.00    
+  38 11581.9  0.351  0.362 327.64 327.72 327.80   0.03   0.00   0.00  10.00    
+  37 11081.9  0.373  0.384 326.99 327.12 327.25   0.05   0.00   0.00  10.00    
+  36 10581.9  0.395  0.406 326.48 326.68 326.88   0.08   0.00   0.00  10.00    
+  35 10081.9  0.418  0.429 326.00 326.29 326.60   0.12   0.00   0.00  10.00    
+  34  9581.9  0.442  0.454 325.49 325.90 326.37   0.16   0.00   0.00  10.00    
+  33  9081.9  0.466  0.479 324.88 325.45 326.16   0.23   0.00   0.00  10.00    
+  32  8581.9  0.492  0.506 324.17 324.94 325.96   0.31   0.00   0.00  10.00    
+  31  8081.9  0.519  0.533 323.35 324.39 325.79   0.42   0.00   0.00  10.00    
+  30  7581.9  0.548  0.563 322.42 323.80 325.70   0.55   0.00   0.00  10.00    
+  29  7081.9  0.578  0.593 321.34 323.17 325.63   0.73   0.00   0.00  10.00    
+  28  6581.9  0.609  0.625 320.08 322.54 325.56   0.98   0.00   0.00  10.00    
+  27  6081.9  0.642  0.659 318.64 321.96 325.47   1.33   0.00   0.00  10.00    
+  26  5581.9  0.677  0.694 317.06 321.47 325.41   1.76   0.00   0.00  10.00    
+  25  5081.9  0.713  0.731 315.39 321.13 325.46   2.30   0.00   0.00  10.00    
+  24  4581.9  0.751  0.770 313.65 320.97 325.68   2.93   0.00   0.00  10.00    
+  23  4081.9  0.789  0.809 311.88 321.05 326.15   3.67   0.00   0.00  9.572    
+  22  3624.6  0.826  0.845 310.28 321.41 326.90   4.45   0.00   0.00  8.677    
+  21  3214.2  0.861  0.878 308.81 321.99 327.75   5.27   0.00   0.00  7.790    
+  20  2845.7  0.893  0.909 307.46 322.74 328.64   6.11   0.00   0.00  6.993    
+  19  2514.9  0.923  0.937 306.21 323.59 329.55   6.95   0.00   0.00  6.278    
+  18  2217.9  0.950  0.963 305.05 324.53 330.41   7.79   0.00   0.00  5.636    
+  17  1951.3  0.975  0.987 303.99 325.48 331.24   8.60   0.00   0.00  5.059    
+  16  1711.9  0.998  1.009 303.02 326.44 332.03   9.37   0.00   0.00  4.542    
+  15  1497.1  1.019  1.029 302.14 327.38 332.79  10.09   0.00   0.00  4.077    
+  14  1304.2  1.038  1.047 301.34 328.33 333.49  10.79   0.00   0.00  3.660    
+  13  1131.0  1.055  1.064 300.63 329.28 334.22  11.46   0.00   0.00  3.286    
+  12   975.6  1.071  1.078 300.03 330.26 335.01  12.09   0.00   0.00  2.950    
+  11   836.0  1.085  1.092 299.53 331.25 335.90  12.69   0.00   0.00  2.648    
+  10   710.8  1.097  1.103 299.13 332.20 336.91  13.23   0.00   0.00  2.377    
+   9   598.3  1.109  1.114 298.82 333.05 338.04  13.69   0.00   0.00  2.134    
+   8   497.3  1.118  1.123 298.61 333.73 339.29  14.05   0.00   0.00  1.916    
+   7   406.7  1.127  1.131 298.45 334.24 340.61  14.31   0.00   0.00  1.720    
+   6   325.3  1.135  1.139 298.34 334.61 341.93  14.51   0.00   0.00  1.544    
+   5   252.3  1.142  1.145 298.26 334.90 343.22  14.65   0.00   0.00  1.386    
+   4   186.7  1.148  1.151 298.20 335.11 344.46  14.76   0.00   0.00  1.244    
+   3   127.8  1.154  1.157 298.15 335.38 345.63  14.89   0.00   0.00  1.117    
+   2    75.0  1.159  1.161 298.12 335.71 346.74  15.03   0.00   0.00  1.028    
+   1    25.0  1.163  1.165 298.23 337.60 348.35  15.75   0.00   0.00  1.000    
+  k      z    rho     rhoi    s      h     h*      qt      u      v     adz     
+ N
+ 
+   k      z      dz     pres   presi   Tabs     tp     tpl      qt      Qc     Qi    REL
+  64 26982.78 1089.34   17.06   18.54  223.85  716.69  716.69  0.0000  0.0000  0.0000    0.00
+  63 25893.44 1039.83   20.19   21.80  219.59  670.09  670.09 -0.0000  0.0000  0.0000   -0.00
+  62 24903.12  945.30   23.59   25.33  215.71  629.59  629.59  0.0004  0.0000  0.0000    0.06
+  61 24002.84  859.36   27.23   29.07  213.64  598.50  598.50  0.0006  0.0000  0.0000    0.13
+  60 23184.40  781.24   31.06   32.99  211.30  570.06  570.06  0.0008  0.0000  0.0000    0.26
+  59 22440.36  710.22   35.06   37.06  208.82  544.18  544.18  0.0011  0.0000  0.0000    0.58
+  58 21763.97  645.65   39.19   41.24  206.52  521.33  521.33  0.0018  0.0000  0.0000    1.46
+  57 21149.06  586.96   43.41   45.48  205.11  502.85  502.85  0.0021  0.0000  0.0000    2.30
+  56 20590.05  533.60   47.66   49.73  204.45  488.03  488.03  0.0021  0.0000  0.0000    2.77
+  55 20081.87  504.09   51.89   54.10  204.42  476.24  476.24  0.0021  0.0000  0.0000    3.03
+  54 19581.87  500.00   56.41   58.82  204.47  465.12  465.12  0.0021  0.0000  0.0000    3.28
+  53 19081.87  500.00   61.33   63.95  204.32  453.80  453.80  0.0023  0.0000  0.0000    3.98
+  52 18581.87  500.00   66.69   69.54  203.93  442.21  442.21  0.0029  0.0000  0.0000    5.76
+  51 18081.87  500.00   72.53   75.64  203.19  430.16  430.16  0.0036  0.0000  0.0000    8.61
+  50 17581.87  500.00   78.89   82.28  203.05  419.66  419.66  0.0042  0.0000  0.0000   11.12
+  49 17081.87  500.00   85.83   89.52  202.69  408.93  408.93  0.0048  0.0000  0.0000   14.55
+  48 16581.87  500.00   93.38   97.41  202.52  398.86  398.86  0.0052  0.0000  0.0000   17.50
+  47 16081.87  500.00  101.61  106.01  201.97  388.29  388.29  0.0056  0.0000  0.0000   22.03
+  46 15581.87  500.00  110.60  115.39  201.42  377.97  377.97  0.0058  0.0000  0.0000   26.60
+  45 15081.87  500.00  120.41  125.65  200.69  367.56  367.56  0.0059  0.0000  0.0000   32.11
+  44 14581.87  500.00  131.13  136.84  200.31  358.03  358.03  0.0060  0.0000  0.0000   37.21
+  43 14081.87  500.00  142.80  149.01  200.53  349.78  349.78  0.0061  0.0000  0.0000   40.21
+  42 13581.87  500.00  155.46  162.19  201.74  343.45  343.45  0.0066  0.0000  0.0000   40.89
+  41 13081.87  500.00  169.13  176.37  203.87  338.83  338.83  0.0078  0.0000  0.0000   39.59
+  40 12581.87  500.00  183.81  191.56  206.87  335.73  335.73  0.0113  0.0000  0.0000   40.83
+  39 12081.87  500.00  199.50  207.76  210.46  333.65  333.65  0.0193  0.0000  0.0000   45.83
+  38 11581.87  500.00  216.21  225.00  214.47  332.27  332.27  0.0327  0.0000  0.0000   49.64
+  37 11081.87  500.00  233.96  243.28  218.71  331.29  331.29  0.0523  0.0000  0.0000   50.89
+  36 10581.87  500.00  252.78  262.65  223.09  330.52  330.52  0.0794  0.0000  0.0000   50.19
+  35 10081.87  500.00  272.70  283.14  227.50  329.83  329.83  0.1157  0.0000  0.0000   48.39
+  34  9581.87  500.00  293.77  304.80  231.86  329.08  329.08  0.1640  0.0000  0.0000   46.45
+  33  9081.87  500.00  316.03  327.67  236.15  328.24  328.24  0.2266  0.0000  0.0000   44.56
+  32  8581.87  500.00  339.53  351.82  240.32  327.26  327.26  0.3092  0.0000  0.0000   43.32
+  31  8081.87  500.00  364.33  377.29  244.38  326.15  326.15  0.4151  0.0000  0.0000   42.43
+  30  7581.87  500.00  390.50  404.16  248.34  324.93  324.93  0.5500  0.0000  0.0000   41.93
+  29  7081.87  500.00  418.09  432.49  252.15  323.53  323.53  0.7305  0.0000  0.0000   42.56
+  28  6581.87  500.00  447.18  462.36  255.77  321.93  321.93  0.9828  0.0000  0.0000   44.88
+  27  6081.87  500.00  477.84  493.85  259.22  320.14  320.14  1.3252  0.0000  0.0000   48.54
+  26  5581.87  500.00  510.17  527.03  262.52  318.21  318.21  1.7648  0.0000  0.0000   52.85
+  25  5081.87  500.00  544.23  561.99  265.73  316.21  316.21  2.2961  0.0000  0.0000   56.98
+  24  4581.87  500.00  580.10  598.80  268.88  314.17  314.17  2.9270  0.0000  0.0000   60.82
+  23  4081.87  478.62  617.87  635.85  272.00  312.13  312.13  3.6677  0.0000  0.0000   64.29
+  22  3624.63  433.85  654.14  671.01  274.87  310.32  310.32  4.4484  0.0000  0.0000   66.95
+  21  3214.16  389.48  688.15  703.90  277.41  308.69  308.69  5.2708  0.0000  0.0000   69.59
+  20  2845.66  349.65  719.88  734.53  279.65  307.20  307.20  6.1126  0.0000  0.0000   72.14
+  19  2514.86  313.89  749.37  762.94  281.63  305.85  305.85  6.9541  0.0000  0.0000   74.50
+  18  2217.88  281.79  776.67  789.20  283.38  304.61  304.61  7.7886  0.0000  0.0000   76.79
+  17  1951.28  252.97  801.86  813.39  284.92  303.49  303.49  8.5968  0.0000  0.0000   78.89
+  16  1711.95  227.10  825.03  835.62  286.29  302.48  302.48  9.3652  0.0000  0.0000   80.71
+  15  1497.09  203.87  846.30  856.00  287.51  301.56  301.56 10.0927  0.0000  0.0000   82.34
+  14  1304.20  183.02  865.77  874.64  288.60  300.73  300.73 10.7931  0.0000  0.0000   83.93
+  13  1131.05  164.30  883.56  891.65  289.58  300.01  300.01 11.4568  0.0000  0.0000   85.29
+  12   975.60  147.50  899.78  907.15  290.49  299.40  299.40 12.0923  0.0000  0.0000   86.43
+  11   836.05  132.41  914.55  921.24  291.36  298.89  298.89 12.6876  0.0000  0.0000   87.21
+  10   710.77  118.87  927.96  934.04  292.18  298.50  298.50 13.2273  0.0000  0.0000   87.54
+   9   598.31  106.71  940.14  945.64  292.98  298.19  298.19 13.6893  0.0000  0.0000   87.28
+   8   497.34   95.80  951.17  956.15  293.75  297.98  297.98 14.0486  0.0000  0.0000   86.34
+   7   406.71   86.00  961.15  965.66  294.48  297.83  297.83 14.3140  0.0000  0.0000   84.90
+   6   325.34   77.21  970.18  974.26  295.16  297.73  297.73 14.5055  0.0000  0.0000   83.21
+   5   252.29   69.31  978.35  982.03  295.80  297.65  297.65 14.6509  0.0000  0.0000   81.47
+   4   186.72   62.22  985.71  989.04  296.38  297.60  297.60 14.7635  0.0000  0.0000   79.81
+   3   127.85   55.86  992.36  995.36  296.91  297.56  297.56 14.8880  0.0000  0.0000   78.41
+   2    75.00   51.42  998.36 1001.21  297.39  297.53  297.53 15.0316  0.0000  0.0000   77.31
+   1    25.00   50.00 1004.05 1006.91  297.98  297.64  297.64 15.7461  0.0000  0.0000   78.54
+   k      z      dz     pres   presi   Tabs     tp     tpl      qt      Qc     Qi    REL
+ Smagorinsky SGS Closure
+ Initializeing forcing data...
+ sounding data: nsnd=           3   nzsnd=          64
+ Observed sounding interval (days):  0.0000000E+00   2000.000    
+ 
+ Case: RCE
+ Caseid: MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x64_EDMF
+ New Run.
+ Day:  0.0000000E+00
+ Model type: CEM
+ Finish at timestep:        1200
+ Finish on day:  0.2083333    
+ 
+ Statistics file ouput frequency:          120  steps
+ Statistics file sampling: every           30  steps
+ printouts frequency:         360  steps
+ Adams-Bashforth scheme order:           3
+ 
+ Global Grid:         320           1          64
+ Local Grid:          10           1          64
+ Grid spacing (m) dx, dy, dz:   4000.000       4000.000       50.00000    
+ Domain dimensions (m):   1280000.       4000.000       26982.78    
+ dowallx= F
+ dowally= F
+ 
+ Timestep (sec):   15.00000    
+ domain translation velocities ug, vg:  0.0000000E+00  0.0000000E+00
+ 
+ do column model F
+ do convective parameterization F
+ do spange damping at the domain top:  T
+ maintain grad. of scalars at the top: F
+ clouds are allowed: T
+ precipitation is allowed: T
+ smoke cloud F
+ SGS scheme is on: T
+ larger-scale subsidence is on: F
+ larger-scale tendency is on: F
+ coriolis force is allowed: F
+ vertical coriolis force is allowed: F
+ longwave radiation: T
+ shortwave radiation: T
+ do seasonal solar cycle: F
+ do perpetual sun: T
+ compute effective radius for liquid: F
+ compute effective radius for ice: F
+ doradsimple =  F
+ doradhomo = F
+ dosolarconstant =  F
+ solar_constant =    685.0000    
+ zenith_angle =    51.70000    
+ doradlon =  F
+ doradlat =  F
+ Latitude0:  0.0000000E+00
+ Longitude0:  0.0000000E+00
+ rundatadir = ./RUNDATA
+ factor to change present CO2 concentration: nxco2=   1.000000    
+ surface flux parameterization is on: T
+ Surface type: OCEAN
+  sensible heat flux prescribed: F
+  latent heat flux prescribed: F
+  surface stress prescribed: F
+ dosfchomo =  F
+ doisccp =  F
+ domodis =  F
+ domisr =  F
+ dosimfilesout= F
+ dodynamicocean = F
+ doseawater= F
+ salt_factor (satur. correction for salty water)=   1.000000    
+ dotracers = F
+ output_sep = F
+ perturb_type =            0
+ doSAMconditionals = F
+ dosatupdnconditionals = T
+ doscamiopdata = F
+ iopfile:
+ dozero_out_day0 = F
+ nsave2D =           40
+ nsave2Dstart =            0
+ nsave2Dend =    999999999
+ save2Dbin =  F
+ nsave3D =           40
+ nsave3Dstart =            0
+ nsave3Dend =    999999999
+ save3Dbin =  F
+ qnsave3D =   0.0000000E+00
+ docolumn =  F
+ doensemble =  F
+ nensemble =            0
+ nstatmom =            1
+ nstatmomstart =    999999999
+ nstatmomend =    999999999
+ savemombin =  F
+ nmovie =           60
+ nmoviestart =         1201
+ nmovieend =         1200
+ Number of statistics profiles:         387
+ Statistics profiles to save:
+PRES       U          V          UOBS       VOBS       WOBS       RHO        MSE     
+DSE        SSE        THETAE     THETA      THETAV     THETAL     TABS       TABSOBS 
+TL         QT         QV         QVOBS      TTEND      QTEND      QCL        QCI     
+QPL        QPI        QN         QP         QNFR       FRACT      QSAT       QCOND   
+PRECIP     RELH       TLFLUX     TLFLUXS    TVFLUX     QCFLUX     QIFLUX     SW      
+SWSB       UW         UWSB       VW         VWSB       RADLWUP    RADLWDN    RADSWUP 
+RADSWDN    RADQRLW    RADQRSW    RADQR      RADQRS     RADQRC     Q1C        Q1CC    
+Q1CS       Q1LS       Q2         Q2C        Q2S        Q2LS       U2         V2      
+W2         TL2        TQ         QT2        QC2        QI2        QS2        S2      
+W3         AUP        WSKEW      TKE        TKES       TK         TKH        HLADV   
+HLDIFF     HLLAT      HLRAD      QTADV      QTDIFF     QTSINK     QTSRC      QPADV   
+QPDIFF     QPFALL     QPSRC      QPEVP      SHEAR      SHEARS     BUOYA      BUOYAS  
+ADVTR      PRESSTR    ADVTRS     DIFTR      DISSIP     DISSIPS    WUADV      WVADV   
+WUPRES     WVPRES     WUANIZ     WVANIZ     WUSHEAR    WVSHEAR    WUBUOY     WVBUOY  
+WUDIFF     WVDIFF     W2ADV      W2PRES     W2REDIS    W2BUOY     W2DIFF     TWGRAD  
+TWADV      TWDIFF     TWBUOY     TWPRES     TWPREC     QWGRAD     QWADV      QWDIFF  
+QWBUOY     QWPRES     QWPREC     T2ADVTR    T2GRAD     T2DISSIP   T2DIFTR    T2PREC  
+Q2ADVTR    Q2GRAD     Q2DISSIP   Q2DIFTR    Q2PREC     HYDRO      MCUP       MCDNS   
+MCDNU      MC         CORE       CORECL     COREDN     COREDNCL   MCRUP      MCRDNS  
+MCRDNU     MCR        QVTEND     QHTEND     QNUDGE     THTEND     TVTEND     TNUDGE  
+WSTAR3     UADV       VADV       UDIFF      VDIFF      UNUDGE     VNUDGE     ULSADVV 
+VLSADVV    USTOR      VSTOR      UTENDCOR   URESID     VTENDCOR   VRESID     HLSTOR  
+QTSTOR     RADQRCLW   RADQRCSW   CLD        WCLD       UCLD       VCLD       MSECLD  
+DSECLD     TLCLD      TACLD      TVCLD      TVCLDA     QTCLD      QNCLD      QPCLD   
+SCLD       WCLDA      TLWCLD     TVWCLD     SWCLD      QTWCLD     QCWCLD     QIWCLD  
+HFCLD      HFCLDA     UCLDA      VCLDA      UPGFCLD    VPGFCLD    WPGFCLD    UWCLD   
+VWCLD      UWSBCLD    VWSBCLD    MFCLD      MFHCLD     MFHCLDA    MFTLCLD    MFTLCLDA
+MFTVCLD    MFTVCLDA   MFQTCLD    MFQTCLDA   RUWCLD     RVWCLD     RWWCLD     SUP     
+WSUP       USUP       VSUP       MSESUP     DSESUP     TLSUP      TASUP      TVSUP   
+TVSUPA     QTSUP      QNSUP      QPSUP      SSUP       WSUPA      TLWSUP     TVWSUP  
+SWSUP      QTWSUP     QCWSUP     QIWSUP     HFSUP      HFSUPA     USUPA      VSUPA   
+UPGFSUP    VPGFSUP    WPGFSUP    UWSUP      VWSUP      UWSBSUP    VWSBSUP    MFSUP   
+MFHSUP     MFHSUPA    MFTLSUP    MFTLSUPA   MFTVSUP    MFTVSUPA   MFQTSUP    MFQTSUPA
+RUWSUP     RVWSUP     RWWSUP     SDN        WSDN       USDN       VSDN       MSESDN  
+DSESDN     TLSDN      TASDN      TVSDN      TVSDNA     QTSDN      QNSDN      QPSDN   
+SSDN       WSDNA      TLWSDN     TVWSDN     SWSDN      QTWSDN     QCWSDN     QIWSDN  
+HFSDN      HFSDNA     USDNA      VSDNA      UPGFSDN    VPGFSDN    WPGFSDN    UWSDN   
+VWSDN      UWSBSDN    VWSBSDN    MFSDN      MFHSDN     MFHSDNA    MFTLSDN    MFTLSDNA
+MFTVSDN    MFTVSDNA   MFQTSDN    MFQTSDNA   RUWSDN     RVWSDN     RWWSDN     ENV     
+WENV       UENV       VENV       MSEENV     DSEENV     TLENV      TAENV      TVENV   
+TVENVA     QTENV      QNENV      QPENV      SENV       WENVA      TLWENV     TVWENV  
+SWENV      QTWENV     QCWENV     QIWENV     HFENV      HFENVA     UENVA      VENVA   
+UPGFENV    VPGFENV    WPGFENV    UWENV      VWENV      UWSBENV    VWSBENV    MFENV   
+MFHENV     MFHENVA    MFTLENV    MFTLENVA   MFTVENV    MFTVENVA   MFQTENV    MFQTENVA
+RUWENV     RVWENV     RWWENV     QTFLUX     QTFLUXS    QTFLUXSM   QPFLUX     QPFLUXS 
+QTLSADV    QPLSADV    QC         QI         QR         QS         QG         QCCLD   
+QICLD      QRCLD      QSCLD      QGCLD      QCSUP      QISUP      QRSUP      QSSUP   
+QGSUP      QCSDN      QISDN      QRSDN      QSSDN      QGSDN      QCENV      QIENV   
+QRENV      QSENV      QGENV   
+  _______________________________________________________
+  _______ initializing aerosol optical properties _______
+  _______________________________________________________
+  aer_optics_initialize : nrh_opac =   8
+  aer_optics_initialize : nbnd =  19
+  _______ hygroscopic growth in visible band _______
+  SO4
+     rh    ext (m^2 g-1)      ssa      asm
+  0.000            5.581    1.000    0.650
+  0.801           13.614    1.000    0.742
+  0.836           16.185    1.000    0.750
+  0.858           17.971    1.000    0.755
+  0.873           19.389    1.000    0.759
+  0.885           20.585    1.000    0.762
+  0.896           21.630    1.000    0.764
+  0.904           23.093    1.000    0.766
+  0.912           24.959    1.000    0.769
+  0.919           26.745    1.000    0.771
+  0.925           28.462    1.000    0.772
+  0.930           30.121    1.000    0.774
+  0.935           31.730    1.000    0.775
+  0.940           33.293    1.000    0.777
+  0.944           34.817    1.000    0.778
+  0.948           36.305    1.000    0.779
+  0.952           38.717    1.000    0.781
+  0.956           41.819    1.000    0.782
+  0.959           44.986    1.000    0.783
+  0.963           48.213    1.000    0.784
+  0.966           51.498    1.000    0.785
+  0.969           54.841    1.000    0.786
+  0.971           58.241    1.000    0.787
+  0.974           61.695    1.000    0.788
+  0.977           65.207    1.000    0.789
+  0.979           68.771    1.000    0.789
+  0.982           75.009    1.000    0.790
+  0.984           82.961    1.000    0.791
+  0.986           91.458    1.000    0.791
+  0.988          100.506    1.000    0.791
+  0.990          110.112    1.000    0.792
+  0.992          120.296    1.000    0.792
+  0.994          131.074    1.000    0.793
+  0.996          142.463    1.000    0.793
+  0.998          154.473    1.000    0.794
+  1.000          166.810    1.000    0.794
+  SSLT
+     rh    ext (m^2 g-1)      ssa      asm
+  0.000            0.395    1.000    0.752
+  0.801            1.495    1.000    0.825
+  0.836            1.689    1.000    0.828
+  0.858            1.818    1.000    0.829
+  0.873            1.918    1.000    0.831
+  0.885            2.000    1.000    0.831
+  0.896            2.072    1.000    0.832
+  0.904            2.173    1.000    0.833
+  0.912            2.303    1.000    0.834
+  0.919            2.425    1.000    0.835
+  0.925            2.540    1.000    0.836
+  0.930            2.650    1.000    0.836
+  0.935            2.755    1.000    0.837
+  0.940            2.856    1.000    0.838
+  0.944            2.953    1.000    0.838
+  0.948            3.047    1.000    0.839
+  0.952            3.215    1.000    0.839
+  0.956            3.436    1.000    0.840
+  0.959            3.660    1.000    0.841
+  0.963            3.885    1.000    0.841
+  0.966            4.113    1.000    0.842
+  0.969            4.343    1.000    0.842
+  0.971            4.575    1.000    0.843
+  0.974            4.808    1.000    0.843
+  0.977            5.044    1.000    0.844
+  0.979            5.281    1.000    0.844
+  0.982            5.740    1.000    0.845
+  0.984            6.339    1.000    0.846
+  0.986            6.977    1.000    0.847
+  0.988            7.656    1.000    0.848
+  0.990            8.376    1.000    0.849
+  0.992            9.138    1.000    0.849
+  0.994            9.943    1.000    0.850
+  0.996           10.793    1.000    0.851
+  0.998           11.688    1.000    0.852
+  1.000           12.607    1.000    0.852
+  OCPHI
+     rh    ext (m^2 g-1)      ssa      asm
+  0.000            3.421    0.965    0.621
+  0.801            8.298    0.986    0.710
+  0.836            9.396    0.987    0.717
+  0.858           10.130    0.988    0.722
+  0.873           10.698    0.989    0.725
+  0.885           11.168    0.989    0.727
+  0.896           11.573    0.990    0.729
+  0.904           12.145    0.990    0.732
+  0.912           12.870    0.991    0.734
+  0.919           13.551    0.991    0.737
+  0.925           14.195    0.991    0.739
+  0.930           14.808    0.992    0.741
+  0.935           15.394    0.992    0.742
+  0.940           15.956    0.992    0.744
+  0.944           16.498    0.993    0.745
+  0.948           17.022    0.993    0.747
+  0.952           17.884    0.993    0.749
+  0.956           18.985    0.994    0.751
+  0.959           20.091    0.994    0.752
+  0.963           21.200    0.994    0.754
+  0.966           22.312    0.994    0.756
+  0.969           23.427    0.995    0.758
+  0.971           24.546    0.995    0.759
+  0.974           25.667    0.995    0.761
+  0.977           26.793    0.995    0.762
+  0.979           27.922    0.996    0.764
+  0.982           29.780    0.996    0.765
+  0.984           32.068    0.996    0.767
+  0.986           34.448    0.996    0.769
+  0.988           36.918    0.997    0.771
+  0.990           39.477    0.997    0.773
+  0.992           42.126    0.997    0.774
+  0.994           44.865    0.997    0.776
+  0.996           47.696    0.998    0.777
+  0.998           50.617    0.998    0.779
+  1.000           53.574    0.998    0.781
+ CEM.trace: number of levels=         281
+ gas traces vertical profiles (g/g):
+   z    o3   n2o   ch4   cfc11   cfc12
+   25.00      0.4813E-07   0.000       0.000       0.000       0.000    
+   75.00      0.4838E-07   0.000       0.000       0.000       0.000    
+   127.8      0.4864E-07   0.000       0.000       0.000       0.000    
+   186.7      0.4893E-07   0.000       0.000       0.000       0.000    
+   252.3      0.4926E-07   0.000       0.000       0.000       0.000    
+   325.3      0.4963E-07   0.000       0.000       0.000       0.000    
+   406.7      0.5003E-07   0.000       0.000       0.000       0.000    
+   497.3      0.5049E-07   0.000       0.000       0.000       0.000    
+   598.3      0.5099E-07   0.000       0.000       0.000       0.000    
+   710.8      0.5155E-07   0.000       0.000       0.000       0.000    
+   836.0      0.5218E-07   0.000       0.000       0.000       0.000    
+   975.6      0.5288E-07   0.000       0.000       0.000       0.000    
+   1131.      0.5339E-07   0.000       0.000       0.000       0.000    
+   1304.      0.5391E-07   0.000       0.000       0.000       0.000    
+   1497.      0.5449E-07   0.000       0.000       0.000       0.000    
+   1712.      0.5514E-07   0.000       0.000       0.000       0.000    
+   1951.      0.5585E-07   0.000       0.000       0.000       0.000    
+   2218.      0.5644E-07   0.000       0.000       0.000       0.000    
+   2515.      0.5703E-07   0.000       0.000       0.000       0.000    
+   2846.      0.5769E-07   0.000       0.000       0.000       0.000    
+   3214.      0.5821E-07   0.000       0.000       0.000       0.000    
+   3625.      0.5862E-07   0.000       0.000       0.000       0.000    
+   4082.      0.5933E-07   0.000       0.000       0.000       0.000    
+   4582.      0.6133E-07   0.000       0.000       0.000       0.000    
+   5082.      0.6325E-07   0.000       0.000       0.000       0.000    
+   5582.      0.6475E-07   0.000       0.000       0.000       0.000    
+   6082.      0.6633E-07   0.000       0.000       0.000       0.000    
+   6582.      0.6833E-07   0.000       0.000       0.000       0.000    
+   7082.      0.7033E-07   0.000       0.000       0.000       0.000    
+   7582.      0.7233E-07   0.000       0.000       0.000       0.000    
+   8082.      0.7474E-07   0.000       0.000       0.000       0.000    
+   8582.      0.7924E-07   0.000       0.000       0.000       0.000    
+   9082.      0.8382E-07   0.000       0.000       0.000       0.000    
+   9582.      0.8882E-07   0.000       0.000       0.000       0.000    
+  0.1008E+05  0.9439E-07   0.000       0.000       0.000       0.000    
+  0.1058E+05  0.1029E-06   0.000       0.000       0.000       0.000    
+  0.1108E+05  0.1116E-06   0.000       0.000       0.000       0.000    
+  0.1158E+05  0.1216E-06   0.000       0.000       0.000       0.000    
+  0.1208E+05  0.1316E-06   0.000       0.000       0.000       0.000    
+  0.1258E+05  0.1416E-06   0.000       0.000       0.000       0.000    
+  0.1308E+05  0.1516E-06   0.000       0.000       0.000       0.000    
+  0.1358E+05  0.1616E-06   0.000       0.000       0.000       0.000    
+  0.1408E+05  0.1733E-06   0.000       0.000       0.000       0.000    
+  0.1458E+05  0.1933E-06   0.000       0.000       0.000       0.000    
+  0.1508E+05  0.2125E-06   0.000       0.000       0.000       0.000    
+  0.1558E+05  0.2275E-06   0.000       0.000       0.000       0.000    
+  0.1608E+05  0.2539E-06   0.000       0.000       0.000       0.000    
+  0.1658E+05  0.3389E-06   0.000       0.000       0.000       0.000    
+  0.1708E+05  0.4296E-06   0.000       0.000       0.000       0.000    
+  0.1758E+05  0.5496E-06   0.000       0.000       0.000       0.000    
+  0.1808E+05  0.6950E-06   0.000       0.000       0.000       0.000    
+  0.1858E+05  0.9702E-06   0.000       0.000       0.000       0.000    
+  0.1908E+05  0.1265E-05   0.000       0.000       0.000       0.000    
+  0.1958E+05  0.1665E-05   0.000       0.000       0.000       0.000    
+  0.2008E+05  0.2082E-05   0.000       0.000       0.000       0.000    
+  0.2059E+05  0.2590E-05   0.000       0.000       0.000       0.000    
+  0.2115E+05  0.3179E-05   0.000       0.000       0.000       0.000    
+  0.2176E+05  0.3917E-05   0.000       0.000       0.000       0.000    
+  0.2244E+05  0.4861E-05   0.000       0.000       0.000       0.000    
+  0.2318E+05  0.5958E-05   0.000       0.000       0.000       0.000    
+  0.2400E+05  0.7104E-05   0.000       0.000       0.000       0.000    
+  0.2490E+05  0.8274E-05   0.000       0.000       0.000       0.000    
+  0.2589E+05  0.9222E-05   0.000       0.000       0.000       0.000    
+  0.2698E+05  0.1022E-04   0.000       0.000       0.000       0.000    
+ done...
+ CO2 VMR =   3.5500000E-04
+ CO2 MMR =   5.3925294E-04
+ Eccentricity   1.6704068E-02
+ radiation: perpetual sun, solin=   413.8069    
+NSTEP =          1   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.000
+NSTEP =          2   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.011
+NSTEP =          3   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =          4   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =          5   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =          6   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =          7   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =          8   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =          9   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         10   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         11   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =         12   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         13   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         14   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         15   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =         16   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         17   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         18   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         19   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =         20   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         21   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         22   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         23   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =         24   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         25   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         26   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         27   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =         28   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         29   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         30   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ radiation: perpetual sun, solin=   413.8069    
+NSTEP =         31   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =         32   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         33   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         34   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         35   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =         36   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         37   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         38   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         39   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+ Writting 2D data. file:./OUT_2D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x6
+ 4_EDMF_32.2Dcom                                                 
+ Appending 3D data. file:./OUT_3D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x
+ 64_EDMF_32.com2D                                                 
+NSTEP =         40   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         41   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         42   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         43   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =         44   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         45   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         46   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         47   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =         48   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         49   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         50   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         51   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =         52   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         53   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         54   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         55   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =         56   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         57   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         58   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         59   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =         60   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ radiation: perpetual sun, solin=   413.8069    
+NSTEP =         61   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         62   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         63   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =         64   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         65   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         66   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         67   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =         68   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         69   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         70   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         71   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =         72   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         73   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         74   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         75   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =         76   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         77   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         78   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         79   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+ Writting 2D data. file:./OUT_2D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x6
+ 4_EDMF_32.2Dcom                                                 
+ Appending 3D data. file:./OUT_3D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x
+ 64_EDMF_32.com2D                                                 
+NSTEP =         80   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         81   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         82   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         83   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =         84   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         85   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         86   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         87   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =         88   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         89   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         90   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ radiation: perpetual sun, solin=   413.8069    
+NSTEP =         91   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =         92   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         93   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         94   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         95   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =         96   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         97   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         98   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =         99   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        100   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        101   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        102   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        103   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        104   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        105   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        106   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        107   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        108   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        109   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        110   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        111   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        112   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        113   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        114   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        115   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        116   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        117   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        118   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        119   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+ Writting statistics:nstatsteps=          30
+ Writting history file 
+ MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x64_EDMF                              
+  
+ Writting 2D data. file:./OUT_2D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x6
+ 4_EDMF_32.2Dcom                                                 
+ Appending 3D data. file:./OUT_3D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x
+ 64_EDMF_32.com2D                                                 
+NSTEP =        120   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+CPU TIME =       1.6819 OVER     0.50 MODEL HOURS
+ radiation: perpetual sun, solin=   413.8069    
+NSTEP =        121   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        122   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        123   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        124   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        125   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        126   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        127   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        128   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        129   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        130   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        131   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        132   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        133   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        134   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        135   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        136   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        137   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        138   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        139   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        140   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        141   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        142   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        143   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        144   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        145   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        146   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        147   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        148   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        149   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        150   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ radiation: perpetual sun, solin=   413.8069    
+NSTEP =        151   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        152   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        153   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        154   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        155   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        156   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        157   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        158   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        159   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+ Writting 2D data. file:./OUT_2D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x6
+ 4_EDMF_32.2Dcom                                                 
+ Appending 3D data. file:./OUT_3D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x
+ 64_EDMF_32.com2D                                                 
+NSTEP =        160   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        161   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        162   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        163   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        164   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        165   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        166   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        167   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        168   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        169   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        170   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        171   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        172   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        173   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        174   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        175   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        176   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        177   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        178   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        179   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        180   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ radiation: perpetual sun, solin=   413.8069    
+NSTEP =        181   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        182   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        183   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        184   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        185   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        186   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        187   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        188   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        189   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        190   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        191   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        192   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        193   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        194   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        195   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        196   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        197   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        198   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        199   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+ Writting 2D data. file:./OUT_2D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x6
+ 4_EDMF_32.2Dcom                                                 
+ Appending 3D data. file:./OUT_3D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x
+ 64_EDMF_32.com2D                                                 
+NSTEP =        200   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        201   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        202   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        203   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        204   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        205   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        206   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        207   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        208   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        209   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        210   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ radiation: perpetual sun, solin=   413.8069    
+NSTEP =        211   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        212   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        213   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        214   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        215   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        216   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        217   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        218   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        219   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        220   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        221   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        222   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        223   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        224   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        225   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        226   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        227   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        228   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        229   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        230   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        231   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        232   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        233   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        234   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        235   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        236   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        237   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        238   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        239   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+ Writting statistics:nstatsteps=          30
+ Writting history file 
+ MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x64_EDMF                              
+  
+ Writting 2D data. file:./OUT_2D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x6
+ 4_EDMF_32.2Dcom                                                 
+ Appending 3D data. file:./OUT_3D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x
+ 64_EDMF_32.com2D                                                 
+NSTEP =        240   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+CPU TIME =       1.4564 OVER     0.50 MODEL HOURS
+ radiation: perpetual sun, solin=   413.8069    
+NSTEP =        241   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        242   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        243   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        244   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        245   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        246   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        247   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        248   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        249   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        250   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        251   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        252   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        253   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        254   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        255   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        256   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        257   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        258   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        259   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        260   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        261   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        262   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        263   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        264   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        265   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        266   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        267   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        268   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        269   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        270   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ radiation: perpetual sun, solin=   413.8069    
+NSTEP =        271   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        272   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        273   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        274   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        275   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        276   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        277   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        278   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        279   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+ Writting 2D data. file:./OUT_2D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x6
+ 4_EDMF_32.2Dcom                                                 
+ Appending 3D data. file:./OUT_3D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x
+ 64_EDMF_32.com2D                                                 
+NSTEP =        280   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        281   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        282   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        283   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        284   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        285   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        286   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        287   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        288   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        289   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        290   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        291   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        292   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        293   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        294   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        295   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        296   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        297   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        298   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        299   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        300   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ radiation: perpetual sun, solin=   413.8069    
+NSTEP =        301   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        302   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        303   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        304   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        305   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        306   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        307   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        308   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        309   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        310   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        311   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        312   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        313   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        314   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        315   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        316   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        317   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        318   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        319   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+ Writting 2D data. file:./OUT_2D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x6
+ 4_EDMF_32.2Dcom                                                 
+ Appending 3D data. file:./OUT_3D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x
+ 64_EDMF_32.com2D                                                 
+NSTEP =        320   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        321   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        322   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        323   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        324   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        325   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        326   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        327   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        328   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        329   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        330   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ radiation: perpetual sun, solin=   413.8069    
+NSTEP =        331   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        332   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        333   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        334   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        335   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        336   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        337   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        338   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        339   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        340   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        341   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        342   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        343   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        344   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        345   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        346   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        347   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        348   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        349   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        350   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        351   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        352   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        353   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        354   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        355   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        356   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        357   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        358   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        359   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+ Writting statistics:nstatsteps=          30
+ Writting history file 
+ MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x64_EDMF                              
+  
+ Writting 2D data. file:./OUT_2D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x6
+ 4_EDMF_32.2Dcom                                                 
+ Appending 3D data. file:./OUT_3D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x
+ 64_EDMF_32.com2D                                                 
+NSTEP =        360   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ DAY =   6.2500000E-02
+ NSTEP=         360
+ div:  2.3962478E-13 -2.4522477E-13
+ SST=   300.000000000000     
+ surface pressure=   1006.910    
+ u: -2.2646775E-11  1.9899742E-11
+ v:  0.0000000E+00  0.0000000E+00
+ w: -1.0600992E-10  9.3399677E-11
+ p: -2.1309128E-03  5.2642271E-08
+ t:   298.1221       487.4867    
+ tabs:   200.3131       298.1317    
+ qv:  2.9564535E-29  1.6521761E-02
+ tke:  0.0000000E+00  3.0336965E-02
+ tk:  0.0000000E+00  0.8708755    
+ tkh:  0.0000000E+00  0.8708755    
+ qcl:  0.0000000E+00  0.0000000E+00
+ qci:  0.0000000E+00  0.0000000E+00
+ qpl:  0.0000000E+00  0.0000000E+00
+ qpi:  0.0000000E+00  0.0000000E+00
+ qrad(K/day):  -1.739470      0.6226505    
+ shf:   5.007581       5.007581    
+ lhf:   51.23811       51.23811    
+ uw: -6.7489525E-14  8.0946507E-14
+ vw:  0.0000000E+00  0.0000000E+00
+ sst:   300.0000       300.0000    
+ total water budget:
+ before (mm):         41.41408831031
+ after (mm):          41.41439446047
+ evaporation (mm):     0.00030615016
+ precipitation (mm):   0.00000000000
+ large-scale (mm):     0.00000000000
+ Imbalance (mm)       0.00000000000
+  imbalance (rel error):  3.088247720229842E-016
+ evap (mm/day):   1.76342490986281     
+ prec (mm/day):  0.000000000000000E+000
+ ls (mm/day):  0.000000000000000E+000
+ imbalance (mm/day)  7.366919574369746E-011
+CPU TIME =       1.2795 OVER     0.50 MODEL HOURS
+ radiation: perpetual sun, solin=   413.8069    
+NSTEP =        361   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        362   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        363   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        364   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        365   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        366   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        367   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        368   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        369   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        370   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        371   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        372   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        373   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        374   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        375   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        376   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        377   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        378   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        379   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        380   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        381   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        382   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        383   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        384   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        385   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        386   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        387   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        388   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        389   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        390   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ radiation: perpetual sun, solin=   413.8069    
+NSTEP =        391   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        392   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        393   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        394   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        395   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        396   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        397   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        398   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        399   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+ Writting 2D data. file:./OUT_2D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x6
+ 4_EDMF_32.2Dcom                                                 
+ Appending 3D data. file:./OUT_3D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x
+ 64_EDMF_32.com2D                                                 
+NSTEP =        400   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        401   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        402   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        403   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        404   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        405   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        406   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        407   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        408   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        409   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        410   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        411   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        412   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        413   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        414   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        415   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        416   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        417   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        418   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        419   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        420   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ radiation: perpetual sun, solin=   413.8069    
+NSTEP =        421   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        422   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        423   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        424   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        425   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        426   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        427   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        428   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        429   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        430   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        431   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        432   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        433   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        434   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        435   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        436   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        437   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        438   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        439   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+ Writting 2D data. file:./OUT_2D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x6
+ 4_EDMF_32.2Dcom                                                 
+ Appending 3D data. file:./OUT_3D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x
+ 64_EDMF_32.com2D                                                 
+NSTEP =        440   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        441   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        442   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        443   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        444   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        445   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        446   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        447   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        448   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        449   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        450   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ radiation: perpetual sun, solin=   413.8069    
+NSTEP =        451   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        452   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        453   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        454   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        455   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        456   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        457   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        458   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        459   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        460   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        461   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        462   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        463   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        464   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        465   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        466   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        467   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        468   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        469   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        470   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        471   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        472   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        473   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        474   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        475   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        476   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        477   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        478   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        479   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+ Writting statistics:nstatsteps=          30
+ Writting history file 
+ MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x64_EDMF                              
+  
+ Writting 2D data. file:./OUT_2D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x6
+ 4_EDMF_32.2Dcom                                                 
+ Appending 3D data. file:./OUT_3D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x
+ 64_EDMF_32.com2D                                                 
+NSTEP =        480   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+CPU TIME =       1.4865 OVER     0.50 MODEL HOURS
+ radiation: perpetual sun, solin=   413.8069    
+NSTEP =        481   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        482   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        483   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        484   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        485   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        486   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        487   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        488   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        489   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        490   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        491   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        492   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        493   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        494   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        495   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        496   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        497   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        498   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        499   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        500   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        501   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        502   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        503   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        504   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        505   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        506   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        507   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        508   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        509   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        510   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ radiation: perpetual sun, solin=   413.8069    
+NSTEP =        511   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        512   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        513   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        514   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        515   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        516   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        517   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        518   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        519   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+ Writting 2D data. file:./OUT_2D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x6
+ 4_EDMF_32.2Dcom                                                 
+ Appending 3D data. file:./OUT_3D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x
+ 64_EDMF_32.com2D                                                 
+NSTEP =        520   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        521   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        522   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        523   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        524   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        525   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        526   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        527   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        528   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        529   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        530   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        531   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        532   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        533   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        534   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        535   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        536   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        537   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        538   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        539   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        540   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ radiation: perpetual sun, solin=   413.8069    
+NSTEP =        541   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        542   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        543   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        544   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        545   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        546   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        547   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        548   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        549   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        550   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        551   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        552   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        553   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        554   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        555   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        556   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        557   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        558   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        559   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+ Writting 2D data. file:./OUT_2D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x6
+ 4_EDMF_32.2Dcom                                                 
+ Appending 3D data. file:./OUT_3D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x
+ 64_EDMF_32.com2D                                                 
+NSTEP =        560   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        561   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        562   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        563   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        564   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        565   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        566   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        567   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        568   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        569   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        570   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ radiation: perpetual sun, solin=   413.8069    
+NSTEP =        571   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        572   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        573   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        574   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        575   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        576   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        577   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        578   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        579   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        580   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        581   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        582   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        583   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        584   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        585   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        586   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        587   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        588   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        589   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        590   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        591   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        592   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        593   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        594   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        595   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        596   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        597   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        598   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        599   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+ Writting statistics:nstatsteps=          30
+ Writting history file 
+ MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x64_EDMF                              
+  
+ Writting 2D data. file:./OUT_2D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x6
+ 4_EDMF_32.2Dcom                                                 
+ Appending 3D data. file:./OUT_3D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x
+ 64_EDMF_32.com2D                                                 
+NSTEP =        600   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+CPU TIME =       1.3572 OVER     0.50 MODEL HOURS
+ radiation: perpetual sun, solin=   413.8069    
+NSTEP =        601   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        602   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        603   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        604   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        605   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        606   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        607   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        608   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        609   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        610   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        611   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        612   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        613   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        614   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        615   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        616   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        617   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        618   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        619   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        620   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        621   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        622   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        623   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        624   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        625   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        626   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        627   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        628   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        629   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        630   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ radiation: perpetual sun, solin=   413.8069    
+NSTEP =        631   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        632   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        633   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        634   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        635   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        636   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        637   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        638   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        639   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+ Writting 2D data. file:./OUT_2D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x6
+ 4_EDMF_32.2Dcom                                                 
+ Appending 3D data. file:./OUT_3D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x
+ 64_EDMF_32.com2D                                                 
+NSTEP =        640   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        641   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        642   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        643   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        644   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        645   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        646   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        647   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        648   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        649   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        650   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        651   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        652   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        653   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        654   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        655   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        656   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        657   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        658   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        659   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        660   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ radiation: perpetual sun, solin=   413.8069    
+NSTEP =        661   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        662   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        663   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        664   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        665   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        666   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        667   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        668   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        669   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        670   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        671   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        672   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        673   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        674   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        675   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        676   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        677   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        678   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        679   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+ Writting 2D data. file:./OUT_2D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x6
+ 4_EDMF_32.2Dcom                                                 
+ Appending 3D data. file:./OUT_3D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x
+ 64_EDMF_32.com2D                                                 
+NSTEP =        680   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        681   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        682   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        683   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        684   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        685   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        686   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        687   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        688   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        689   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        690   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ radiation: perpetual sun, solin=   413.8069    
+NSTEP =        691   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        692   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        693   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        694   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        695   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        696   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        697   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        698   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        699   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        700   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        701   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        702   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        703   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        704   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        705   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        706   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        707   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        708   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        709   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        710   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        711   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        712   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        713   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        714   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        715   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        716   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        717   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        718   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        719   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+ Writting statistics:nstatsteps=          30
+ Writting history file 
+ MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x64_EDMF                              
+  
+ Writting 2D data. file:./OUT_2D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x6
+ 4_EDMF_32.2Dcom                                                 
+ Appending 3D data. file:./OUT_3D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x
+ 64_EDMF_32.com2D                                                 
+NSTEP =        720   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ DAY =   0.1250000    
+ NSTEP=         720
+ div:  2.3225879E-13 -2.4509786E-13
+ SST=   300.000000000000     
+ surface pressure=   1006.910    
+ u: -2.1228796E-08  2.1231816E-08
+ v:  0.0000000E+00  0.0000000E+00
+ w: -1.0751666E-09  1.0327252E-09
+ p: -2.1406373E-03  3.6826126E-08
+ t:   298.0959       487.4757    
+ tabs:   200.3131       298.1834    
+ qv:  1.5323922E-28  1.6987965E-02
+ tke:  0.0000000E+00  3.0018296E-02
+ tk:  0.0000000E+00  0.8662894    
+ tkh:  0.0000000E+00  0.8662894    
+ qcl:  0.0000000E+00  0.0000000E+00
+ qci:  0.0000000E+00  0.0000000E+00
+ qpl:  0.0000000E+00  0.0000000E+00
+ qpi:  0.0000000E+00  0.0000000E+00
+ qrad(K/day):  -1.925373      0.6180245    
+ shf:   4.846715       4.846715    
+ lhf:   47.34992       47.34992    
+ uw: -7.4094023E-11  7.4112667E-11
+ vw:  0.0000000E+00  0.0000000E+00
+ sst:   300.0000       300.0000    
+ total water budget:
+ before (mm):         41.51985766494
+ after (mm):          41.52014059291
+ evaporation (mm):     0.00028292797
+ precipitation (mm):   0.00000000000
+ large-scale (mm):     0.00000000000
+ Imbalance (mm)       0.00000000000
+  imbalance (rel error):  2.395851507391492E-016
+ evap (mm/day):   1.62966511400737     
+ prec (mm/day):  0.000000000000000E+000
+ ls (mm/day):  0.000000000000000E+000
+ imbalance (mm/day)  5.729822866173961E-011
+CPU TIME =       1.3796 OVER     0.50 MODEL HOURS
+ radiation: perpetual sun, solin=   413.8069    
+NSTEP =        721   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        722   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        723   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        724   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        725   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        726   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        727   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        728   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        729   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        730   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        731   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        732   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        733   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        734   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        735   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        736   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        737   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        738   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        739   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        740   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        741   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        742   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        743   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        744   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        745   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        746   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        747   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        748   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        749   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        750   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ radiation: perpetual sun, solin=   413.8069    
+NSTEP =        751   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        752   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        753   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        754   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        755   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        756   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        757   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        758   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        759   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+ Writting 2D data. file:./OUT_2D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x6
+ 4_EDMF_32.2Dcom                                                 
+ Appending 3D data. file:./OUT_3D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x
+ 64_EDMF_32.com2D                                                 
+NSTEP =        760   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        761   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        762   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        763   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        764   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        765   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        766   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        767   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        768   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        769   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        770   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        771   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        772   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        773   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        774   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        775   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        776   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        777   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        778   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        779   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        780   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ radiation: perpetual sun, solin=   413.8069    
+NSTEP =        781   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        782   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        783   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        784   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        785   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        786   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        787   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        788   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        789   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        790   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        791   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        792   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        793   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        794   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        795   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        796   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        797   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        798   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        799   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+ Writting 2D data. file:./OUT_2D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x6
+ 4_EDMF_32.2Dcom                                                 
+ Appending 3D data. file:./OUT_3D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x
+ 64_EDMF_32.com2D                                                 
+NSTEP =        800   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        801   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        802   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        803   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        804   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        805   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        806   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        807   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        808   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        809   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        810   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ radiation: perpetual sun, solin=   413.8069    
+NSTEP =        811   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        812   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        813   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        814   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        815   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        816   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        817   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        818   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        819   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        820   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        821   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        822   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        823   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        824   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        825   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        826   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        827   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        828   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        829   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        830   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        831   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        832   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        833   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        834   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        835   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        836   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        837   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        838   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        839   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+ Writting statistics:nstatsteps=          30
+ Writting history file 
+ MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x64_EDMF                              
+  
+ Writting 2D data. file:./OUT_2D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x6
+ 4_EDMF_32.2Dcom                                                 
+ Appending 3D data. file:./OUT_3D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x
+ 64_EDMF_32.com2D                                                 
+NSTEP =        840   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+CPU TIME =       1.3949 OVER     0.50 MODEL HOURS
+ radiation: perpetual sun, solin=   413.8069    
+NSTEP =        841   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        842   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        843   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        844   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        845   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        846   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        847   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        848   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        849   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        850   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        851   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        852   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        853   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        854   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        855   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        856   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        857   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        858   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        859   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        860   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        861   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        862   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        863   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        864   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        865   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        866   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        867   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        868   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        869   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        870   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ radiation: perpetual sun, solin=   413.8069    
+NSTEP =        871   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        872   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        873   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        874   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        875   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        876   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        877   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        878   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        879   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+ Writting 2D data. file:./OUT_2D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x6
+ 4_EDMF_32.2Dcom                                                 
+ Appending 3D data. file:./OUT_3D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x
+ 64_EDMF_32.com2D                                                 
+NSTEP =        880   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        881   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        882   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        883   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        884   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        885   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        886   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        887   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        888   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        889   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        890   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        891   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        892   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        893   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        894   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        895   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        896   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        897   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        898   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        899   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        900   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ radiation: perpetual sun, solin=   413.8069    
+NSTEP =        901   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        902   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        903   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        904   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        905   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        906   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        907   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        908   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        909   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        910   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        911   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        912   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        913   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        914   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        915   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        916   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        917   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        918   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        919   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+ Writting 2D data. file:./OUT_2D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x6
+ 4_EDMF_32.2Dcom                                                 
+ Appending 3D data. file:./OUT_3D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x
+ 64_EDMF_32.com2D                                                 
+NSTEP =        920   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        921   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        922   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        923   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        924   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        925   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        926   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        927   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        928   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        929   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        930   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ radiation: perpetual sun, solin=   413.8069    
+NSTEP =        931   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        932   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        933   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        934   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        935   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        936   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        937   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        938   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        939   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        940   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        941   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        942   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        943   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        944   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        945   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        946   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        947   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        948   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        949   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        950   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        951   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        952   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        953   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        954   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        955   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        956   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        957   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        958   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        959   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+ Writting statistics:nstatsteps=          30
+ Writting history file 
+ MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x64_EDMF                              
+  
+ Writting 2D data. file:./OUT_2D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x6
+ 4_EDMF_32.2Dcom                                                 
+ Appending 3D data. file:./OUT_3D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x
+ 64_EDMF_32.com2D                                                 
+NSTEP =        960   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+CPU TIME =       1.4643 OVER     0.50 MODEL HOURS
+ radiation: perpetual sun, solin=   413.8069    
+NSTEP =        961   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        962   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        963   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        964   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        965   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        966   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        967   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        968   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        969   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        970   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        971   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        972   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        973   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        974   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        975   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        976   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        977   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        978   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        979   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        980   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        981   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        982   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        983   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        984   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        985   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        986   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        987   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        988   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        989   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        990   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ radiation: perpetual sun, solin=   413.8069    
+NSTEP =        991   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        992   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        993   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        994   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        995   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =        996   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        997   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        998   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =        999   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+ Writting 2D data. file:./OUT_2D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x6
+ 4_EDMF_32.2Dcom                                                 
+ Appending 3D data. file:./OUT_3D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x
+ 64_EDMF_32.com2D                                                 
+NSTEP =       1000   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1001   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1002   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1003   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =       1004   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1005   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1006   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1007   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =       1008   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1009   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1010   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1011   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =       1012   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1013   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1014   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1015   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =       1016   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1017   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1018   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1019   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =       1020   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ radiation: perpetual sun, solin=   413.8069    
+NSTEP =       1021   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1022   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1023   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =       1024   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1025   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1026   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1027   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =       1028   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1029   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1030   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1031   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =       1032   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1033   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1034   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1035   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =       1036   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1037   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1038   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1039   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+ Writting 2D data. file:./OUT_2D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x6
+ 4_EDMF_32.2Dcom                                                 
+ Appending 3D data. file:./OUT_3D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x
+ 64_EDMF_32.com2D                                                 
+NSTEP =       1040   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1041   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1042   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1043   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =       1044   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1045   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1046   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1047   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =       1048   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1049   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1050   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ radiation: perpetual sun, solin=   413.8069    
+NSTEP =       1051   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =       1052   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1053   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1054   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1055   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =       1056   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1057   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1058   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1059   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =       1060   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1061   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1062   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1063   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =       1064   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1065   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1066   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1067   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =       1068   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1069   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1070   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1071   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =       1072   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1073   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1074   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1075   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =       1076   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1077   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1078   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1079   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+ Writting statistics:nstatsteps=          30
+ Writting history file 
+ MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x64_EDMF                              
+  
+ Writting 2D data. file:./OUT_2D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x6
+ 4_EDMF_32.2Dcom                                                 
+ Appending 3D data. file:./OUT_3D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x
+ 64_EDMF_32.com2D                                                 
+NSTEP =       1080   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ DAY =   0.1875000    
+ NSTEP=        1080
+ div:  2.4351438E-13 -1.9497327E-13
+ SST=   300.000000000000     
+ surface pressure=   1006.910    
+ u: -1.6678522E-08  1.6679197E-08
+ v:  0.0000000E+00  0.0000000E+00
+ w: -9.5530650E-10  9.0961760E-10
+ p: -2.3753745E-03  1.1004241E-05
+ t:   298.0489       487.4647    
+ tabs:   200.3131       298.1989    
+ qv:  3.5695869E-28  1.7319683E-02
+ tke:  0.0000000E+00  2.9742319E-02
+ tk:  0.0000000E+00  0.8622981    
+ tkh:  0.0000000E+00  0.8622981    
+ qcl:  0.0000000E+00  0.0000000E+00
+ qci:  0.0000000E+00  0.0000000E+00
+ qpl:  0.0000000E+00  0.0000000E+00
+ qpi:  0.0000000E+00  0.0000000E+00
+ qrad(K/day):  -2.082256      0.6130857    
+ shf:   4.796805       4.796805    
+ lhf:   44.57357       44.57357    
+ uw: -5.7587667E-11  5.7592302E-11
+ vw:  0.0000000E+00  0.0000000E+00
+ sst:   300.0000       300.0000    
+ total water budget:
+ before (mm):         41.61859772333
+ after (mm):          41.61886409273
+ evaporation (mm):     0.00026636940
+ precipitation (mm):   0.00000000000
+ large-scale (mm):     0.00000000000
+ Imbalance (mm)      -0.00000000000
+  imbalance (rel error): -1.365814203256295E-016
+ evap (mm/day):   1.53428773262567     
+ prec (mm/day):  0.000000000000000E+000
+ ls (mm/day):  0.000000000000000E+000
+ imbalance (mm/day) -3.274193416391569E-011
+CPU TIME =       1.3675 OVER     0.50 MODEL HOURS
+ radiation: perpetual sun, solin=   413.8069    
+NSTEP =       1081   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1082   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1083   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =       1084   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1085   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1086   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1087   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =       1088   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1089   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1090   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1091   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =       1092   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1093   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1094   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1095   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =       1096   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1097   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1098   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1099   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =       1100   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1101   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1102   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1103   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =       1104   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1105   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1106   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1107   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =       1108   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1109   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1110   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ radiation: perpetual sun, solin=   413.8069    
+NSTEP =       1111   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =       1112   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1113   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1114   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1115   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =       1116   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1117   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1118   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1119   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+ Writting 2D data. file:./OUT_2D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x6
+ 4_EDMF_32.2Dcom                                                 
+ Appending 3D data. file:./OUT_3D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x
+ 64_EDMF_32.com2D                                                 
+NSTEP =       1120   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1121   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1122   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1123   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =       1124   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1125   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1126   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1127   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =       1128   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1129   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1130   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1131   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =       1132   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1133   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1134   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1135   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =       1136   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1137   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1138   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1139   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =       1140   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ radiation: perpetual sun, solin=   413.8069    
+NSTEP =       1141   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1142   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1143   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =       1144   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1145   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1146   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1147   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =       1148   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1149   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1150   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1151   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =       1152   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1153   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1154   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1155   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =       1156   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1157   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1158   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1159   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+ Writting 2D data. file:./OUT_2D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x6
+ 4_EDMF_32.2Dcom                                                 
+ Appending 3D data. file:./OUT_3D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x
+ 64_EDMF_32.com2D                                                 
+NSTEP =       1160   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1161   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1162   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1163   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =       1164   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1165   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1166   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1167   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =       1168   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1169   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1170   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ radiation: perpetual sun, solin=   413.8069    
+NSTEP =       1171   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =       1172   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1173   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1174   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1175   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =       1176   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1177   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1178   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1179   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =       1180   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1181   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1182   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1183   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =       1184   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1185   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1186   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1187   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =       1188   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1189   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1190   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1191   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =       1192   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1193   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1194   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1195   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+NSTEP =       1196   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1197   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1198   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+NSTEP =       1199   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Collecting statistics...
+ Writting radiation restart file...
+ Saved radiation restart file. nstep=        1200
+ name CLDSGS is missing in "lst" file.
+ name TLFLUXSM is missing in "lst" file.
+ name RADLWUPC is missing in "lst" file.
+ name RADLWDNC is missing in "lst" file.
+ Writting statistics:nstatsteps=          30
+ Writting history file 
+ MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x64_EDMF                              
+  
+ Writing restart file ...
+ Restart file was saved. nstep=        1200
+ Writting 2D data. file:./OUT_2D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x6
+ 4_EDMF_32.2Dcom                                                 
+ Appending 3D data. file:./OUT_3D/RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_320x1x
+ 64_EDMF_32.com2D                                                 
+NSTEP =       1200   NCYCLE=  1  CFL_adv= 0.000  CFL_sgs= 0.010
+ Finished with SAM, exiting...
