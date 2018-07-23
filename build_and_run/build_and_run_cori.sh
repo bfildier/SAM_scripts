@@ -1,14 +1,14 @@
 #!/bin/bash
 
 # What to do in this script
-setdomain=true
-build=true
-setcase=true
+setdomain=false
+build=false
+setcase=false
 setbatch=true
 run=false
 
-#experiment=STD
-experiment=EDMF
+experiment=STD
+#experiment=EDMF
 
 machine=coriknl
 CURRENTDIR=$PWD
@@ -30,11 +30,11 @@ git checkout edmf
 cd ${MODELDIR}/SRC
 
 nx=320
-#ny=320
-ny=1
-nz=64
+ny=320
+#ny=1
+nz=32
 #nsubx=20; nsuby=16
-nsubx=32; nsuby=1
+nsubx=32; nsuby=10
 
 if [ "$setdomain" == "true" ]; then
 
@@ -68,7 +68,8 @@ SGS=TKE
 SGSDIR=SGS_${SGS}        # SGS scheme
 RAD=CAM
 RADDIR=RAD_${RAD}        # Radiation scheme
-MICRO=M2005
+#MICRO=M2005
+MICRO=SAM1MOM
 MICRODIR=MICRO_${MICRO}  # Microphysics scheme
 
 #Set up the model for single/multi processor
@@ -116,7 +117,7 @@ fi
 dx=4000.    # zonal resolution in m
 dy=4000.    # meridional resolution in m
 dt=15.      # time increment in seconds
-nstop=1200  # number of time steps to run
+nstop=288000 # 50 days # number of time steps to run
 nelapse=$nstop  # stop the model in intermediate runs
 
 #------------------------ Physical setup --------------------------#
@@ -153,7 +154,7 @@ if [ "$setcase" == "true" ]; then
     sed -i "s/doperpetual = .*/doperpetual = ${doperpetual}/" prm
         
     if [ "$experiment" == "EDMF" ]; then
-        sed -i '' "s/doedmf = .*/doedmf = ${doedmf}/" prm
+        sed -i "s/doedmf = .*/doedmf = ${doedmf}/" prm
     fi 
     cd ..
 else
@@ -170,19 +171,20 @@ nprint=360      # frequency for prinouts in number of time steps
 #------------------------ Statistics file -------------------------#
 nstat=120       # frequency of statistics outputs in number of time steps
 nstatfrq=30    # sample size for computing statistics (number of samples per statistics calculations)
-dosatupdnconditionals='.false.'
+dosatupdnconditionals='.true.'
 
 #-------------------------- 2D-3D fields --------------------------#
 output_sep='.false.'
-nsave2D=40       # sampling period of 2D fields in model steps
-nsave3D=40       # sampling period of 3D fields in model steps
+nsave2D=120       # sampling period of 2D fields in model steps
+nsave3D=120       # sampling period of 3D fields in model steps
 
 #-------------------------- Restart files -------------------------#
-nrestart_skip=480
+nrestart_skip=5
+dokeeprestart=.true.
 
 #--------------------------- Movie files --------------------------#
 nmovie=60 
-nmoviestart=0
+nmoviestart=$((nstop+1))
 nmovieend=$nstop
 
 if [ "$setcase" == "true" ]; then
@@ -195,6 +197,7 @@ if [ "$setcase" == "true" ]; then
     sed -i "s/nsave2D = .*/nsave2D = ${nsave2D}/" prm
     sed -i "s/nsave3D = .*/nsave3D = ${nsave3D}/" prm
     sed -i "s/nrestart_skip = .*/nrestart_skip = ${nrestart_skip}/" prm
+    sed -i "s/dokeeprestart = .*/dokeeprestart = ${dokeeprestart}/" prm
     sed -i "s/dosatupdnconditionals = .*/dosatupdnconditionals = ${dosatupdnconditionals}/" prm
     sed -i "s/nmovie = .*/nmovie = ${nmovie}/" prm
     sed -i "s/nmoviestart = .*/nmoviestart = ${nmoviestart}/" prm
@@ -207,8 +210,8 @@ fi
 #                       Create batch script                        #
 #------------------------------------------------------------------#
 
-qos=debug
-runtime=00:30:00
+qos=regular
+runtime=24:00:00
 datetime=`date +"%Y%m%d-%H%M"`
 exescript=SAM_${ADVDIR}_${SGSDIR}_${RADDIR}_${MICRODIR}
 batchscript=${SCRIPTDIR}/run_${machine}.sbatch

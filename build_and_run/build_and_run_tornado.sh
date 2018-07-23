@@ -187,6 +187,7 @@ nsave3D=40       # sampling period of 3D fields in model steps
 
 #-------------------------- Restart files -------------------------#
 nrestart_skip=0
+dokeeprestart=.true.
 
 #--------------------------- Movie files --------------------------#
 nmovie=40 
@@ -204,6 +205,7 @@ if [ "$setcase" == "true" ]; then
     sed -i '' "s/nsave2D = .*/nsave2D = ${nsave2D}/" prm
     sed -i '' "s/nsave3D = .*/nsave3D = ${nsave3D}/" prm
     sed -i '' "s/nrestart_skip =.*/nrestart_skip = ${nrestart_skip}/" prm
+    sed -i '' "s/dokeeprestart = .*/dokeeprestart = ${dokeeprestart}/" prm
     sed -i '' "s/dosatupdnconditionals = .*/dosatupdnconditionals = ${dosatupdnconditionals}/" prm
     sed -i '' "s/nmovie =.*/nmovie = $nmovie/" prm
     sed -i '' "s/nmoviestart =.*/nmoviestart = $nmoviestart/" prm
