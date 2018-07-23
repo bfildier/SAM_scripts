@@ -3,8 +3,8 @@
 # What to do in this script
 setdomain=true
 build=true
-setcase=true
-setrunscript=true
+setcase=false
+setrunscript=false
 run=false
 
 #experiment=STD
@@ -72,7 +72,11 @@ SAMSCR=${OUTPUTDIR}
 #----------------------------- Schemes ----------------------------#
 ADV=MPDATA
 ADVDIR=ADV_${ADV}        # Advection scheme
-SGS=TKE
+if [ "$experiment" == "EDMF" ]; then
+    SGS=EDMF
+else
+    SGS=TKE
+fi
 SGSDIR=SGS_${SGS}        # SGS scheme
 RAD=CAM
 RADDIR=RAD_${RAD}        # Radiation scheme
@@ -138,6 +142,7 @@ fi
 
 #------------------------------ Case ------------------------------#
 casename=RCE
+#casename=1DCPBL
 caseid=\"${ADV}x${SGS}x${RAD}x${MICRO}_`echo $dx | bc -l`x\
 `echo $dy | bc -l`x`echo $dt | bc -l`_${nx}x${ny}x${nz}_${experiment}\"
 
