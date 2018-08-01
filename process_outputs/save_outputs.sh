@@ -18,7 +18,7 @@ if [ "$mode" == "overwrite" ]; then
         TARGETDIR=${ARCHIVEDIR}/${machine}/${simname}
 
         # Copy all outputs and restart files
-        cp -r ${OUTPUTDIR}/ ${TARGETDIR}
+        cp -r ${OUTPUTDIR}/* ${TARGETDIR}
         # Save timing file
         cp ${MODELDIR}/timing.0 ${TARGETDIR}
         # Save parameter file and namelist
@@ -34,7 +34,7 @@ if [ "$mode" == "overwrite" ]; then
         TARGETDIR=/Users/bfildier/Data/simulations/SAM6.11.1/archive/${machine}/${simname}
 
         # Copy all outputs and restart files
-        scp -r cori.nersc.gov:${OUTPUTDIR}/ ${TARGETDIR}
+        scp -r cori.nersc.gov:${OUTPUTDIR}/* ${TARGETDIR}
         # Save timing file
         scp cori.nersc.gov:${MODELDIR}/timing.0 ${TARGETDIR}
         # Save parameter file and namelist
