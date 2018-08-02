@@ -3,12 +3,15 @@
 # What to do in this script
 setdomain=true
 build=true
-setcase=false
-setrunscript=false
+setcase=true
+setrunscript=true
 run=false
 
-#experiment=STD
-experiment=EDMF
+realization=r1
+# experiment=STD
+# experiment=EDMF
+experiment=SMAG_CTRL_${realization}
+
 
 machine=tornado
 CURRENTDIR=$PWD
@@ -20,17 +23,10 @@ SCRIPTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 cd ${MODELDIR}
 
-#-- if model is compatible with edmf
-git checkout edmf
-
-#if [ "$experiment" == "STD" ]; then
-#    git checkout master
-#elif [ "$experiment" == "EDMF" ]; then
-#    git checkout edmf
-#else
-#    echo "bad experiment specification"
-#    exit 1
-#fi
+#-- if model is compatible with edmf, then pick edmf
+#-- else pick master branch
+branch=edmf
+git checkout $branch
 
 #------------------------------------------------------------------#
 #             Set up domains, subdomains and processors            #
@@ -38,7 +34,7 @@ git checkout edmf
 
 cd ${MODELDIR}/SRC
 
-nx=240
+nx=256
 ny=1
 nz=32
 nsubx=1; nsuby=1
@@ -72,7 +68,7 @@ SAMSCR=${OUTPUTDIR}
 #----------------------------- Schemes ----------------------------#
 ADV=MPDATA
 ADVDIR=ADV_${ADV}        # Advection scheme
-if [ "$experiment" == "EDMF" ]; then
+if [ "$experiment" =~ EDMF* ]; then
     SGS=EDMF
 else
     SGS=TKE
@@ -134,20 +130,23 @@ nelapse=$nstop  # when to stop the model for intermediate runs
 #------------------------- Physical setup -------------------------#
 doseasons='.false.'
 doperpetual='.true.'
+if [[ "${experiment}" =~ SMAG* ]]; then
+	dosmagor='.true.'
+fi
 
 #------------------------------ EDMF ------------------------------#
-if [ "$experiment" == "EDMF" ]; then
+if [ "$experiment" =~ EDMF* ]; then
     doedmf=".true."
 fi
 
 #------------------------------ Case ------------------------------#
 casename=RCE
-#casename=1DCPBL
 caseid=\"${ADV}x${SGS}x${RAD}x${MICRO}_`echo $dx | bc -l`x\
 `echo $dy | bc -l`x`echo $dt | bc -l`_${nx}x${ny}x${nz}_${experiment}\"
 
 #-------------------------- Parameter File ------------------------#
 refprmfilename=prm_template
+prmfile=prm_${experiment}
 
 if [ "$setcase" == "true" ]; then 
 
@@ -155,19 +154,20 @@ if [ "$setcase" == "true" ]; then
     sed -i '' "s/.*/$casename/" CaseName
 
     cd ${casename}
-    cp ${refprmfilename} prm
-    sed -i '' "s/caseid =.*/caseid = $caseid/" prm
-    sed -i '' "s/dx =.*/dx = $dx/" prm
-    sed -i '' "s/dy =.*/dy = $dy/" prm
-    sed -i '' "s/dt =.*/dt = $dt/" prm
-    sed -i '' "s/nstop    =.*/nstop    = ${nstop}/" prm
-    sed -i '' "s/nelapse  =.*/nelapse  = ${nelapse}/" prm
-    sed -i '' "s/doseasons = .*/doseasons = ${doseasons}/" prm
-    sed -i '' "s/doperpetual = .*/doperpetual = ${doperpetual}/" prm
+    cp ${refprmfilename} ${prmfile}
+    sed -i '' "s/caseid =.*/caseid = $caseid/" ${prmfile}
+    sed -i '' "s/dx =.*/dx = $dx/" ${prmfile}
+    sed -i '' "s/dy =.*/dy = $dy/" ${prmfile}
+    sed -i '' "s/dt =.*/dt = $dt/" ${prmfile}
+    sed -i '' "s/nstop    =.*/nstop    = ${nstop}/" ${prmfile}
+    sed -i '' "s/nelapse  =.*/nelapse  = ${nelapse}/" ${prmfile}
+    sed -i '' "s/doseasons = .*/doseasons = ${doseasons}/" ${prmfile}
+    sed -i '' "s/doperpetual = .*/doperpetual = ${doperpetual}/" ${prmfile}
     
-    if [ "$experiment" == "EDMF" ]; then
-        sed -i '' "s/doedmf = .*/doedmf = ${doedmf}/" prm
+    if [ "$branch" == "edmf" ]; then
+        sed -i '' "s/doedmf = .*/doedmf = ${doedmf}/" ${prmfile}
     fi 
+
     cd ..
 else
     echo "case setting phase passed"
@@ -183,7 +183,7 @@ nprint=40      # frequency for prinouts in number of time steps
 #------------------------ Statistics file -------------------------#
 nstat=40       # frequency of statistics outputs in number of time steps
 nstatfrq=20    # sample size for computing statistics (number of samples per statistics calculations)
-dosatupdnconditionals='.true.'
+dosatupdnconditionals='.false.'
 
 #-------------------------- 2D-3D fields --------------------------#
 output_sep='.false.'
@@ -192,7 +192,7 @@ nsave3D=40       # sampling period of 3D fields in model steps
 
 #-------------------------- Restart files -------------------------#
 nrestart_skip=0
-dokeeprestart=.true.
+dokeeprestart=.false.
 
 #--------------------------- Movie files --------------------------#
 nmovie=40 
@@ -203,18 +203,18 @@ if [ "$setcase" == "true" ]; then
 
     echo "set outputs"
     cd $casename
-    sed -i '' "s/nprint   =.*/nprint   = $nprint/" prm
-    sed -i '' "s/nstat    =.*/nstat    = $nstat/" prm
-    sed -i '' "s/nstatfrq =.*/nstatfrq = $nstatfrq/" prm
-    sed -i '' "s/output_sep =.*/output_sep = ${output_sep}/" prm
-    sed -i '' "s/nsave2D = .*/nsave2D = ${nsave2D}/" prm
-    sed -i '' "s/nsave3D = .*/nsave3D = ${nsave3D}/" prm
-    sed -i '' "s/nrestart_skip =.*/nrestart_skip = ${nrestart_skip}/" prm
-    sed -i '' "s/dokeeprestart = .*/dokeeprestart = ${dokeeprestart}/" prm
-    sed -i '' "s/dosatupdnconditionals = .*/dosatupdnconditionals = ${dosatupdnconditionals}/" prm
-    sed -i '' "s/nmovie =.*/nmovie = $nmovie/" prm
-    sed -i '' "s/nmoviestart =.*/nmoviestart = $nmoviestart/" prm
-    sed -i '' "s/nmovieend =.*/nmovieend = $nmovieend/" prm
+    sed -i '' "s/nprint   =.*/nprint   = $nprint/" ${prmfile}
+    sed -i '' "s/nstat    =.*/nstat    = $nstat/" ${prmfile}
+    sed -i '' "s/nstatfrq =.*/nstatfrq = $nstatfrq/" ${prmfile}
+    sed -i '' "s/output_sep =.*/output_sep = ${output_sep}/" ${prmfile}
+    sed -i '' "s/nsave2D = .*/nsave2D = ${nsave2D}/" ${prmfile}
+    sed -i '' "s/nsave3D = .*/nsave3D = ${nsave3D}/" ${prmfile}
+    sed -i '' "s/nrestart_skip =.*/nrestart_skip = ${nrestart_skip}/" ${prmfile}
+    sed -i '' "s/dokeeprestart = .*/dokeeprestart = ${dokeeprestart}/" ${prmfile}
+    sed -i '' "s/dosatupdnconditionals = .*/dosatupdnconditionals = ${dosatupdnconditionals}/" ${prmfile}
+    sed -i '' "s/nmovie =.*/nmovie = $nmovie/" ${prmfile}
+    sed -i '' "s/nmoviestart =.*/nmoviestart = $nmoviestart/" ${prmfile}
+    sed -i '' "s/nmovieend =.*/nmovieend = $nmovieend/" ${prmfile}
     echo
     cd ..
 
@@ -226,9 +226,12 @@ fi
 
 datetime=`date +"%Y%m%d-%H%M"`
 exescript=SAM_${ADVDIR}_${SGSDIR}_${RADDIR}_${MICRODIR}
+# Save executable on a new name
+newexescript=${exescript}_${experiment}_${realization}
+cp $exescript $newexescript
 stdoutlog=${SCRIPTDIR}/logs/${exescript}_${machine}_${datetime}.log
 stderrlog=${SCRIPTDIR}/logs/${exescript}_${machine}_${datetime}.err
-runscript=${SCRIPTDIR}/run_${machine}.sh
+runscript=${SCRIPTDIR}/run_scripts/run_${machine}_${experiment}_${realization}.sh
 
 if [ "$setrunscript" == "true" ]; then
     
@@ -236,7 +239,7 @@ if [ "$setrunscript" == "true" ]; then
     # Copying and editing run script
     cp ${SCRIPTDIR}/template_run_${machine}.sh ${runscript}
     sed -i '' "s|RUNDIR|${MODELDIR}|" ${runscript}
-    sed -i '' "s|EXESCRIPT|${exescript}|g" ${runscript}
+    sed -i '' "s|EXESCRIPT|${newexescript}|g" ${runscript}
     sed -i '' "s|STDOUT|${stdoutlog}|g" ${runscript}
     sed -i '' "s|STDERR|${stderrlog}|g" ${runscript}
 
