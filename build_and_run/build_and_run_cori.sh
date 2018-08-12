@@ -7,8 +7,11 @@ setcase=false
 setbatch=true
 run=false
 
-experiment=STD
-#experiment=EDMF
+realization=r1
+# experiment=STD
+# experiment=EDMF
+experiment=SMAG-CTRL
+explabel=${experiment}-${realization}
 
 machine=coriknl
 CURRENTDIR=$PWD
@@ -20,8 +23,10 @@ SCRIPTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 cd ${MODELDIR}
 
-#-- if model is compatible with edmf
-git checkout edmf
+#-- if model is compatible with edmf, then pick edmf
+#-- else pick master branch
+branch=edmf
+git checkout $branch
 
 #------------------------------------------------------------------#
 #             Set up domains, subdomains and processors            #
@@ -64,7 +69,11 @@ SAMSCR=${OUTPUTDIR}
 #----------------------------- Schemes ----------------------------#
 ADV=MPDATA
 ADVDIR=ADV_${ADV}     # Advection scheme
-SGS=TKE
+if [ "$experiment" =~ EDMF* ]; then
+    SGS=EDMF
+else
+    SGS=TKE
+fi
 SGSDIR=SGS_${SGS}        # SGS scheme
 RAD=CAM
 RADDIR=RAD_${RAD}        # Radiation scheme
@@ -123,19 +132,25 @@ nelapse=$nstop  # stop the model in intermediate runs
 #------------------------ Physical setup --------------------------#
 doseasons='.false.'
 doperpetual='.true.'
+dosmagor='.false.'
+if [[ "${experiment}" =~ SMAG* ]]; then
+    dosmagor='.true.'
+fi
 
 #------------------------------ EDMF ------------------------------#
-if [ "$experiment" == "EDMF" ]; then
+doedmf=".false."
+if [ "$experiment" =~ EDMF* ]; then
     doedmf=".true."
 fi
 
 #------------------------------ Case ------------------------------#
 casename=RCE
 caseid=\"${ADV}x${SGS}x${RAD}x${MICRO}_`echo $dx | bc -l`x\
-`echo $dy | bc -l`x`echo $dt | bc -l`_${nx}x${ny}x${nz}_${experiment}\"
+`echo $dy | bc -l`x`echo $dt | bc -l`_${nx}x${ny}x${nz}_${explabel}\"
 
 #-------------------------- Parameter File ------------------------#
 refprmfilename=prm_template
+prmfile=prm_${explabel}
 
 if [ "$setcase" == "true" ]; then
 
@@ -143,19 +158,21 @@ if [ "$setcase" == "true" ]; then
     sed -i "s/.*/$casename/" CaseName
 
     cd $casename
-    cp ${refprmfilename} prm
-    sed -i "s/caseid =.*/caseid = $caseid/" prm
-    sed -i "s/dx =.*/dx = $dx/" prm
-    sed -i "s/dy =.*/dy = $dy/" prm
-    sed -i "s/dt =.*/dt = $dt/" prm
-    sed -i "s/nstop    =.*/nstop    = ${nstop}/" prm
-    sed -i "s/nelapse  =.*/nelapse  = ${nelapse}/" prm
-    sed -i "s/doseasons = .*/doseasons = ${doseasons}/" prm
-    sed -i "s/doperpetual = .*/doperpetual = ${doperpetual}/" prm
-        
-    if [ "$experiment" == "EDMF" ]; then
-        sed -i "s/doedmf = .*/doedmf = ${doedmf}/" prm
-    fi 
+    cp ${refprmfilename} ${prmfile}
+    sed -i "s/caseid =.*/caseid = $caseid/" ${prmfile}
+    sed -i "s/dx =.*/dx = $dx/" ${prmfile}
+    sed -i "s/dy =.*/dy = $dy/" ${prmfile}
+    sed -i "s/dt =.*/dt = $dt/" ${prmfile}
+    sed -i "s/nstop    =.*/nstop    = ${nstop}/" ${prmfile}
+    sed -i "s/nelapse  =.*/nelapse  = ${nelapse}/" ${prmfile}
+    sed -i "s/doseasons = .*/doseasons = ${doseasons}/" ${prmfile}
+    sed -i "s/doperpetual = .*/doperpetual = ${doperpetual}/" ${prmfile}
+    sed -i "s/dosmagor = .*/dosmagor = ${dosmagor}/" ${prmfile}
+
+    if [ "$branch" == "edmf" ]; then
+        sed -i "s/doedmf = .*/doedmf = ${doedmf}/" ${prmfile}
+    fi
+
     cd ..
 else
     echo "case setting phase passed"
@@ -189,19 +206,20 @@ nmovieend=$nstop
 
 if [ "$setcase" == "true" ]; then
 
+    echo "set outputs"
     cd $casename
-    sed -i "s/nprint   =.*/nprint   = $nprint/" prm
-    sed -i "s/nstat    =.*/nstat    = $nstat/" prm
-    sed -i "s/nstatfrq =.*/nstatfrq = $nstatfrq/" prm
-    sed -i "s/output_sep =.*/output_sep = ${output_sep}/" prm
-    sed -i "s/nsave2D = .*/nsave2D = ${nsave2D}/" prm
-    sed -i "s/nsave3D = .*/nsave3D = ${nsave3D}/" prm
-    sed -i "s/nrestart_skip = .*/nrestart_skip = ${nrestart_skip}/" prm
-    sed -i "s/dokeeprestart = .*/dokeeprestart = ${dokeeprestart}/" prm
-    sed -i "s/dosatupdnconditionals = .*/dosatupdnconditionals = ${dosatupdnconditionals}/" prm
-    sed -i "s/nmovie = .*/nmovie = ${nmovie}/" prm
-    sed -i "s/nmoviestart = .*/nmoviestart = ${nmoviestart}/" prm
-    sed -i "s/nmovieend = .*/nmovieend = ${nmovieend}/" prm
+    sed -i "s/nprint   =.*/nprint   = $nprint/" ${prmfile}
+    sed -i "s/nstat    =.*/nstat    = $nstat/" ${prmfile}
+    sed -i "s/nstatfrq =.*/nstatfrq = $nstatfrq/" ${prmfile}
+    sed -i "s/output_sep =.*/output_sep = ${output_sep}/" ${prmfile}
+    sed -i "s/nsave2D = .*/nsave2D = ${nsave2D}/" ${prmfile}
+    sed -i "s/nsave3D = .*/nsave3D = ${nsave3D}/" ${prmfile}
+    sed -i "s/nrestart_skip = .*/nrestart_skip = ${nrestart_skip}/" ${prmfile}
+    sed -i "s/dokeeprestart = .*/dokeeprestart = ${dokeeprestart}/" ${prmfile}
+    sed -i "s/dosatupdnconditionals = .*/dosatupdnconditionals = ${dosatupdnconditionals}/" ${prmfile}
+    sed -i "s/nmovie = .*/nmovie = ${nmovie}/" ${prmfile}
+    sed -i "s/nmoviestart = .*/nmoviestart = ${nmoviestart}/" ${prmfile}
+    sed -i "s/nmovieend = .*/nmovieend = ${nmovieend}/" ${prmfile}
     cd ..
 
 fi
@@ -210,11 +228,16 @@ fi
 #                       Create batch script                        #
 #------------------------------------------------------------------#
 
-qos=regular
-runtime=24:00:00
+# qos=regular
+qos=debug
+# runtime=24:00:00
+runtime=00:30:00
 datetime=`date +"%Y%m%d-%H%M"`
 exescript=SAM_${ADVDIR}_${SGSDIR}_${RADDIR}_${MICRODIR}
-batchscript=${SCRIPTDIR}/run_${machine}.sbatch
+# Save executable on a new name
+newexescript=${exescript}_${explabel}
+cp $exescript $newexescript
+batchscript=${SCRIPTDIR}/run_scripts/run_${machine}_${explabel}.sbatch
 
 # Compute number of nodes and tasks - similarly to what is done for mkbatch.cori-knl for CESM
 tasks=$((nsubx*nsuby))
@@ -230,7 +253,7 @@ if [ "$setbatch" == "true" ]; then
     
     echo "create batch script"
     # Copying and editing batch script
-    cp ${SCRIPTDIR}/template_${machine}.sbatch ${batchscript}
+    cp ${SCRIPTDIR}/template_run_${machine}.sbatch ${batchscript}
     sed -i "s/--qos=.*/--qos=${qos}/" ${batchscript}
     sed -i "s/--time=.*/--time=${runtime}/" ${batchscript}
     sed -i "s/CASENAME/${casename}/g" ${batchscript}
@@ -238,7 +261,7 @@ if [ "$setbatch" == "true" ]; then
     sed -i "s/--nodes=.*/--nodes=${nodes}/" ${batchscript}
     sed -i "s/--ntasks=.*/--ntasks=${tasks}/" ${batchscript}
     sed -i "s|SCRIPTDIR|${SCRIPTDIR}|" ${batchscript}
-    sed -i "s|EXESCRIPT|${exescript}|" ${batchscript}
+    sed -i "s|EXESCRIPT|${newexescript}|" ${batchscript}
     sed -i "s|MODELDIR|${MODELDIR}|" ${batchscript}
 fi
 

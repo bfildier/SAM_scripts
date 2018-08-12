@@ -10,7 +10,8 @@ run=false
 realization=r1
 # experiment=STD
 # experiment=EDMF
-experiment=SMAG_CTRL_${realization}
+experiment=SMAG-CTRL
+explabel=${experiment}-${realization}
 
 
 machine=tornado
@@ -130,11 +131,13 @@ nelapse=$nstop  # when to stop the model for intermediate runs
 #------------------------- Physical setup -------------------------#
 doseasons='.false.'
 doperpetual='.true.'
+dosmagor='.false.'
 if [[ "${experiment}" =~ SMAG* ]]; then
 	dosmagor='.true.'
 fi
 
 #------------------------------ EDMF ------------------------------#
+doedmf=".false."
 if [ "$experiment" =~ EDMF* ]; then
     doedmf=".true."
 fi
@@ -142,11 +145,11 @@ fi
 #------------------------------ Case ------------------------------#
 casename=RCE
 caseid=\"${ADV}x${SGS}x${RAD}x${MICRO}_`echo $dx | bc -l`x\
-`echo $dy | bc -l`x`echo $dt | bc -l`_${nx}x${ny}x${nz}_${experiment}\"
+`echo $dy | bc -l`x`echo $dt | bc -l`_${nx}x${ny}x${nz}_${explabel}\"
 
 #-------------------------- Parameter File ------------------------#
 refprmfilename=prm_template
-prmfile=prm_${experiment}
+prmfile=prm_${explabel}
 
 if [ "$setcase" == "true" ]; then 
 
@@ -163,10 +166,11 @@ if [ "$setcase" == "true" ]; then
     sed -i '' "s/nelapse  =.*/nelapse  = ${nelapse}/" ${prmfile}
     sed -i '' "s/doseasons = .*/doseasons = ${doseasons}/" ${prmfile}
     sed -i '' "s/doperpetual = .*/doperpetual = ${doperpetual}/" ${prmfile}
-    
+    sed -i '' "s/dosmagor = .*/dosmagor = ${dosmagor}/" ${prmfile}
+
     if [ "$branch" == "edmf" ]; then
         sed -i '' "s/doedmf = .*/doedmf = ${doedmf}/" ${prmfile}
-    fi 
+    fi
 
     cd ..
 else
@@ -192,7 +196,7 @@ nsave3D=40       # sampling period of 3D fields in model steps
 
 #-------------------------- Restart files -------------------------#
 nrestart_skip=0
-dokeeprestart=.false.
+dokeeprestart=.true.
 
 #--------------------------- Movie files --------------------------#
 nmovie=40 
@@ -227,11 +231,11 @@ fi
 datetime=`date +"%Y%m%d-%H%M"`
 exescript=SAM_${ADVDIR}_${SGSDIR}_${RADDIR}_${MICRODIR}
 # Save executable on a new name
-newexescript=${exescript}_${experiment}_${realization}
+newexescript=${exescript}_${explabel}
 cp $exescript $newexescript
-stdoutlog=${SCRIPTDIR}/logs/${exescript}_${machine}_${datetime}.log
-stderrlog=${SCRIPTDIR}/logs/${exescript}_${machine}_${datetime}.err
-runscript=${SCRIPTDIR}/run_scripts/run_${machine}_${experiment}_${realization}.sh
+stdoutlog=${SCRIPTDIR}/logs/${newexescript}_${machine}_${datetime}.log
+stderrlog=${SCRIPTDIR}/logs/${newexescript}_${machine}_${datetime}.err
+runscript=${SCRIPTDIR}/run_scripts/run_${machine}_${explabel}.sh
 
 if [ "$setrunscript" == "true" ]; then
     
