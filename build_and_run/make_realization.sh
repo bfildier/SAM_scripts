@@ -41,15 +41,26 @@ cp ${PRM_NAMEROOT}-r1 ${PRM_NAMEROOT}-r${number}
 # cp ${NML_NAMEROOT}-r1.nml ${NML_NAMEROOT}-r${number}.nml
 
 # Change caseid in parameter file
-sed -i '' "s/caseid = .*/caseid = \"${caseidroot}-r${number}\"/" ${PRM_NAMEROOT}-r${number}
-# sed -i '' "s/CASEID=\".*/CASEID=\"${caseidroot}-r${number}\",/" ${NML_NAMEROOT}-r${number}.nml
+if [ "$machine" == "tornado" ]; then
+	sed -i '' "s/caseid = .*/caseid = \"${caseidroot}-r${number}\"/" ${PRM_NAMEROOT}-r${number}
+	# sed -i '' "s/CASEID=\".*/CASEID=\"${caseidroot}-r${number}\",/" ${NML_NAMEROOT}-r${number}.nml
+elif [ "$machine" == "coriknl" ]; then
+	sed -i "s/caseid = .*/caseid = \"${caseidroot}-r${number}\"/" ${PRM_NAMEROOT}-r${number}
+fi
 
 # Change runscript as well
 datetime=`date +"%Y%m%d-%H%M"`
 echo "datetime: "${datetime}
 
 cd ${SCRIPTDIR}/run_scripts
-newrunscript=run_${machine}_${EXP}-r${number}.sh
-cp run_${machine}_${EXP}-r1.sh $newrunscript
-sed -i '' "s/${EXP}-r1/${EXP}-r${number}/" $newrunscript
-sed -i '' -E "s/[0-9]{8}-[0-9]{4}/${datetime}/g" $newrunscript
+if [ "$machine" == "tornado" ]; then
+	newrunscript=run_${machine}_${EXP}-r${number}.sh
+	cp run_${machine}_${EXP}-r1.sh $newrunscript
+	sed -i '' "s/${EXP}-r1/${EXP}-r${number}/" $newrunscript
+	sed -i '' -E "s/[0-9]{8}-[0-9]{4}/${datetime}/g" $newrunscript
+elif  [ "$machine" == "coriknl" ]; then
+        newrunscript=run_${machine}_${EXP}-r${number}.sbatch
+        cp run_${machine}_${EXP}-r1.sbatch $newrunscript
+	sed -i "s/${EXP}-r1/${EXP}-r${number}/" $newrunscript
+        sed -i -E "s/[0-9]{8}-[0-9]{4}/${datetime}/g" $newrunscript
+fi
