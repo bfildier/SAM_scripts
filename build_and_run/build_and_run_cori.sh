@@ -1,10 +1,11 @@
 #!/bin/bash
 
 # What to do in this script
-setdomain=false
-build=false
-setcase=false
+setdomain=true
+build=true
+setcase=true
 setbatch=true
+makerealiz=true
 run=false
 
 realization=r1
@@ -34,12 +35,12 @@ git checkout $branch
 
 cd ${MODELDIR}/SRC
 
-nx=320
-ny=320
+nx=128
+ny=128
 #ny=1
 nz=32
 #nsubx=20; nsuby=16
-nsubx=32; nsuby=10
+nsubx=32; nsuby=4
 
 if [ "$setdomain" == "true" ]; then
 
@@ -69,7 +70,7 @@ SAMSCR=${OUTPUTDIR}
 #----------------------------- Schemes ----------------------------#
 ADV=MPDATA
 ADVDIR=ADV_${ADV}     # Advection scheme
-if [ "$experiment" =~ EDMF* ]; then
+if [[ "$experiment" =~ EDMF* ]]; then
     SGS=EDMF
 else
     SGS=TKE
@@ -126,7 +127,8 @@ fi
 dx=4000.    # zonal resolution in m
 dy=4000.    # meridional resolution in m
 dt=15.      # time increment in seconds
-nstop=288000 # 50 days # number of time steps to run
+#nstop=288000 # 50 days # number of time steps to run
+nstop=1440 # =6hrs
 nelapse=$nstop  # stop the model in intermediate runs
 
 #------------------------ Physical setup --------------------------#
@@ -139,7 +141,7 @@ fi
 
 #------------------------------ EDMF ------------------------------#
 doedmf=".false."
-if [ "$experiment" =~ EDMF* ]; then
+if [[ "$experiment" =~ EDMF* ]]; then
     doedmf=".true."
 fi
 
@@ -183,20 +185,20 @@ fi
 #------------------------------------------------------------------#
 
 #------------------------ Standard output -------------------------#
-nprint=360      # frequency for prinouts in number of time steps 
+nprint=5760      # frequency for prinouts in number of time steps 
 
 #------------------------ Statistics file -------------------------#
-nstat=120       # frequency of statistics outputs in number of time steps
+nstat=240       # frequency of statistics outputs in number of time steps
 nstatfrq=30    # sample size for computing statistics (number of samples per statistics calculations)
 dosatupdnconditionals='.true.'
 
 #-------------------------- 2D-3D fields --------------------------#
 output_sep='.false.'
-nsave2D=120       # sampling period of 2D fields in model steps
-nsave3D=120       # sampling period of 3D fields in model steps
+nsave2D=240       # sampling period of 2D fields in model steps
+nsave3D=240       # sampling period of 3D fields in model steps
 
 #-------------------------- Restart files -------------------------#
-nrestart_skip=5
+nrestart_skip=23
 dokeeprestart=.true.
 
 #--------------------------- Movie files --------------------------#
@@ -264,6 +266,12 @@ if [ "$setbatch" == "true" ]; then
     sed -i "s|EXESCRIPT|${newexescript}|" ${batchscript}
     sed -i "s|MODELDIR|${MODELDIR}|" ${batchscript}
 fi
+
+#------------------------------------------------------------------#
+#                        Make realizations                         #
+#------------------------------------------------------------------#
+
+
 
 #------------------------------------------------------------------#
 #                               Run                                #
