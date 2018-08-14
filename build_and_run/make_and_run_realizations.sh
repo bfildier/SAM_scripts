@@ -1,17 +1,17 @@
 #!/bin/bash
 
 # What to do in this script
-#makerealiz=true
 makerealiz=false
 run=true
-#run=false
 
 # Which run to duplicate
 case=RCE
-caseidroot=MPDATAxTKExCAMxSAM1MOM_4000x4000x15_128x128x32_SMAG-CTRL
+caseidroot="MPDATAxTKExCAMxSAM1MOM_4000x4000x15_128x128x32_SMAG-CTRL"
 expname=${caseidroot##*_}
-nmin=1			# minimum realization number to create
-nmax=3			# maximum realization number to create
+# minimum realization number to create
+nmin=2
+# maximum realization number to create
+nmax=3
 
 # Where
 #machine=tornado
