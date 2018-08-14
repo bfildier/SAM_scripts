@@ -10,7 +10,7 @@ SCRIPTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 SCRIPTNAME=`basename "$0"`
 
 # What/where to convert
-currentsim=true	# true if in model's output dir, false if in directory given in argument
+currentsim=true # true if in model's output dir, false if in directory given in argument
 doout2d=true
 doout3d=true
 dooutstat=false
