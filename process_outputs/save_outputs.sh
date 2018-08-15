@@ -43,18 +43,16 @@ if [ "$mode" == "overwrite" ]; then
        	# Copy all outputs and restart files
         for dir in `echo OUT_2D OUT_3D OUT_MOMENTS OUT_MOVIES OUT_STAT RESTART`; do
         	[ -d $dir ] || mkdir $dir && echo "create $dir"
-        	cp -r ${OUTPUTDIR}/$dir/${simname}* ${dir}/
+        	mv ${OUTPUTDIR}/$dir/${simname}* ${dir}/
         done
 
-        # Save timing file
-        cp ${MODELDIR}/timing.0 .
         # Save parameter file and namelist
-        cp ${MODELDIR}/${casename}/prm .
-        cp ${MODELDIR}/${casename}/${simname}.nml .
+        mv ${MODELDIR}/${casename}/prm_${EXP} .
+        mv ${MODELDIR}/${casename}/${simname}.nml .
         # Save domain parameters for record
         cp ${MODELDIR}/SRC/domain.f90 .
         # Save executable
-        cp ${MODELDIR}/${EXESCRIPT} .
+        mv ${MODELDIR}/${EXESCRIPT} .
 
         cd -
 
@@ -71,10 +69,8 @@ if [ "$mode" == "overwrite" ]; then
         	scp cori.nersc.gov:${OUTPUTDIR}/$dir/${simname}* ${dir}/
         done
 
-        # Save timing file
-        scp cori.nersc.gov:${MODELDIR}/timing.0 .
         # Save parameter file and namelist
-        scp cori.nersc.gov:${MODELDIR}/${casename}/prm .
+        scp cori.nersc.gov:${MODELDIR}/${casename}/prm_${EXP} .
         scp cori.nersc.gov:${MODELDIR}/${casename}/${simname}.nml .
         # Save domain parameters for record
         scp cori.nersc.gov:${MODELDIR}/SRC/domain.f90 .
