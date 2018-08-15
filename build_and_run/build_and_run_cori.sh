@@ -1,12 +1,12 @@
 #!/bin/bash
 
 # What to do in this script
-setdomain=false
-build=false
-setcase=false
-setbatch=false
-makerealiz=false
-run=false
+setdomain=true
+build=true
+setcase=true
+setbatch=true
+makerealiz=true
+run=true
 runrealiz=true
 
 realization=r1
@@ -132,9 +132,9 @@ fi
 dx=4000.    # zonal resolution in m
 dy=4000.    # meridional resolution in m
 dt=15.      # time increment in seconds
-#nstop=288000 # 50 days # number of time steps to run
+nstop=288000 # 50 days # number of time steps to run
 #nstop=5760 # =1day
-nstop=23040 # =4days
+#nstop=23040 # =4days
 nelapse=$nstop  # stop the model in intermediate runs
 
 #------------------------ Physical setup --------------------------#
@@ -236,10 +236,10 @@ fi
 #                       Create batch script                        #
 #------------------------------------------------------------------#
 
-# qos=regular
-qos=debug
-# runtime=24:00:00
-runtime=00:30:00
+qos=regular
+# qos=debug
+runtime=24:00:00
+# runtime=00:30:00
 datetime=`date +"%Y%m%d-%H%M"`
 exescript=SAM_${ADVDIR}_${SGSDIR}_${RADDIR}_${MICRODIR}
 # Save executable on a new name
@@ -305,17 +305,17 @@ if [ "$makerealiz" == "true" ] || [ "$runrealiz" == "true" ]; then
     sed -i "s/run=.*/run=${runrealiz}/" ${r_script}
     # Set which experiment to duplicate
     sed -i "s/case=.*/case=${casename}/" ${r_script}
-    sed -i "s/caseidroot=.*/caseidroot=${caseidroot}/" ${r_script}
+    sed -i "s/caseidroot=.*/caseidroot=\"${caseidroot}\"/" ${r_script}
     # Set number of realizations
     sed -i "s/nmin=.*/nmin=2/" ${r_script}
     sed -i "s/nmax=.*/nmax=${nrlz}/" ${r_script}
 
+    # Create and/or run realizations
+    echo "Duplicate/run realizations"
+    ./${r_script}
+    cd -
+
 fi
-
-# Create and/or run realizations
-./${r_script}
-cd -
-
 
 echo "startup script completed"
 

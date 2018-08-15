@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # What to do in this script
-makerealiz=false
+makerealiz=true
 run=true
 
 # Which run to duplicate
@@ -14,7 +14,7 @@ nmin=2
 nmax=3
 
 # Where
-#machine=tornado
+#machine=coriknl
 machine=coriknl
 
 # Directories
