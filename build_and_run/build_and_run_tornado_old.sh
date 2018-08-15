@@ -24,10 +24,10 @@ SCRIPTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 cd ${MODELDIR}
 
-#-- if model is compatible with edmf, then pick edmf
+#-- if model is compatible with edmf, then pick edmf branch
 #-- else pick master branch
 branch=edmf
-git checkout $branch
+git checkout $branch || exit 1
 
 #------------------------------------------------------------------#
 #             Set up domains, subdomains and processors            #
@@ -64,12 +64,14 @@ cd ..
 #                           Build model                            #
 #------------------------------------------------------------------#
 
+cd ${MODELDIR}
+
 #------------------------ Output directory ------------------------#
 SAMSCR=${OUTPUTDIR}
 #----------------------------- Schemes ----------------------------#
 ADV=MPDATA
 ADVDIR=ADV_${ADV}        # Advection scheme
-if [ "$experiment" =~ EDMF* ]; then
+if [[ "$experiment" =~ EDMF* ]]; then
     SGS=EDMF
 else
     SGS=TKE
@@ -83,7 +85,7 @@ MICRODIR=MICRO_${MICRO}  # Microphysics scheme
 
 #Set up the model for single/multi processor
 if [ "$HOSTNAME" == "tornado" ]; then
-	echo "switch SRC/task_util* scripts to run in serial"
+    echo "switch SRC/task_util* scripts to run in serial"
     mv SRC/task_util_NOMPI.f9000 SRC/task_util_NOMPI.f90 2> /dev/null
     mv SRC/task_util_MPI.f90 SRC/task_util_MPI.f9000 2> /dev/null
     # If on EDMF branch, edits to statistics.f90 not compatible with serial mode
@@ -135,14 +137,14 @@ nelapse=$nstop  # when to stop the model for intermediate runs
 #------------------------- Physical setup -------------------------#
 doseasons='.false.'
 doperpetual='.true.'
-dosmagor='.false.'
-if [[ "${experiment}" =~ SMAG* ]]; then
-	dosmagor='.true.'
-fi
+dosmagor='.true.'
+# if [[ "${experiment}" =~ SMAG* ]]; then
+# 	dosmagor='.true.'
+# fi
 
 #------------------------------ EDMF ------------------------------#
 doedmf=".false."
-if [ "$experiment" =~ EDMF* ]; then
+if [[ "$experiment" =~ EDMF* ]]; then
     doedmf=".true."
 fi
 
@@ -153,7 +155,7 @@ caseid=\"${ADV}x${SGS}x${RAD}x${MICRO}_`echo $dx | bc -l`x\
 
 #-------------------------- Parameter File ------------------------#
 refprmfilename=prm_template
-prmfile=prm_${explabel}
+prmfile=prm
 
 if [ "$setcase" == "true" ]; then 
 
@@ -200,7 +202,7 @@ nsave3D=40       # sampling period of 3D fields in model steps
 
 #-------------------------- Restart files -------------------------#
 nrestart_skip=0
-dokeeprestart=.true.
+dokeeprestart=.false.
 
 #--------------------------- Movie files --------------------------#
 nmovie=40 
