@@ -3,7 +3,6 @@
 
 # case=RCE
 case=$1
-# caseidroot=MPDATAxTKExCAMxSAM1MOM_4000x4000x15_256x1x32_SMAG-CTRL
 caseidroot=$2
 number=$3
 machine=$4

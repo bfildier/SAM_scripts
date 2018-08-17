@@ -139,10 +139,11 @@ dosmagor='.false.'
 if [[ "${experiment}" =~ SMAG* ]]; then
 	dosmagor='.true.'
 fi
+coefsmag=0.1
 
 #------------------------------ EDMF ------------------------------#
 doedmf=".false."
-if [ "$experiment" =~ EDMF* ]; then
+if [[ "$experiment" =~ EDMF* ]]; then
     doedmf=".true."
 fi
 
@@ -171,6 +172,7 @@ if [ "$setcase" == "true" ]; then
     sed -i '' "s/doseasons = .*/doseasons = ${doseasons}/" ${prmfile}
     sed -i '' "s/doperpetual = .*/doperpetual = ${doperpetual}/" ${prmfile}
     sed -i '' "s/dosmagor = .*/dosmagor = ${dosmagor}/" ${prmfile}
+    sed -i '' "s/coefsmag = .*/coefsmag = ${coefsmag},/" ${prmfile}
 
     if [ "$branch" == "edmf" ]; then
         sed -i '' "s/doedmf = .*/doedmf = ${doedmf}/" ${prmfile}

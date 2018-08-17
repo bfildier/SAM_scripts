@@ -38,9 +38,7 @@ cd ${MODELDIR}/SRC
 
 nx=128
 ny=128
-#ny=1
 nz=32
-#nsubx=20; nsuby=16
 nsubx=32; nsuby=4
 
 if [ "$setdomain" == "true" ]; then
@@ -144,6 +142,7 @@ dosmagor='.false.'
 if [[ "${experiment}" =~ SMAG* ]]; then
     dosmagor='.true.'
 fi
+coefsmag=0.1
 
 #------------------------------ EDMF ------------------------------#
 doedmf=".false."
@@ -176,6 +175,7 @@ if [ "$setcase" == "true" ]; then
     sed -i "s/doseasons = .*/doseasons = ${doseasons}/" ${prmfile}
     sed -i "s/doperpetual = .*/doperpetual = ${doperpetual}/" ${prmfile}
     sed -i "s/dosmagor = .*/dosmagor = ${dosmagor}/" ${prmfile}
+    sed -i "s/coefsmag = .*/coefsmag = ${coefsmag},/" ${prmfile}
 
     if [ "$branch" == "edmf" ]; then
         sed -i "s/doedmf = .*/doedmf = ${doedmf}/" ${prmfile}
