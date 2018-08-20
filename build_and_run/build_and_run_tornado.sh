@@ -8,9 +8,10 @@ setrunscript=true
 run=false
 
 realization=r1
-experiment=STD
+# experiment=STD
 # experiment=EDMF
 # experiment=SMAG-CTRL
+experiment=SMAG-CS01
 explabel=${experiment}-${realization}
 
 
@@ -19,6 +20,8 @@ CURRENTDIR=$PWD
 SCRIPTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 # Define MODELDIR and OUTPUTDIR
 . ${SCRIPTDIR}/../load_dirnames.sh ${machine}
+# Load functions
+. ${SCRIPTDIR}/../bash_util/string_operations.sh 
 
 #------------- Activate the right version of the model ------------#
 
@@ -139,7 +142,12 @@ dosmagor='.false.'
 if [[ "${experiment}" =~ SMAG* ]]; then
 	dosmagor='.true.'
 fi
-coefsmag=0.1
+# Define eddy diffusivity coefficient
+CS_str=${experiment##*-CS}
+CS_str=${CS_str%%-*}
+coefsmag=`str2float ${CS_str}` # if it can be considered as a number
+[[ "$coefsmag" =~ [0-9].* ]] || coefsmag=0.15 # Use default value
+                                # if no number is found in the name
 
 #------------------------------ EDMF ------------------------------#
 doedmf=".false."
@@ -149,8 +157,8 @@ fi
 
 #------------------------------ Case ------------------------------#
 casename=RCE
-caseid=\"${ADV}x${SGS}x${RAD}x${MICRO}_`echo $dx | bc -l`x\
-`echo $dy | bc -l`x`echo $dt | bc -l`_${nx}x${ny}x${nz}_${explabel}\"
+caseid=${ADV}x${SGS}x${RAD}x${MICRO}_`echo $dx | bc -l`x\
+`echo $dy | bc -l`x`echo $dt | bc -l`_${nx}x${ny}x${nz}_${explabel}
 
 #-------------------------- Parameter File ------------------------#
 refprmfilename=prm_template
@@ -163,7 +171,7 @@ if [ "$setcase" == "true" ]; then
 
     cd ${casename}
     cp ${refprmfilename} ${prmfile}
-    sed -i '' "s/caseid =.*/caseid = $caseid/" ${prmfile}
+    sed -i '' "s/caseid =.*/caseid = \"$caseid\"/" ${prmfile}
     sed -i '' "s/dx =.*/dx = $dx/" ${prmfile}
     sed -i '' "s/dy =.*/dy = $dy/" ${prmfile}
     sed -i '' "s/dt =.*/dt = $dt/" ${prmfile}

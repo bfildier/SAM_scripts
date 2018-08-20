@@ -1,13 +1,16 @@
 #!/bin/bash
 
-function str2float(str){
+function str2float(){
 
-	if [[ "${str}" =~ 0* ]]; then
-		echo "add a dot"
-		coef=${str#0}
-		return "0.${coef}"
+	if [[ "$1" =~ [0-9]+d[0-9]+ ]]; then
+		units=${1%d*}
+		decimals=${1##*d}
+		echo ${units}.${decimals}
+	elif [[ "$1" =~ ^0.* ]]; then
+		digits=${1#0}
+		echo 0.${digits}
 	else
-		return ${str}
+		echo $1
 	fi
 
 }
