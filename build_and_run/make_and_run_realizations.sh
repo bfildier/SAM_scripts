@@ -6,7 +6,7 @@ run=true
 
 # Which run to duplicate
 case=RCE
-caseidroot="MPDATAxTKExCAMxSAM1MOM_4000x4000x15_128x128x32_SMAG-CTRL"
+caseidroot="MPDATAxTKExCAMxSAM1MOM_4000x4000x15_128x128x32_TKE-CS01"
 expname=${caseidroot##*_}
 # minimum realization number to create
 nmin=2
