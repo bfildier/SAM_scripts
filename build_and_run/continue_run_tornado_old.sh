@@ -1,93 +1,52 @@
 #!/bin/bash
 
 # What to do in this script
-restorefiles=true
 editoutputs=true
 setrunscript=true
 run=true
 
-machine=tornado
 CURRENTDIR=$PWD
+MODELDIR=/Users/bfildier/beforeReloadingBackup/SAM6.11.1
 SCRIPTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-# Define MODELDIR and OUTPUTDIR
-. ${SCRIPTDIR}/../load_dirnames.sh ${machine}
-# Load functions
-. ${SCRIPTDIR}/../bash_util/string_operations.sh 
 
+casename=RCE
+exescript=SAM_ADV_MPDATA_SGS_TKE_RAD_CAM_MICRO_M2005
 
-# simulation name
-simname="RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_256x1x32_SMAG-CS01-r1"
-casename=`casenameFromSimname $simname`
-exescript=`exescriptFromSimname $simname`
-explabel=`expnameFromSimname $simname`
-
-
-#------------------------------------------------------------------#
-#                        Restore run files                         #
-#------------------------------------------------------------------#
-
-cd ${SCRIPTDIR}
-
-if [ "$restorefiles" == "true" ]; then
-
-    echo "restore files from"
-    # Choose to restore namelist file
-    sed -i '' "s/restorenamelist=.*/restorenamelist=true/" ${restorescript}
-    # Choose to restore output files
-    sed -i '' "s/restoreoutputs=.*/restoreoutputs=true/" ${restorescript}
-    # Restore all files
-    ./restore_restart_files_tornado.sh "$simname"
-
-else
-
-    echo "File restoration phase passed."
-
-fi
+cd ${MODELDIR}
 
 
 #------------------------------------------------------------------#
 #                      Edit output parameters                      #
 #------------------------------------------------------------------#
 
-cd ${MODELDIR}
-
 #-------------------------- Run duration --------------------------#
-nstop=12000   # number of time steps of the overall simulation
+nstop=6000   # number of time steps of the overall simulation
 #------------------------ Standard output -------------------------#
 nprint=40      # frequency for prinouts in number of time steps 
 #------------------------ Statistics file -------------------------#
 nstat=40       # frequency of statistics outputs in number of time steps
 nstatfrq=20    # sample size for computing statistics (number of samples per statistics calculations)
-dosatupdnconditionals='.false.'
 #-------------------------- 2D-3D fields --------------------------#
 output_sep='.false.'
 nsave2D=40       # sampling period of 2D fields in model steps
 nsave3D=40       # sampling period of 3D fields in model 
 
 
-
-prmfile=prm_${explabel}
-
 if [ "$editoutputs" == "true" ]; then
 
     echo "edit outputs"
     cd $casename
-    sed -i '' "s/nrestart =.*/nrestart = 1,/" $prmfile
-    sed -i '' "s/nstop =.*/nstop = ${nstop}/" $prmfile
-    sed -i '' "s/nstop =.*/nstop = ${nstop}/" $prmfile
-    sed -i '' "s/nprint =.*/nprint = $nprint/" $prmfile
-    sed -i '' "s/nstat =.*/nstat = $nstat/" $prmfile
-    sed -i '' "s/nstatfrq =.*/nstatfrq = $nstatfrq/" $prmfile
-    sed -i '' "s/dosatupdnconditionals = .*/dosatupdnconditionals = ${dosatupdnconditionals}/" ${prmfile}
-    sed -i '' "s/output_sep =.*/output_sep = ${output_sep}/" $prmfile
-    sed -i '' "s/nsave2D = .*/nsave2D = ${nsave2D}/" $prmfile
-    sed -i '' "s/nsave3D = .*/nsave3D = ${nsave3D}/" $prmfile
+    sed -i '' "s/nrestart =.*/nrestart = 1,/" prm
+    sed -i '' "s/nstop    =.*/nstop    = ${nstop}/" prm
+    sed -i '' "s/nstop    =.*/nstop    = ${nstop}/" prm
+    sed -i '' "s/nprint   =.*/nprint   = $nprint/" prm
+    sed -i '' "s/nstat    =.*/nstat    = $nstat/" prm
+    sed -i '' "s/nstatfrq =.*/nstatfrq = $nstatfrq/" prm
+    sed -i '' "s/output_sep =.*/output_sep = ${output_sep}/" prm
+    sed -i '' "s/nsave2D = .*/nsave2D = ${nsave2D}/" prm
+    sed -i '' "s/nsave3D = .*/nsave3D = ${nsave3D}/" prm
     echo
     cd ..
-
-else
-
-    echo "No output parameter changed."
 
 fi
 
@@ -99,7 +58,7 @@ machine=tornado
 datetime=`date +"%Y%m%d-%H%M"`
 stdoutlog=${SCRIPTDIR}/logs/${exescript}_${machine}_${datetime}.log
 stderrlog=${SCRIPTDIR}/logs/${exescript}_${machine}_${datetime}.err
-runscript=${SCRIPTDIR}/run_scripts/run_${machine}_${explabel}.sh
+runscript=${SCRIPTDIR}/run_${machine}.sh
 
 if [ "$setrunscript" == "true" ]; then
     

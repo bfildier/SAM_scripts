@@ -12,7 +12,7 @@ SCRIPTNAME=`basename "$0"`
 # What/where to convert
 currentsim=true # true if in model's output dir, false if in directory given in argument
 doout2d=true
-doout3d=true
+doout3d=false
 dooutstat=false
 
 echo $currentsim

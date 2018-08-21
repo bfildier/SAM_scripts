@@ -3,8 +3,8 @@
 # What to do in this script
 restorefiles=true
 editoutputs=true
-setrunscript=true
-run=true
+setrunscript=false
+run=false
 
 machine=tornado
 CURRENTDIR=$PWD
@@ -15,11 +15,19 @@ SCRIPTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 . ${SCRIPTDIR}/../bash_util/string_operations.sh 
 
 
-# simulation name
+# Old simulation name
 simname="RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_256x1x32_SMAG-CS01-r1"
+caseid=`caseidFromSimname $simname`
 casename=`casenameFromSimname $simname`
 exescript=`exescriptFromSimname $simname`
 explabel=`expnameFromSimname $simname`
+
+# Branched/new simulation
+newexp="b1"
+newexplabel=${explabel}-${newexp}
+# caseidroot=${caseid%_*}
+newcaseid=${caseid}-${newexp}
+newexescript=${exescript}-${newexp}
 
 
 #------------------------------------------------------------------#
@@ -28,15 +36,18 @@ explabel=`expnameFromSimname $simname`
 
 cd ${SCRIPTDIR}
 
+restarttime=0000000200 # Time label of the restart files to use
+restorescript=restore_restart_files_tornado.sh
+
 if [ "$restorefiles" == "true" ]; then
 
-    echo "restore files from"
-    # Choose to restore namelist file
-    sed -i '' "s/restorenamelist=.*/restorenamelist=true/" ${restorescript}
-    # Choose to restore output files
-    sed -i '' "s/restoreoutputs=.*/restoreoutputs=true/" ${restorescript}
-    # Restore all files
-    ./restore_restart_files_tornado.sh "$simname"
+    echo "restore files from $simname"
+    # Choose to ignore namelist file
+    sed -i '' "s/restorenamelist=.*/restorenamelist=false/" ${restorescript}
+    # Choose to ignore output files
+    sed -i '' "s/restoreoutputs=.*/restoreoutputs=false/" ${restorescript}
+    # Restore all files except namelist files
+    ./${restorescript} ${simname} ${restarttime}
 
 else
 
@@ -64,18 +75,34 @@ output_sep='.false.'
 nsave2D=40       # sampling period of 2D fields in model steps
 nsave3D=40       # sampling period of 3D fields in model 
 
-
-
-prmfile=prm_${explabel}
+# Copy parameter file
+oldprmfile=prm_${explabel}
+prmfile=prm_${newexplabel}
 
 if [ "$editoutputs" == "true" ]; then
 
     echo "edit outputs"
     cd $casename
-    sed -i '' "s/nrestart =.*/nrestart = 1,/" $prmfile
+
+    cp prm_template ${prmfile}
+
+    # Copy all parameters from old prm file to new prm file
+    grep = ${oldprmfile} | while read line; do
+        key=`echo $line | tr -d ' ' | cut -d'=' -f1`
+        value=`echo $line | tr -d ' ' | cut -d'=' -f2`
+        sed -i '' "s/${key} =.*/${key} = ${value}/" $prmfile
+    done
+
+    # Edit branching options
+    sed -i '' "s/nrestart =.*/nrestart = 2,/" $prmfile
+    sed -i '' "s/caseid_restart =.*/caseid_restart = \"${caseid}\"/" $prmfile
+    sed -i '' "s/case_restart =.*/case_restart = \"${casename}\"/" $prmfile
+    sed -i '' "s/caseid =.*/caseid = \"${newcaseid}\"/" $prmfile
+    # Edit run options
     sed -i '' "s/nstop =.*/nstop = ${nstop}/" $prmfile
     sed -i '' "s/nstop =.*/nstop = ${nstop}/" $prmfile
     sed -i '' "s/nprint =.*/nprint = $nprint/" $prmfile
+    # Edit output options
     sed -i '' "s/nstat =.*/nstat = $nstat/" $prmfile
     sed -i '' "s/nstatfrq =.*/nstatfrq = $nstatfrq/" $prmfile
     sed -i '' "s/dosatupdnconditionals = .*/dosatupdnconditionals = ${dosatupdnconditionals}/" ${prmfile}
@@ -95,19 +122,21 @@ fi
 #                         Create run script                        #
 #------------------------------------------------------------------#
 
-machine=tornado
+# Copy executable
 datetime=`date +"%Y%m%d-%H%M"`
-stdoutlog=${SCRIPTDIR}/logs/${exescript}_${machine}_${datetime}.log
-stderrlog=${SCRIPTDIR}/logs/${exescript}_${machine}_${datetime}.err
-runscript=${SCRIPTDIR}/run_scripts/run_${machine}_${explabel}.sh
+stdoutlog=${SCRIPTDIR}/logs/${newexescript}_${machine}_${datetime}.log
+stderrlog=${SCRIPTDIR}/logs/${newexescript}_${machine}_${datetime}.err
+runscript=${SCRIPTDIR}/run_scripts/run_${machine}_${newexplabel}.sh
 
 if [ "$setrunscript" == "true" ]; then
     
-    echo "set run script"
+    echo "set executable and run script"
+
+    cp ${exescript} ${newexescript}
     # Copying and editing run script
     cp ${SCRIPTDIR}/template_run_${machine}.sh ${runscript}
     sed -i '' "s|RUNDIR|${MODELDIR}|" ${runscript}
-    sed -i '' "s|EXESCRIPT|${exescript}|g" ${runscript}
+    sed -i '' "s|EXESCRIPT|${newexescript}|g" ${runscript}
     sed -i '' "s|STDOUT|${stdoutlog}|g" ${runscript}
     sed -i '' "s|STDERR|${stderrlog}|g" ${runscript}
 

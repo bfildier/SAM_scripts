@@ -170,8 +170,8 @@ if [ "$setcase" == "true" ]; then
     sed -i "s/dx =.*/dx = $dx/" ${prmfile}
     sed -i "s/dy =.*/dy = $dy/" ${prmfile}
     sed -i "s/dt =.*/dt = $dt/" ${prmfile}
-    sed -i "s/nstop    =.*/nstop    = ${nstop}/" ${prmfile}
-    sed -i "s/nelapse  =.*/nelapse  = ${nelapse}/" ${prmfile}
+    sed -i "s/nstop =.*/nstop = ${nstop}/" ${prmfile}
+    sed -i "s/nelapse =.*/nelapse = ${nelapse}/" ${prmfile}
     sed -i "s/doseasons = .*/doseasons = ${doseasons}/" ${prmfile}
     sed -i "s/doperpetual = .*/doperpetual = ${doperpetual}/" ${prmfile}
     sed -i "s/dosmagor = .*/dosmagor = ${dosmagor}/" ${prmfile}
@@ -216,8 +216,8 @@ if [ "$setcase" == "true" ]; then
 
     echo "set outputs"
     cd $casename
-    sed -i "s/nprint   =.*/nprint   = $nprint/" ${prmfile}
-    sed -i "s/nstat    =.*/nstat    = $nstat/" ${prmfile}
+    sed -i "s/nprint =.*/nprint = $nprint/" ${prmfile}
+    sed -i "s/nstat =.*/nstat = $nstat/" ${prmfile}
     sed -i "s/nstatfrq =.*/nstatfrq = $nstatfrq/" ${prmfile}
     sed -i "s/output_sep =.*/output_sep = ${output_sep}/" ${prmfile}
     sed -i "s/nsave2D = .*/nsave2D = ${nsave2D}/" ${prmfile}
