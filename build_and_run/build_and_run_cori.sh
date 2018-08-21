@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # What to do in this script
-setdomain=true
+setdomain=false
 build=true
 setcase=true
 setbatch=true
@@ -12,7 +12,7 @@ runrealiz=true
 realization=r1
 # experiment=STD
 # experiment=EDMF
-experiment=SMAG-CTRL
+experiment=TKE-CS01
 explabel=${experiment}-${realization}
 
 machine=coriknl
@@ -130,7 +130,8 @@ fi
 dx=4000.    # zonal resolution in m
 dy=4000.    # meridional resolution in m
 dt=15.      # time increment in seconds
-nstop=288000 # 50 days # number of time steps to run
+#nstop=288000 # 50 days # number of time steps to run
+nstop=576000 # 100 days
 #nstop=5760 # =1day
 #nstop=23040 # =4days
 nelapse=$nstop  # stop the model in intermediate runs
@@ -142,6 +143,7 @@ dosmagor='.false.'
 if [[ "${experiment}" =~ SMAG* ]]; then
     dosmagor='.true.'
 fi
+echo "Set dosmagor to $dosmagor"
 coefsmag=0.1
 
 #------------------------------ EDMF ------------------------------#
@@ -152,8 +154,8 @@ fi
 
 #------------------------------ Case ------------------------------#
 casename=RCE
-caseid=\"${ADV}x${SGS}x${RAD}x${MICRO}_`echo $dx | bc -l`x\
-`echo $dy | bc -l`x`echo $dt | bc -l`_${nx}x${ny}x${nz}_${explabel}\"
+caseid=${ADV}x${SGS}x${RAD}x${MICRO}_`echo $dx | bc -l`x\
+`echo $dy | bc -l`x`echo $dt | bc -l`_${nx}x${ny}x${nz}_${explabel}
 
 #-------------------------- Parameter File ------------------------#
 refprmfilename=prm_template
@@ -166,7 +168,7 @@ if [ "$setcase" == "true" ]; then
 
     cd $casename
     cp ${refprmfilename} ${prmfile}
-    sed -i "s/caseid =.*/caseid = $caseid/" ${prmfile}
+    sed -i "s/caseid =.*/caseid = \"$caseid\"/" ${prmfile}
     sed -i "s/dx =.*/dx = $dx/" ${prmfile}
     sed -i "s/dy =.*/dy = $dy/" ${prmfile}
     sed -i "s/dt =.*/dt = $dt/" ${prmfile}
