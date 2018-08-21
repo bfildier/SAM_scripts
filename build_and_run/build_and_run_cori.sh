@@ -20,6 +20,8 @@ CURRENTDIR=$PWD
 SCRIPTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 # Define MODELDIR and OUTPUTDIR
 . ${SCRIPTDIR}/../load_dirnames.sh ${machine}
+# Load functions
+. ${SCRIPTDIR}/../bash_util/string_operations.sh
 
 #------------- Activate the right version of the model ------------#
 
@@ -144,7 +146,12 @@ if [[ "${experiment}" =~ SMAG* ]]; then
     dosmagor='.true.'
 fi
 echo "Set dosmagor to $dosmagor"
-coefsmag=0.1
+# Define eddy diffusivity coefficient
+CS_str=${experiment##*-CS}
+CS_str=${CS_str%%-*}
+coefsmag=`str2float ${CS_str}` # if it can be considered as a number
+[[ "$coefsmag" =~ [0-9].* ]] || coefsmag=0.15 # Use default value
+                                # if no number is found in the name
 
 #------------------------------ EDMF ------------------------------#
 doedmf=".false."

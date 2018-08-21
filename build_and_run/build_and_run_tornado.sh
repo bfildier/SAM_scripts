@@ -21,7 +21,7 @@ SCRIPTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 # Define MODELDIR and OUTPUTDIR
 . ${SCRIPTDIR}/../load_dirnames.sh ${machine}
 # Load functions
-. ${SCRIPTDIR}/../bash_util/string_operations.sh 
+. ${SCRIPTDIR}/../bash_util/string_operations.sh
 
 #------------- Activate the right version of the model ------------#
 
@@ -142,6 +142,7 @@ dosmagor='.false.'
 if [[ "${experiment}" =~ SMAG* ]]; then
 	dosmagor='.true.'
 fi
+echo "Set dosmagor to $dosmagor"
 # Define eddy diffusivity coefficient
 CS_str=${experiment##*-CS}
 CS_str=${CS_str%%-*}
@@ -233,7 +234,6 @@ if [ "$setcase" == "true" ]; then
     sed -i '' "s/nmovie =.*/nmovie = $nmovie/" ${prmfile}
     sed -i '' "s/nmoviestart =.*/nmoviestart = $nmoviestart/" ${prmfile}
     sed -i '' "s/nmovieend =.*/nmovieend = $nmovieend/" ${prmfile}
-    echo
     cd ..
 
 fi
