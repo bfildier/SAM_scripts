@@ -12,7 +12,7 @@ runrealiz=true
 realization=r1
 # experiment=STD
 # experiment=EDMF
-experiment=TKE-CS01
+experiment=SMAG-CS02
 explabel=${experiment}-${realization}
 
 machine=coriknl
