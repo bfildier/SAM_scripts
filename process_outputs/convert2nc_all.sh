@@ -1,7 +1,6 @@
 #!/bin/bash
 
-machine=tornado
-#machine=coriknl
+machine=$2
 
 # Target directory where is stored the output
 SCRIPTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
@@ -10,10 +9,10 @@ SCRIPTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 SCRIPTNAME=`basename "$0"`
 
 # What/where to convert
-currentsim=true # true if in model's output dir, false if in directory given in argument
-doout2d=true
+currentsim=false # true if in model's output dir, false if in directory given in argument
+doout2d=false
 doout3d=false
-dooutstat=false
+dooutstat=true
 
 echo $currentsim
 

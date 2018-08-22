@@ -95,8 +95,8 @@ if [ "$editoutputs" == "true" ]; then
 
     # Edit branching options
     sed -i '' "s/nrestart =.*/nrestart = 2,/" $prmfile
-    sed -i '' "s/caseid_restart =.*/caseid_restart = \"${caseid}\"/" $prmfile
-    sed -i '' "s/case_restart =.*/case_restart = \"${casename}\"/" $prmfile
+    sed -i '' "s/!caseid_restart =.*/caseid_restart = \"${caseid}\"/" $prmfile
+    sed -i '' "s/!case_restart =.*/case_restart = \"${casename}\"/" $prmfile
     sed -i '' "s/caseid =.*/caseid = \"${newcaseid}\"/" $prmfile
     # Edit run options
     sed -i '' "s/nstop =.*/nstop = ${nstop}/" $prmfile
