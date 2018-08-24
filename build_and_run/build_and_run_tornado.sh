@@ -132,7 +132,7 @@ fi
 dx=4000.    # zonal resolution in m
 dy=4000.    # meridional resolution in m
 dt=15.      # time increment in seconds
-nstop=12480  # number of time steps to run
+nstop=480  # number of time steps to run
 nelapse=$nstop  # when to stop the model for intermediate runs
 
 #------------------------- Physical setup -------------------------#
@@ -203,6 +203,7 @@ nprint=40      # frequency for prinouts in number of time steps
 nstat=40       # frequency of statistics outputs in number of time steps
 nstatfrq=20    # sample size for computing statistics (number of samples per statistics calculations)
 dosatupdnconditionals='.false.'
+doPWconditionals='.true.'
 
 #-------------------------- 2D-3D fields --------------------------#
 output_sep='.false.'
@@ -231,6 +232,7 @@ if [ "$setcase" == "true" ]; then
     sed -i '' "s/nrestart_skip =.*/nrestart_skip = ${nrestart_skip}/" ${prmfile}
     sed -i '' "s/dokeeprestart = .*/dokeeprestart = ${dokeeprestart}/" ${prmfile}
     sed -i '' "s/dosatupdnconditionals = .*/dosatupdnconditionals = ${dosatupdnconditionals}/" ${prmfile}
+    sed -i '' "s/doPWconditionals = .*/doPWconditionals = ${doPWconditionals}/" ${prmfile}
     sed -i '' "s/nmovie =.*/nmovie = $nmovie/" ${prmfile}
     sed -i '' "s/nmoviestart =.*/nmoviestart = $nmoviestart/" ${prmfile}
     sed -i '' "s/nmovieend =.*/nmovieend = $nmovieend/" ${prmfile}

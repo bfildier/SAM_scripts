@@ -206,6 +206,7 @@ nprint=1440      # frequency for prinouts in number of time steps
 nstat=240       # frequency of statistics outputs in number of time steps
 nstatfrq=30    # sample size for computing statistics (number of samples per statistics calculations)
 dosatupdnconditionals='.true.'
+doPWconditionals='.true.'
 
 #-------------------------- 2D-3D fields --------------------------#
 output_sep='.false.'
@@ -234,6 +235,7 @@ if [ "$setcase" == "true" ]; then
     sed -i "s/nrestart_skip = .*/nrestart_skip = ${nrestart_skip}/" ${prmfile}
     sed -i "s/dokeeprestart = .*/dokeeprestart = ${dokeeprestart}/" ${prmfile}
     sed -i "s/dosatupdnconditionals = .*/dosatupdnconditionals = ${dosatupdnconditionals}/" ${prmfile}
+    sed -i "s/doPWconditionals = .*/doPWconditionals = ${doPWconditionals}/" ${prmfile}
     sed -i "s/nmovie = .*/nmovie = ${nmovie}/" ${prmfile}
     sed -i "s/nmoviestart = .*/nmoviestart = ${nmoviestart}/" ${prmfile}
     sed -i "s/nmovieend = .*/nmovieend = ${nmovieend}/" ${prmfile}
