@@ -1,6 +1,6 @@
 #!/bin/bash
 
-machine=$2
+machine=$1
 
 # Target directory where is stored the output
 SCRIPTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
@@ -9,7 +9,7 @@ SCRIPTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 SCRIPTNAME=`basename "$0"`
 
 # What/where to convert
-currentsim=false # true if in model's output dir, false if in directory given in argument
+currentsim=true # true if in model's output dir, false if in directory given in argument
 doout2d=false
 doout3d=false
 dooutstat=true
@@ -19,7 +19,7 @@ echo $currentsim
 if [[ "$currentsim" == "true" ]]; then
     TARGETDIR=${OUTPUTDIR}
 else
-    TARGETDIR=$1
+    TARGETDIR=$2
 fi
 
 echo $OUTPUTDIR

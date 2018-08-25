@@ -5,14 +5,14 @@ setdomain=false
 build=true
 setcase=true
 setbatch=true
-makerealiz=true
+makerealiz=false
 run=true
-runrealiz=true
+runrealiz=false
 
 realization=r1
-# experiment=STD
+experiment=STD
 # experiment=EDMF
-experiment=TKE-CS0
+#experiment=TKE-CS0
 explabel=${experiment}-${realization}
 
 machine=coriknl
@@ -245,10 +245,10 @@ fi
 #                       Create batch script                        #
 #------------------------------------------------------------------#
 
-qos=regular
-# qos=debug
-runtime=24:00:00
-# runtime=00:30:00
+#qos=regular
+qos=debug
+#runtime=24:00:00
+runtime=00:02:00
 datetime=`date +"%Y%m%d-%H%M"`
 exescript=SAM_${ADVDIR}_${SGSDIR}_${RADDIR}_${MICRODIR}
 # Save executable on a new name
