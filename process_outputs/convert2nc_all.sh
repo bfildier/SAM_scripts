@@ -19,7 +19,7 @@ echo $currentsim
 if [[ "$currentsim" == "true" ]]; then
     TARGETDIR=${OUTPUTDIR}
 else
-    TARGETDIR=$2
+    TARGETDIR=${ARCHIVEDIR}/${machine}/$2
 fi
 
 echo $OUTPUTDIR
