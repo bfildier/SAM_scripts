@@ -1,13 +1,11 @@
 #!/bin/bash
 
 # What to do in this script
-setdomain=true
-build=true
+setdomain=f
+build=f
 setcase=true
-setbatch=true
-makerealiz=false
+setrunscript=true
 run=true
-runrealiz=false
 
 realization=r1
 experiment=STD
@@ -38,10 +36,10 @@ git checkout $branch
 
 cd ${MODELDIR}/SRC
 
-nx=128
-ny=128
+nx=256
+ny=1
 nz=32
-nsubx=32; nsuby=4
+nsubx=1; nsuby=1
 
 if [ "$setdomain" == "true" ]; then
 
@@ -84,25 +82,16 @@ MICRO=SAM1MOM
 MICRODIR=MICRO_${MICRO}  # Microphysics scheme
 
 #Set up the model for single/multi processor when switching machine
-if [ "$HOSTNAME" == "tornado" ]; then
-    echo "switch SRC/task_util* scripts to run in serial"
-    mv SRC/task_util_NOMPI.f9000 SRC/task_util_NOMPI.f90 2> /dev/null
-    mv SRC/task_util_MPI.f90 SRC/task_util_MPI.f9000 2> /dev/null
-    # If on EDMF branch, edits to statistics.f90 not compatible with serial mode
-    echo "comment lines in SRC/statistics.f90 that crash when compiling in serial"
-    echo "in order for the following lines to work, first remove the indentation"
-    echo "on lines 694 and 711 (and remove linebreak on line 711)"
-    sed -i '' "s/^include 'mpif.h'/!include 'mpif.h'/" SRC/statistics.f90
-    sed -i '' "s/^call MPI_/!call MPI_/" SRC/statistics.f90
-    sed -i '' "s/^MPI_/!MPI_/" SRC/statistics.f90
-elif [[ "$HOSTNAME" =~ edison* || "$HOSTNAME" =~ cori* ]]; then
-    mv SRC/task_util_NOMPI.f90 SRC/task_util_NOMPI.f9000 2> /dev/null
-    mv SRC/task_util_MPI.f9000 SRC/task_util_MPI.f90 2> /dev/null
-    # If on EDMF branch, set back edits to statistics.f90
-    sed -i "s/!include 'mpif.h'/include 'mpif.h'/" SRC/statistics.f90
-    sed -i "s/^!call MPI_/call MPI_/" SRC/statistics.f90
-    sed -i "s/^!MPI_/MPI_/" SRC/statistics.f90
-fi
+echo "switch SRC/task_util* scripts to run in serial"
+mv SRC/task_util_NOMPI.f9000 SRC/task_util_NOMPI.f90 2> /dev/null
+mv SRC/task_util_MPI.f90 SRC/task_util_MPI.f9000 2> /dev/null
+# If on EDMF branch, edits to statistics.f90 not compatible with serial mode
+echo "comment lines in SRC/statistics.f90 that crash when compiling in serial"
+echo "in order for the following lines to work, first remove the indentation"
+echo "on lines 694 and 711 (and remove linebreak on line 711)"
+sed -i "s/^include 'mpif.h'/!include 'mpif.h'/" SRC/statistics.f90
+sed -i "s/^call MPI_/!call MPI_/" SRC/statistics.f90
+sed -i "s/^MPI_/!MPI_/" SRC/statistics.f90
 
 if [ "$build" == "true" ]; then
 
@@ -132,11 +121,7 @@ fi
 dx=4000.    # zonal resolution in m
 dy=4000.    # meridional resolution in m
 dt=15.      # time increment in seconds
-#nstop=288000 # 50 days # number of time steps to run
-#nstop=576000 # 100 days
-#nstop=5760 # =1day
-#nstop=23040 # =4days
-nstop=480 # 2h
+nstop=480 # 2h # number of time steps to run
 nelapse=$nstop  # stop the model in intermediate runs
 
 #------------------------ Physical setup --------------------------#
@@ -201,25 +186,25 @@ fi
 #------------------------------------------------------------------#
 
 #------------------------ Standard output -------------------------#
-nprint=1440      # frequency for prinouts in number of time steps 
+nprint=40      # frequency for prinouts in number of time steps 
 
 #------------------------ Statistics file -------------------------#
-nstat=240       # frequency of statistics outputs in number of time steps
-nstatfrq=30    # sample size for computing statistics (number of samples per statistics calculations)
-dosatupdnconditionals='.true.'
+nstat=40       # frequency of statistics outputs in number of time steps
+nstatfrq=20    # sample size for computing statistics (number of samples per statistics calculations)
+dosatupdnconditionals='.false.'
 doPWconditionals='.true.'
 
 #-------------------------- 2D-3D fields --------------------------#
 output_sep='.false.'
-nsave2D=240       # sampling period of 2D fields in model steps
-nsave3D=240       # sampling period of 3D fields in model steps
+nsave2D=40       # sampling period of 2D fields in model steps
+nsave3D=40       # sampling period of 3D fields in model steps
 
 #-------------------------- Restart files -------------------------#
-nrestart_skip=23
+nrestart_skip=0
 dokeeprestart=.true.
 
 #--------------------------- Movie files --------------------------#
-nmovie=60 
+nmovie=40 
 nmoviestart=$((nstop+1))
 nmovieend=$nstop
 
@@ -245,44 +230,30 @@ if [ "$setcase" == "true" ]; then
 fi
 
 #------------------------------------------------------------------#
-#                       Create batch script                        #
+#                       Create run script                          #
 #------------------------------------------------------------------#
 
-#qos=regular
-qos=debug
-#runtime=24:00:00
-runtime=00:02:00
 datetime=`date +"%Y%m%d-%H%M"`
 exescript=SAM_${ADVDIR}_${SGSDIR}_${RADDIR}_${MICRODIR}
 # Save executable on a new name
 newexescript=${exescript}_${explabel}
 cp $exescript $newexescript
-batchscript=${SCRIPTDIR}/run_scripts/run_${machine}_${explabel}.sbatch
+stdoutlog=${SCRIPTDIR}/logs/${newexescript}_${machine}_${datetime}.log
+stderrlog=${SCRIPTDIR}/logs/${newexescript}_${machine}_${datetime}.err
+runscript=${SCRIPTDIR}/run_scripts/run_${machine}_${explabel}.sh
 
-# Compute number of nodes and tasks - similarly to what is done for mkbatch.cori-knl for CESM
-tasks=$((nsubx*nsuby))
-maxtaskspernode=64
-N=$((tasks/maxtaskspernode))
-R=$((tasks%maxtaskspernode))
-if ((R>0)); then nodes=$((N+1)); else nodes=$N; fi
+if [ "$setrunscript" == "true" ]; then
 
-echo nodes=$nodes
-echo tasks=$tasks
+    echo "set run script"
+    # Copying and editing run script
+    cp ${SCRIPTDIR}/template_run_tornado.sh ${runscript}
+    sed -i "s|RUNDIR|${MODELDIR}|" ${runscript}
+    sed -i "s|EXESCRIPT|${newexescript}|g" ${runscript}
+    sed -i "s|STDOUT|${stdoutlog}|g" ${runscript}
+    sed -i "s|STDERR|${stderrlog}|g" ${runscript}
 
-if [ "$setbatch" == "true" ]; then
-    
-    echo "create batch script"
-    # Copying and editing batch script
-    cp ${SCRIPTDIR}/template_run_${machine}.sbatch ${batchscript}
-    sed -i "s/--qos=.*/--qos=${qos}/" ${batchscript}
-    sed -i "s/--time=.*/--time=${runtime}/" ${batchscript}
-    sed -i "s/CASENAME/${casename}/g" ${batchscript}
-    sed -i "s/DATETIME/${datetime}/g" ${batchscript}
-    sed -i "s/--nodes=.*/--nodes=${nodes}/" ${batchscript}
-    sed -i "s/--ntasks=.*/--ntasks=${tasks}/" ${batchscript}
-    sed -i "s|SCRIPTDIR|${SCRIPTDIR}|" ${batchscript}
-    sed -i "s|EXESCRIPT|${newexescript}|" ${batchscript}
-    sed -i "s|MODELDIR|${MODELDIR}|" ${batchscript}
+else
+    echo "run script setup phase passed"
 fi
 
 #------------------------------------------------------------------#
@@ -291,42 +262,11 @@ fi
 
 if [ "$run" == "true" ]; then
 
-    echo "submit batch job"
-    cd ${MODELDIR}
-    sbatch ${batchscript}
-    cd -
+    echo "Start run"
+    ${runscript}
 
-fi
-
-#------------------------------------------------------------------#
-#                        Make realizations                         #
-#------------------------------------------------------------------#
-
-nrlz=3    # Number of realizations
-caseidroot=${caseid%-*} # caseid without the realization suffix _rX
-r_script=make_and_run_realizations.sh
-
-cd ${SCRIPTDIR}
-
-
-if [ "$makerealiz" == "true" ] || [ "$runrealiz" == "true" ]; then
-
-    sed -i "s/machine=.*/machine=${machine}/" ${r_script}
-    # Use the script in duplicate mode, not run mode
-    sed -i "s/makerealiz=.*/makerealiz=${makerealiz}/" ${r_script}
-    sed -i "s/run=.*/run=${runrealiz}/" ${r_script}
-    # Set which experiment to duplicate
-    sed -i "s/case=.*/case=${casename}/" ${r_script}
-    sed -i "s/caseidroot=.*/caseidroot=\"${caseidroot}\"/" ${r_script}
-    # Set number of realizations
-    sed -i "s/nmin=.*/nmin=2/" ${r_script}
-    sed -i "s/nmax=.*/nmax=${nrlz}/" ${r_script}
-
-    # Create and/or run realizations
-    echo "Duplicate/run realizations"
-    ./${r_script}
-    cd -
-
+else
+    echo "run phase passed"
 fi
 
 echo "startup script completed"
