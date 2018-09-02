@@ -8,10 +8,10 @@ setrunscript=true
 run=false
 
 realization=r1
-# experiment=STD
+experiment=STD
 # experiment=EDMF
 # experiment=SMAG-CTRL
-experiment=SMAG-CS01
+# experiment=SMAG-CS01
 explabel=${experiment}-${realization}
 
 
@@ -203,7 +203,7 @@ nprint=40      # frequency for prinouts in number of time steps
 nstat=40       # frequency of statistics outputs in number of time steps
 nstatfrq=20    # sample size for computing statistics (number of samples per statistics calculations)
 dosatupdnconditionals='.false.'
-doPWconditionals='.true.'
+doPWconditionals='.false.'
 
 #-------------------------- 2D-3D fields --------------------------#
 output_sep='.false.'

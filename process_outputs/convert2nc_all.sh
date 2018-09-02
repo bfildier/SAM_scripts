@@ -1,6 +1,6 @@
 #!/bin/bash
 
-machine=$2
+machine=$1
 
 # Target directory where is stored the output
 SCRIPTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
@@ -19,7 +19,7 @@ echo $currentsim
 if [[ "$currentsim" == "true" ]]; then
     TARGETDIR=${OUTPUTDIR}
 else
-    TARGETDIR=${ARCHIVEDIR}/${machine}/$1
+    TARGETDIR=${ARCHIVEDIR}/${machine}/$2
 fi
 
 echo $OUTPUTDIR

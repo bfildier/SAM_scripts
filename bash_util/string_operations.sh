@@ -2,7 +2,7 @@
 
 function str2float(){
 
-	if [[ "$1" =~ [0-9]+d[0-9]+ ]]; then
+	if [[ "$1" =~ ^[0-9]+d[0-9]+$ ]]; then
 		units=${1%d*}
 		decimals=${1##*d}
 		echo ${units}.${decimals}
