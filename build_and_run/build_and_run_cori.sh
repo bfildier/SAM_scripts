@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # What to do in this script
-setdomain=true
-build=true
+setdomain=false
+build=false
 setcase=true
 setbatch=true
 makerealiz=false
@@ -10,9 +10,9 @@ run=true
 runrealiz=false
 
 realization=r1
-experiment=STD
+#experiment=STD
 # experiment=EDMF
-#experiment=TKE-CS0
+experiment=SMAG-CS002-SST290
 explabel=${experiment}-${realization}
 
 machine=coriknl
@@ -134,9 +134,11 @@ dy=4000.    # meridional resolution in m
 dt=15.      # time increment in seconds
 #nstop=288000 # 50 days # number of time steps to run
 #nstop=576000 # 100 days
+#nstop=864000 # 150 days
+nstop=1152000 # 200 days
 #nstop=5760 # =1day
 #nstop=23040 # =4days
-nstop=480 # 2h
+#nstop=480 # 2h
 nelapse=$nstop  # stop the model in intermediate runs
 
 #------------------------ Physical setup --------------------------#
@@ -153,6 +155,9 @@ CS_str=${CS_str%%-*}
 coefsmag=`str2float ${CS_str}` # if it can be considered as a number
 [[ "$coefsmag" =~ [0-9].* ]] || coefsmag=0.15 # Use default value
                                 # if no number is found in the name
+SST_str=${experiment##*-SST}
+SST_str=${SST_str%%-*}
+SST=`str2float ${SST_str}`
 
 #------------------------------ EDMF ------------------------------#
 doedmf=".false."
@@ -186,6 +191,7 @@ if [ "$setcase" == "true" ]; then
     sed -i "s/doperpetual = .*/doperpetual = ${doperpetual}/" ${prmfile}
     sed -i "s/dosmagor = .*/dosmagor = ${dosmagor}/" ${prmfile}
     sed -i "s/coefsmag = .*/coefsmag = ${coefsmag},/" ${prmfile}
+    sed -i "s/tabs_s = .*/tabs_s = ${SST},/" ${prmfile}
 
     if [ "$branch" == "edmf" ]; then
         sed -i "s/doedmf = .*/doedmf = ${doedmf}/" ${prmfile}
@@ -215,7 +221,7 @@ nsave2D=240       # sampling period of 2D fields in model steps
 nsave3D=240       # sampling period of 3D fields in model steps
 
 #-------------------------- Restart files -------------------------#
-nrestart_skip=23
+nrestart_skip=47
 dokeeprestart=.true.
 
 #--------------------------- Movie files --------------------------#
@@ -248,10 +254,10 @@ fi
 #                       Create batch script                        #
 #------------------------------------------------------------------#
 
-#qos=regular
-qos=debug
-#runtime=24:00:00
-runtime=00:02:00
+qos=regular
+#qos=debug
+runtime=48:00:00
+#runtime=00:10:00
 datetime=`date +"%Y%m%d-%H%M"`
 exescript=SAM_${ADVDIR}_${SGSDIR}_${RADDIR}_${MICRODIR}
 # Save executable on a new name

@@ -9,11 +9,11 @@ SCRIPTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 SCRIPTNAME=`basename "$0"`
 
 # What/where to convert
-currentsim=false
+currentsim=true
 # (true if in model's output dir, false if in directory given in argument)
 doout2d=true
 doout3d=false
-dooutstat=true
+dooutstat=false
 
 if [[ "$currentsim" == "true" ]]; then
     TARGETDIR=${OUTPUTDIR}
@@ -33,7 +33,7 @@ if [[ "$doout2d" == "true" ]]; then
             ${UTILDIR}/2Dcom2nc ${file} >> ${TARGETDIR}/OUT_2D/${SCRIPTNAME}.log \
             2>> ${TARGETDIR}/OUT_2D/${SCRIPTNAME}.err
         else
-            echo $file already exists
+            echo $filenc already exists
         fi
     done
 fi
@@ -48,7 +48,7 @@ if [[ "$doout3d" == "true" ]]; then
             ${UTILDIR}/com2D2nc ${file} >> ${TARGETDIR}/OUT_3D/${SCRIPTNAME}.log \
             2>> ${TARGETDIR}/OUT_3D/${SCRIPTNAME}.err
         else
-            echo $file already exists
+            echo $filenc already exists
         fi
     done
     # If the simulation is 3D
@@ -59,7 +59,7 @@ if [[ "$doout3d" == "true" ]]; then
             ${UTILDIR}/com3D2nc ${file} >> ${TARGETDIR}/OUT_3D/${SCRIPTNAME}.log \
             2>> ${TARGETDIR}/OUT_3D/${SCRIPTNAME}.err
         else
-            echo $file already exists
+            echo $filenc already exists
         fi
 
     done
@@ -74,7 +74,7 @@ if [[ "$dooutstat" == "true" ]]; then
             ${UTILDIR}/stat2nc ${file} #>> ${TARGETDIR}/OUT_STAT/${SCRIPTNAME}.log \
         #2>> ${TARGETDIR}/OUT_STAT/${SCRIPTNAME}.err
         else
-            echo $file already exists
+            echo $filenc already exists
         fi
     done
 fi
