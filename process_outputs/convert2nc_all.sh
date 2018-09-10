@@ -4,13 +4,15 @@ machine=coriknl
 
 simroot="RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_128x128x32"
 SGS_all='SMAG TKE'
-CS_all='0 005 01 015 02'
+CS_all='005 01 015 02'
+SST_all='290'
 Ns='1 2 3'
 
 currentsim=false
 doout2d=true
 doout3d=false
 dooutstat=true
+overwrite=false
 
 # Target directory where is stored the output
 SCRIPTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
@@ -19,7 +21,7 @@ SCRIPTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # Replace parameters in convert2nc.sh
 convertscript=convert2nc.sh
-for option in currentsim doout2d doout3d dooutstat; do
+for option in currentsim doout2d doout3d dooutstat overwrite; do
     echo Set $option to ${!option}
     if [ "$machine" == "tornado" ]; then
          sed -i '' "s/${option}=.*/${option}=${!option}/" ${SCRIPTDIR}/$convertscript
@@ -31,19 +33,22 @@ done
 # Convert all simulations
 for SGS in `echo ${SGS_all}`; do
   for CS in `echo ${CS_all}`; do
-    for N in `echo ${Ns}`; do
-      simname=${simroot}_${SGS}-CS${CS}-r${N}
-      if [ ! -d ${ARCHIVEDIR}/${machine}/$simname ]; then
-        echo "passing $simname, simulation doesn't exist"
-        continue
-      fi
-      # print header
-      perl -E 'say "-" x 75'
-#      printf "-   %-70s\n" "$simname"
-      echo "-   $simname"
-      perl -E 'say "-" x 75'
-      # execute conversion
-      ${SCRIPTDIR}/$convertscript $machine $simname
+    for SST in `echo ${SST_all}`; do
+      for N in `echo ${Ns}`; do
+        #simname=${simroot}_${SGS}-CS${CS}-r${N}
+        simname=${simroot}_${SGS}-CS${CS}-SST${SST}-r${N}
+        if [ ! -d ${ARCHIVEDIR}/${machine}/$simname ]; then
+          echo "passing $simname, simulation doesn't exist"
+          continue
+        fi
+        # print header
+        perl -E 'say "-" x 75'
+#        printf "-   %-70s\n" "$simname"
+        echo "-   $simname"
+        perl -E 'say "-" x 75'
+        # execute conversion
+        ${SCRIPTDIR}/$convertscript $machine $simname
+      done
     done
   done
 done
