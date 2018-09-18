@@ -4,8 +4,9 @@ machine=coriknl
 
 simroot="RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_128x128x32"
 SGS_all='SMAG TKE'
-CS_all='005 01 015 02'
-SST_all='290'
+CS_all='001 002 005 01 015 02'
+#CS_all='002'
+SST_all='280 290 300'
 Ns='1 2 3'
 
 currentsim=false

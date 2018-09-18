@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # What to do in this script
-setdomain=false
-build=false
+setdomain=true
+build=true
 setcase=true
 setbatch=true
 makerealiz=false
@@ -11,8 +11,9 @@ runrealiz=false
 
 realization=r1
 #experiment=STD
-# experiment=EDMF
-experiment=SMAG-CS002-SST290
+experiment=EDMF
+#experiment=EDMF-SST300
+#experiment=TKE-CS02-SST280
 explabel=${experiment}-${realization}
 
 machine=coriknl
@@ -254,10 +255,10 @@ fi
 #                       Create batch script                        #
 #------------------------------------------------------------------#
 
-qos=regular
-#qos=debug
-runtime=48:00:00
-#runtime=00:10:00
+#qos=regular
+qos=debug
+#runtime=48:00:00
+runtime=00:02:00
 datetime=`date +"%Y%m%d-%H%M"`
 exescript=SAM_${ADVDIR}_${SGSDIR}_${RADDIR}_${MICRODIR}
 # Save executable on a new name
