@@ -1,9 +1,10 @@
 #!/bin/bash 
 
-restorenamelist=false
-restoreoutputs=false
+restorenamelist=true
+restoreoutputs=true
 
-machine=tornado
+machine=coriknl
+tasks=128
 CURRENTDIR=$PWD
 SCRIPTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 # Define MODELDIR and OUTPUTDIR
@@ -33,10 +34,10 @@ if [ "$restorenamelist" == "true" ]; then
 	cp ${SOURCEDIR}/${simname}.nml ${MODELDIR}/${casename}/
 fi
 # Restore restart files
-cp ${SOURCEDIR}/RESTART/${simname}_1_${timetag}restart.bin \
-	${MODELDIR}/RESTART/${simname}_1_restart.bin
-cp ${SOURCEDIR}/RESTART/${simname}_1_${timetag}restart_rad.bin \
-	${MODELDIR}/RESTART/${simname}_1_restart_rad.bin
+cp ${SOURCEDIR}/RESTART/${simname}_${tasks}_${timetag}restart.bin \
+	${MODELDIR}/RESTART/${simname}_${tasks}_restart.bin
+cp ${SOURCEDIR}/RESTART/${simname}_${tasks}_${timetag}restart_rad.bin \
+	${MODELDIR}/RESTART/${simname}_${tasks}_restart_rad.bin
 cp ${SOURCEDIR}/RESTART/${simname}_${timetag}misc_restart.bin \
 	${MODELDIR}/RESTART/${simname}_misc_restart.bin
 if [ "$restoreoutputs" == "true" ]; then
