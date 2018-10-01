@@ -16,7 +16,7 @@ SCRIPTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 
 # simulation name
-simname="RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_128x128x32_TKE-CS015-r1"
+simname="RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_128x128x32_TKE-CS015-SST300-radhomo-r1"
 casename=`casenameFromSimname $simname`
 exescript=`exescriptFromSimname $simname`
 explabel=`expnameFromSimname $simname`
@@ -24,19 +24,20 @@ for keyword in casename exescript explabel; do
     echo "${keyword}: ${!keyword}"
 done
 
-restorescript=restore_restart_files.sh
-
 #------------------------------------------------------------------#
 #                        Restore run files                         #
 #------------------------------------------------------------------#
 
 restorenamelist=true
 restoreoutputs=true
-restarttime=0000576000 # Time label of the restart files to use
+#restarttime=0000576000 # Time label of the restart files to use
+restarttime=0001048320
 
 nsubx=`cat ${ARCHIVEDIR}/${machine}/${simname}/domain.f90 | grep 'nsubdomains_x  =' | head -1 | tr -s ' ' | cut -d' ' -f7`
 nsuby=`cat ${ARCHIVEDIR}/${machine}/${simname}/domain.f90 | grep 'nsubdomains_y  =' | head -1 | tr -s ' ' | cut -d' ' -f7`
 tasks=$((nsubx*nsuby))
+
+restorescript=restore_restart_files.sh
 
 cd ${SCRIPTDIR}
 

@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # What to do in this script
-setdomain=false
-build=false
+setdomain=true
+build=true
 setcase=true
 setbatch=true
 makerealiz=false
@@ -11,10 +11,10 @@ runrealiz=false
 
 realization=r1
 #experiment=STD
-experiment=EDMF
+#experiment=EDMF
 #experiment=EDMF-SST300
-#experiment=TKE-CS02-SST280
-experiment=TKE-CS015-SST290-radhomo
+experiment=TKE-CS015-SST300
+#experiment=TKE-CS015-SST290-radhomo
 explabel=${experiment}-${realization}
 
 machine=coriknl
@@ -135,9 +135,9 @@ dx=4000.    # zonal resolution in m
 dy=4000.    # meridional resolution in m
 dt=15.      # time increment in seconds
 #nstop=288000 # 50 days # number of time steps to run
-nstop=576000 # 100 days
+#nstop=576000 # 100 days
 #nstop=864000 # 150 days
-#nstop=1152000 # 200 days
+nstop=1152000 # 200 days
 #nstop=5760 # =1day
 #nstop=23040 # =4days
 #nstop=480 # 2h
@@ -161,6 +161,7 @@ coefsmag=`str2float ${CS_str}` # if it can be considered as a number
 SST_str=${experiment##*-SST}
 SST_str=${SST_str%%-*}
 tabs_s=`str2float ${SST_str}`
+[[ "$tabs_s" =~ [0-9].* ]] || tabs_s=300 # Use 300K as default value if not specified in the experiment name
 # Choose whether to homogenize radiation
 doradhomo='.false.'
 if [[ "$experiment" =~ .*radhomo.* ]]; then
@@ -259,7 +260,7 @@ fi
 
 qos=regular
 #qos=debug
-runtime=24:00:00
+runtime=48:00:00
 #runtime=00:02:00
 datetime=`date +"%Y%m%d-%H%M"`
 exescript=SAM_${ADVDIR}_${SGSDIR}_${RADDIR}_${MICRODIR}
