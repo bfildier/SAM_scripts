@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # What to do in this script
-restorefiles=false
-editoutputs=false
-setbatch=true
-run=true
+restorefiles=true
+editoutputs=true
+setbatch=false
+run=false
 
 machine=coriknl
 CURRENTDIR=$PWD
@@ -16,7 +16,8 @@ SCRIPTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 
 # simulation name
-simname="RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_128x128x32_TKE-CS015-SST300-radhomo-r1"
+#simname="RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_128x128x32_TKE-CS015-SST300-radhomo-r1"
+simname="RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_128x128x32_TKE-CS015-SST300-r1"
 casename=`casenameFromSimname $simname`
 exescript=`exescriptFromSimname $simname`
 explabel=`expnameFromSimname $simname`
@@ -31,7 +32,7 @@ done
 restorenamelist=true
 restoreoutputs=true
 #restarttime=0000576000 # Time label of the restart files to use
-restarttime=0001048320
+restarttime=0001152000
 
 nsubx=`cat ${ARCHIVEDIR}/${machine}/${simname}/domain.f90 | grep 'nsubdomains_x  =' | head -1 | tr -s ' ' | cut -d' ' -f7`
 nsuby=`cat ${ARCHIVEDIR}/${machine}/${simname}/domain.f90 | grep 'nsubdomains_y  =' | head -1 | tr -s ' ' | cut -d' ' -f7`
@@ -65,7 +66,8 @@ fi
 cd ${MODELDIR}
 
 #-------------------------- Run duration --------------------------#
-nstop=1152000 # 200 days # number of time steps of the overall simulation
+#nstop=1152000 # 200 days # number of time steps of the overall simulation
+nstop=2304000 # 400 days
 nelapse=$nstop
 #------------------------ Standard output -------------------------#
 nprint=1440      # frequency for prinouts in number of time steps 
@@ -111,7 +113,7 @@ fi
 
 qos=regular
 #qos=debug
-runtime=16:00:00
+runtime=48:00:00
 #runtime=00:02:00
 datetime=`date +"%Y%m%d-%H%M"`
 batchscript=${SCRIPTDIR}/run_scripts/run_${machine}_${explabel}.sbatch

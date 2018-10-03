@@ -7,6 +7,8 @@ SGS_all='SMAG TKE'
 CS_all='001 002 005 01 015 02'
 #CS_all='002'
 SST_all='280 290 300'
+RADOPT='-radhomo'
+#RADOPT=''
 Ns='1 2 3'
 
 currentsim=false
@@ -37,7 +39,7 @@ for SGS in `echo ${SGS_all}`; do
     for SST in `echo ${SST_all}`; do
       for N in `echo ${Ns}`; do
         #simname=${simroot}_${SGS}-CS${CS}-r${N}
-        simname=${simroot}_${SGS}-CS${CS}-SST${SST}-r${N}
+        simname=${simroot}_${SGS}-CS${CS}-SST${SST}${RADOPT}-r${N}
         if [ ! -d ${ARCHIVEDIR}/${machine}/$simname ]; then
           echo "passing $simname, simulation doesn't exist"
           continue
