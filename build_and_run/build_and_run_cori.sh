@@ -11,9 +11,10 @@ runrealiz=false
 
 realization=r1
 #experiment=STD
-experiment=EDMF
+#experiment=EDMF
 #experiment=EDMF-SST300
-#experiment=TKE-CS02-SST280
+experiment=TKE-CS015-SST300
+#experiment=TKE-CS015-SST290-radhomo
 explabel=${experiment}-${realization}
 
 machine=coriknl
@@ -156,9 +157,17 @@ CS_str=${CS_str%%-*}
 coefsmag=`str2float ${CS_str}` # if it can be considered as a number
 [[ "$coefsmag" =~ [0-9].* ]] || coefsmag=0.15 # Use default value
                                 # if no number is found in the name
+# Define SST
 SST_str=${experiment##*-SST}
 SST_str=${SST_str%%-*}
-SST=`str2float ${SST_str}`
+tabs_s=`str2float ${SST_str}`
+[[ "$tabs_s" =~ [0-9].* ]] || tabs_s=300 # Use 300K as default value if not specified in the experiment name
+# Choose whether to homogenize radiation
+doradhomo='.false.'
+if [[ "$experiment" =~ .*radhomo.* ]]; then
+    doradhomo='.true.'
+    echo "homogenize radiative heating rates"
+fi
 
 #------------------------------ EDMF ------------------------------#
 doedmf=".false."
@@ -182,18 +191,17 @@ if [ "$setcase" == "true" ]; then
 
     cd $casename
     cp ${refprmfilename} ${prmfile}
-    sed -i "s/caseid =.*/caseid = \"$caseid\"/" ${prmfile}
-    sed -i "s/dx =.*/dx = $dx/" ${prmfile}
-    sed -i "s/dy =.*/dy = $dy/" ${prmfile}
-    sed -i "s/dt =.*/dt = $dt/" ${prmfile}
-    sed -i "s/nstop =.*/nstop = ${nstop}/" ${prmfile}
-    sed -i "s/nelapse =.*/nelapse = ${nelapse}/" ${prmfile}
-    sed -i "s/doseasons = .*/doseasons = ${doseasons}/" ${prmfile}
-    sed -i "s/doperpetual = .*/doperpetual = ${doperpetual}/" ${prmfile}
-    sed -i "s/dosmagor = .*/dosmagor = ${dosmagor}/" ${prmfile}
-    sed -i "s/coefsmag = .*/coefsmag = ${coefsmag},/" ${prmfile}
-    sed -i "s/tabs_s = .*/tabs_s = ${SST},/" ${prmfile}
 
+    # Set caseid
+    sed -i "s/caseid =.*/caseid = \"$caseid\"/" ${prmfile}
+
+    # Set all physical parameters
+    for keyword in dx dy dt nstop nelapse doseasons doperpetual \
+        dosmagor coefsmag tabs_s doradhomo; do
+        sed -i "s/${keyword} =.*/${keyword} = ${!keyword},/" ${prmfile}
+    done
+
+    # Set EDMF scheme if required
     if [ "$branch" == "edmf" ]; then
         sed -i "s/doedmf = .*/doedmf = ${doedmf}/" ${prmfile}
     fi
@@ -234,19 +242,14 @@ if [ "$setcase" == "true" ]; then
 
     echo "set outputs"
     cd $casename
-    sed -i "s/nprint =.*/nprint = $nprint/" ${prmfile}
-    sed -i "s/nstat =.*/nstat = $nstat/" ${prmfile}
-    sed -i "s/nstatfrq =.*/nstatfrq = $nstatfrq/" ${prmfile}
-    sed -i "s/output_sep =.*/output_sep = ${output_sep}/" ${prmfile}
-    sed -i "s/nsave2D = .*/nsave2D = ${nsave2D}/" ${prmfile}
-    sed -i "s/nsave3D = .*/nsave3D = ${nsave3D}/" ${prmfile}
-    sed -i "s/nrestart_skip = .*/nrestart_skip = ${nrestart_skip}/" ${prmfile}
-    sed -i "s/dokeeprestart = .*/dokeeprestart = ${dokeeprestart}/" ${prmfile}
-    sed -i "s/dosatupdnconditionals = .*/dosatupdnconditionals = ${dosatupdnconditionals}/" ${prmfile}
-    sed -i "s/doPWconditionals = .*/doPWconditionals = ${doPWconditionals}/" ${prmfile}
-    sed -i "s/nmovie = .*/nmovie = ${nmovie}/" ${prmfile}
-    sed -i "s/nmoviestart = .*/nmoviestart = ${nmoviestart}/" ${prmfile}
-    sed -i "s/nmovieend = .*/nmovieend = ${nmovieend}/" ${prmfile}
+
+    # Set output parameters
+    for keyword in nprint nstat nstatfrq output_sep nsave2D nsave3D\
+        nrestart_skip dokeeprestart dosatupdnconditionals doPWconditionals\
+        nmovie nmoviestart nmovieend; do
+        sed -i "s/${keyword} =.*/${keyword} = ${!keyword},/" ${prmfile}
+    done
+
     cd ..
 
 fi
@@ -255,10 +258,10 @@ fi
 #                       Create batch script                        #
 #------------------------------------------------------------------#
 
-#qos=regular
-qos=debug
-#runtime=48:00:00
-runtime=00:02:00
+qos=regular
+#qos=debug
+runtime=48:00:00
+#runtime=00:02:00
 datetime=`date +"%Y%m%d-%H%M"`
 exescript=SAM_${ADVDIR}_${SGSDIR}_${RADDIR}_${MICRODIR}
 # Save executable on a new name
