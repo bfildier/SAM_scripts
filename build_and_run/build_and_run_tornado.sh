@@ -202,8 +202,8 @@ nprint=40      # frequency for prinouts in number of time steps
 #------------------------ Statistics file -------------------------#
 nstat=40       # frequency of statistics outputs in number of time steps
 nstatfrq=20    # sample size for computing statistics (number of samples per statistics calculations)
-dosatupdnconditionals='.false.'
-doPWconditionals='.false.'
+dosatupdnconditionals='.true.'
+doPWconditionals='.true.'
 
 #-------------------------- 2D-3D fields --------------------------#
 output_sep='.false.'
