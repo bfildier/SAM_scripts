@@ -1,5 +1,7 @@
 #!/bin/bash 
 
+restoreexecutable=true
+restoredomain=false
 restorenamelist=true
 restoreoutputs=true
 
@@ -26,12 +28,18 @@ fi
 SOURCEDIR=${ARCHIVEDIR}/${machine}/${simname}
 
 # Restore executable
-cp ${SOURCEDIR}/SAM_* ${MODELDIR}/
+if [ "$restoreexecutable" == "true" ]; then
+	cp ${SOURCEDIR}/SAM_* ${MODELDIR}/
+fi
 # Restore parameter file to edit
 cp ${SOURCEDIR}/prm_${explabel} ${MODELDIR}/${casename}/
 # Restore namelist, just in case, probably unnecessary
 if [ "$restorenamelist" == "true" ]; then
 	cp ${SOURCEDIR}/${simname}.nml ${MODELDIR}/${casename}/
+fi
+# Restore domain.f90 file, necessary for rebuild in case of a branch run
+if [ "$restoredomain" == "true" ]; then
+	cp ${SOURCEDIR}/domain.f90 ${MODELDIR}/SRC/
 fi
 # Restore restart files
 cp ${SOURCEDIR}/RESTART/${simname}_${tasks}_${timetag}restart.bin \

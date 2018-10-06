@@ -1,8 +1,9 @@
 #!/bin/bash
 
 # What to do in this script
-setdomain=true
-build=true
+setdomain=false
+build=false
+setinicond=true
 setcase=true
 setbatch=true
 makerealiz=false
@@ -13,8 +14,8 @@ realization=r1
 #experiment=STD
 #experiment=EDMF
 #experiment=EDMF-SST300
-experiment=TKE-CS015-SST300
-#experiment=TKE-CS015-SST290-radhomo
+#experiment=SMAG-SST302-radhomo
+experiment=TKE-SST304-radhomo
 explabel=${experiment}-${realization}
 
 machine=coriknl
@@ -24,6 +25,8 @@ SCRIPTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 . ${SCRIPTDIR}/../load_dirnames.sh ${machine}
 # Load functions
 . ${SCRIPTDIR}/../bash_util/string_operations.sh
+. ${SCRIPTDIR}/../bash_util/machine_specs.sh
+. ${SCRIPTDIR}/../bash_util/experiment_specs.sh
 
 #------------- Activate the right version of the model ------------#
 
@@ -40,10 +43,10 @@ git checkout $branch
 
 cd ${MODELDIR}/SRC
 
-nx=128
-ny=128
-nz=32
-nsubx=32; nsuby=4
+nx=256
+ny=256
+nz=64
+nsubx=64; nsuby=4
 
 if [ "$setdomain" == "true" ]; then
 
@@ -69,51 +72,33 @@ cd ..
 #------------------------------------------------------------------#
 
 #------------------------ Output directory ------------------------#
-SAMSCR=${OUTPUTDIR}
+SAM_SCR=${OUTPUTDIR}
 #----------------------------- Schemes ----------------------------#
 ADV=MPDATA
-ADVDIR=ADV_${ADV}     # Advection scheme
+ADV_DIR=ADV_${ADV}     # Advection scheme
 if [[ "$experiment" =~ EDMF* ]]; then
     SGS=EDMF
 else
     SGS=TKE
 fi
-SGSDIR=SGS_${SGS}        # SGS scheme
+SGS_DIR=SGS_${SGS}        # SGS scheme
 RAD=CAM
-RADDIR=RAD_${RAD}        # Radiation scheme
+RAD_DIR=RAD_${RAD}        # Radiation scheme
 #MICRO=M2005
 MICRO=SAM1MOM
-MICRODIR=MICRO_${MICRO}  # Microphysics scheme
+MICRO_DIR=MICRO_${MICRO}  # Microphysics scheme
 
 #Set up the model for single/multi processor when switching machine
-if [ "$HOSTNAME" == "tornado" ]; then
-    echo "switch SRC/task_util* scripts to run in serial"
-    mv SRC/task_util_NOMPI.f9000 SRC/task_util_NOMPI.f90 2> /dev/null
-    mv SRC/task_util_MPI.f90 SRC/task_util_MPI.f9000 2> /dev/null
-    # If on EDMF branch, edits to statistics.f90 not compatible with serial mode
-    echo "comment lines in SRC/statistics.f90 that crash when compiling in serial"
-    echo "in order for the following lines to work, first remove the indentation"
-    echo "on lines 694 and 711 (and remove linebreak on line 711)"
-    sed -i '' "s/^include 'mpif.h'/!include 'mpif.h'/" SRC/statistics.f90
-    sed -i '' "s/^call MPI_/!call MPI_/" SRC/statistics.f90
-    sed -i '' "s/^MPI_/!MPI_/" SRC/statistics.f90
-elif [[ "$HOSTNAME" =~ edison* || "$HOSTNAME" =~ cori* ]]; then
-    mv SRC/task_util_NOMPI.f90 SRC/task_util_NOMPI.f9000 2> /dev/null
-    mv SRC/task_util_MPI.f9000 SRC/task_util_MPI.f90 2> /dev/null
-    # If on EDMF branch, set back edits to statistics.f90
-    sed -i "s/!include 'mpif.h'/include 'mpif.h'/" SRC/statistics.f90
-    sed -i "s/^!call MPI_/call MPI_/" SRC/statistics.f90
-    sed -i "s/^!MPI_/MPI_/" SRC/statistics.f90
-fi
+cd ${MODELDIR}
+set_SAM_proc_options
 
 if [ "$build" == "true" ]; then
 
     #-- Modify Build script accordingly
-    sed -i "s|setenv SAM_SCR.*|setenv SAM_SCR ${SAMSCR}|" Build 
-    sed -i "s/setenv ADV_DIR.*/setenv ADV_DIR ${ADVDIR}/" Build
-    sed -i "s/setenv SGS_DIR.*/setenv SGS_DIR ${SGSDIR}/" Build
-    sed -i "s/setenv RAD_DIR.*/setenv RAD_DIR ${RADDIR}/" Build
-    sed -i "s/setend MICRO_DIR.*/setenv MICRO_DIR ${MICRODIR}/" Build
+    for keyword in SAM_SCR ADV_DIR SGS_DIR RAD_DIR MICRO_DIR; do
+        echo "set ${keyword} to ${!keywort}"
+        sed -i "s|setenv ${keyword}.*|setenv ${keyword} ${!keyword}|" Build
+    done
 
     # Load netcdf libraries
     module load nco
@@ -122,9 +107,11 @@ if [ "$build" == "true" ]; then
     # Build
     echo "build model"
     ./Build
+
 else
     echo "build phase passed"
 fi
+
 
 #------------------------------------------------------------------#
 #                             Set case                             #
@@ -135,9 +122,9 @@ dx=4000.    # zonal resolution in m
 dy=4000.    # meridional resolution in m
 dt=15.      # time increment in seconds
 #nstop=288000 # 50 days # number of time steps to run
-#nstop=576000 # 100 days
+nstop=576000 # 100 days
 #nstop=864000 # 150 days
-nstop=1152000 # 200 days
+#nstop=1152000 # 200 days
 #nstop=5760 # =1day
 #nstop=23040 # =4days
 #nstop=480 # 2h
@@ -152,16 +139,33 @@ if [[ "${experiment}" =~ SMAG* ]]; then
 fi
 echo "Set dosmagor to $dosmagor"
 # Define eddy diffusivity coefficient
-CS_str=${experiment##*-CS}
-CS_str=${CS_str%%-*}
-coefsmag=`str2float ${CS_str}` # if it can be considered as a number
-[[ "$coefsmag" =~ [0-9].* ]] || coefsmag=0.15 # Use default value
-                                # if no number is found in the name
+coefsmag=`getCsFromExpname $experiment`
+echo "eddy diffusivity coefficient Cs = $coefsmag"
 # Define SST
-SST_str=${experiment##*-SST}
-SST_str=${SST_str%%-*}
-tabs_s=`str2float ${SST_str}`
-[[ "$tabs_s" =~ [0-9].* ]] || tabs_s=300 # Use 300K as default value if not specified in the experiment name
+tabs_s=`getSSTFromExpname $experiment`
+echo "SST = ${tabs_s}"
+delta_sst=`getValFromExpname $experiment deltaT 0`
+ocean_type=0
+if [ "$delta_sst" != '0' ]; then
+    ocean_type=1
+    echo "Delta SST = ${delta_sst}"
+fi
+# Define mixing factors
+tkxyfac=`getValFromExpname $experiment tkxyf 1`
+tkzfac=`getValFromExpname $experiment tkzf 1`
+dochangemixing='.false.'
+[ "$tkxyfac" == "1" ] && [ "$tkzfac" == "1" ] || dochangemixing='.true.'
+if [ "$dochangemixing" == '.true.' ]; then 
+    echo "tkxyfac = $tkxyfac and tkzfac = $tkzfac"
+fi
+# Define mixing factors in dry region alone
+tkxyfac_dry=`getValFromExpname $experiment tkxyfd 1`
+tkzfac_dry=`getValFromExpname $experiment tkzfd 1`
+dochangemixingdry='.false.'
+[ "$tkxyfac_dry" == "1" ] && [ "$tkzfac_dry" == "1" ] || dochangemixingdry='.true.'
+if [ "$dochangemixingdry" == '.true.' ]; then 
+    echo "tkxyfac_dry = $tkxyfac_dry and tkzfac_dry = $tkzfac_dry"
+fi
 # Choose whether to homogenize radiation
 doradhomo='.false.'
 if [[ "$experiment" =~ .*radhomo.* ]]; then
@@ -189,7 +193,7 @@ if [ "$setcase" == "true" ]; then
     echo "set case"
     sed -i "s/.*/$casename/" CaseName
 
-    cd $casename
+    cd ${MODELDIR}/$casename
     cp ${refprmfilename} ${prmfile}
 
     # Set caseid
@@ -197,7 +201,7 @@ if [ "$setcase" == "true" ]; then
 
     # Set all physical parameters
     for keyword in dx dy dt nstop nelapse doseasons doperpetual \
-        dosmagor coefsmag tabs_s doradhomo; do
+        dosmagor coefsmag tabs_s delta_sst ocean_type doradhomo; do
         sed -i "s/${keyword} =.*/${keyword} = ${!keyword},/" ${prmfile}
     done
 
@@ -206,7 +210,6 @@ if [ "$setcase" == "true" ]; then
         sed -i "s/doedmf = .*/doedmf = ${doedmf}/" ${prmfile}
     fi
 
-    cd ..
 else
     echo "case setting phase passed"
 fi
@@ -241,7 +244,7 @@ nmovieend=$nstop
 if [ "$setcase" == "true" ]; then
 
     echo "set outputs"
-    cd $casename
+    cd ${MODELDIR}/$casename
 
     # Set output parameters
     for keyword in nprint nstat nstatfrq output_sep nsave2D nsave3D\
@@ -250,9 +253,60 @@ if [ "$setcase" == "true" ]; then
         sed -i "s/${keyword} =.*/${keyword} = ${!keyword},/" ${prmfile}
     done
 
-    cd ..
 
 fi
+
+#------------------------------------------------------------------#
+#                      Set initial conditions                      #
+#------------------------------------------------------------------#
+
+#whichsnd='default'
+whichsnd='spunupSST'
+#whichsnd='refsnd'
+
+refsndfile=snd_spunup_TKE-SST300-r1
+defaultsndfile=snd_template
+sndfile=snd_${explabel}
+
+cd ${MODELDIR}/$casename
+
+if [ "$setinicond" == "true" ]; then
+
+    echo "-choose snd file"
+
+    if [ "$whichsnd" == "default" ]; then
+        echo "copy default"
+        cp $defaultsndfile $sndfile
+    elif [ "$whichsnd" == "spunupSST" ]; then
+        echo "Use snd file from spunup SST run snd_spunup_TKE-SST${tabs_s}-r1"
+        cp "snd_spunup_TKE-SST${tabs_s}-r1" $sndfile
+    elif [ "$whichsnd" == "refsnd" ]; then
+        echo "use file $refsndfile"
+        cp $refsndfile $sndfile
+    fi
+
+fi
+
+## Choose type of initial perturbation
+perturb_type=0
+if [[ "$experiment" =~ .*bubble.* ]]; then
+    perturb_type=2
+fi
+sed -i "s/perturb_type =.*/perturb_type = ${perturb_type},/" ${prmfile}
+
+if [ "$perturb_type" == "2" ]; then 
+
+    echo "initialize with warm bubble"
+    sed -i "s/bubble_x0 =.*/bubble_x0 = 256000.,/" ${prmfile}
+    sed -i "s/bubble_y0 =.*/bubble_y0 = 256000.,/" ${prmfile}
+    sed -i "s/bubble_z0 =.*/bubble_z0 = 4000.,/" ${prmfile}
+    sed -i "s/bubble_radius_hor =.*/bubble_radius_hor = 25600.,/" ${prmfile}
+    sed -i "s/bubble_radius_ver =.*/bubble_radius_ver = 2000.,/" ${prmfile}
+    sed -i "s/bubble_dtemp =.*/bubble_dtemp = 5.,/" ${prmfile}
+
+fi
+
+cd ..
 
 #------------------------------------------------------------------#
 #                       Create batch script                        #
@@ -263,7 +317,7 @@ qos=regular
 runtime=48:00:00
 #runtime=00:02:00
 datetime=`date +"%Y%m%d-%H%M"`
-exescript=SAM_${ADVDIR}_${SGSDIR}_${RADDIR}_${MICRODIR}
+exescript=SAM_${ADV_DIR}_${SGS_DIR}_${RAD_DIR}_${MICRO_DIR}
 # Save executable on a new name
 newexescript=${exescript}_${explabel}
 cp $exescript $newexescript

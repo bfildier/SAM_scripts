@@ -2,8 +2,8 @@
 
 # What to do in this script
 restorefiles=true
-editoutputs=true
-setbatch=false
+editoutputs=false
+setbatch=true
 run=false
 
 machine=coriknl
@@ -29,14 +29,18 @@ done
 #                        Restore run files                         #
 #------------------------------------------------------------------#
 
+restoreexecutable=true
+restoredomain=false
 restorenamelist=true
 restoreoutputs=true
 #restarttime=0000576000 # Time label of the restart files to use
-restarttime=0001152000
+restarttime=0001981440
 
 nsubx=`cat ${ARCHIVEDIR}/${machine}/${simname}/domain.f90 | grep 'nsubdomains_x  =' | head -1 | tr -s ' ' | cut -d' ' -f7`
 nsuby=`cat ${ARCHIVEDIR}/${machine}/${simname}/domain.f90 | grep 'nsubdomains_y  =' | head -1 | tr -s ' ' | cut -d' ' -f7`
 tasks=$((nsubx*nsuby))
+echo "nsubx,nsuby = $nsubx,$nsuby"
+echo "ntasks = $tasks"
 
 restorescript=restore_restart_files.sh
 
@@ -46,7 +50,7 @@ if [ "$restorefiles" == "true" ]; then
 
     echo "restore files from $simname"
     # Choose to restore namelist and output file
-    for keyword in restorenamelist restoreoutputs machine tasks; do
+    for keyword in restoreexecutable restoredomain restorenamelist restoreoutputs machine tasks; do
         sed -i "s/${keyword}=.*/${keyword}=${!keyword}/" ${restorescript}
     done    
     # Restore all files
