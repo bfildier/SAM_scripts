@@ -201,7 +201,9 @@ if [ "$setcase" == "true" ]; then
 
     # Set all physical parameters
     for keyword in dx dy dt nstop nelapse doseasons doperpetual \
-        dosmagor coefsmag tabs_s delta_sst ocean_type doradhomo; do
+        dosmagor coefsmag tabs_s delta_sst ocean_type doradhomo \
+        tkxyfac tkzfac tkxyfac_dry tkzfac_dry \
+        dochangemixing dochangemixingdry; do
         sed -i "s/${keyword} =.*/${keyword} = ${!keyword},/" ${prmfile}
     done
 
@@ -312,10 +314,10 @@ cd ..
 #                       Create batch script                        #
 #------------------------------------------------------------------#
 
-qos=regular
-#qos=debug
-runtime=48:00:00
-#runtime=00:02:00
+#qos=regular
+qos=debug
+#runtime=48:00:00
+runtime=00:02:00
 datetime=`date +"%Y%m%d-%H%M"`
 exescript=SAM_${ADV_DIR}_${SGS_DIR}_${RAD_DIR}_${MICRO_DIR}
 # Save executable on a new name
