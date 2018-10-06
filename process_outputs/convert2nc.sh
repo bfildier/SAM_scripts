@@ -14,7 +14,7 @@ currentsim=false
 doout2d=true
 doout3d=false
 dooutstat=true
-overwrite=true # overwrite files in all cases
+overwrite=false
 
 if [[ "$currentsim" == "true" ]]; then
     TARGETDIR=${OUTPUTDIR}

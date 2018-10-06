@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # What to do in this script
-restorefiles=false
+restorefiles=true
 editoutputs=false
 setbatch=true
-run=true
+run=false
 
 machine=coriknl
 CURRENTDIR=$PWD
@@ -16,7 +16,8 @@ SCRIPTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 
 # simulation name
-simname="RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_128x128x32_TKE-CS015-SST300-radhomo-r1"
+#simname="RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_128x128x32_TKE-CS015-SST300-radhomo-r1"
+simname="RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_128x128x32_TKE-CS015-SST300-r1"
 casename=`casenameFromSimname $simname`
 exescript=`exescriptFromSimname $simname`
 explabel=`expnameFromSimname $simname`
@@ -28,14 +29,18 @@ done
 #                        Restore run files                         #
 #------------------------------------------------------------------#
 
+restoreexecutable=true
+restoredomain=false
 restorenamelist=true
 restoreoutputs=true
 #restarttime=0000576000 # Time label of the restart files to use
-restarttime=0001048320
+restarttime=0001981440
 
 nsubx=`cat ${ARCHIVEDIR}/${machine}/${simname}/domain.f90 | grep 'nsubdomains_x  =' | head -1 | tr -s ' ' | cut -d' ' -f7`
 nsuby=`cat ${ARCHIVEDIR}/${machine}/${simname}/domain.f90 | grep 'nsubdomains_y  =' | head -1 | tr -s ' ' | cut -d' ' -f7`
 tasks=$((nsubx*nsuby))
+echo "nsubx,nsuby = $nsubx,$nsuby"
+echo "ntasks = $tasks"
 
 restorescript=restore_restart_files.sh
 
@@ -45,7 +50,7 @@ if [ "$restorefiles" == "true" ]; then
 
     echo "restore files from $simname"
     # Choose to restore namelist and output file
-    for keyword in restorenamelist restoreoutputs machine tasks; do
+    for keyword in restoreexecutable restoredomain restorenamelist restoreoutputs machine tasks; do
         sed -i "s/${keyword}=.*/${keyword}=${!keyword}/" ${restorescript}
     done    
     # Restore all files
@@ -65,7 +70,8 @@ fi
 cd ${MODELDIR}
 
 #-------------------------- Run duration --------------------------#
-nstop=1152000 # 200 days # number of time steps of the overall simulation
+#nstop=1152000 # 200 days # number of time steps of the overall simulation
+nstop=2304000 # 400 days
 nelapse=$nstop
 #------------------------ Standard output -------------------------#
 nprint=1440      # frequency for prinouts in number of time steps 
@@ -111,7 +117,7 @@ fi
 
 qos=regular
 #qos=debug
-runtime=16:00:00
+runtime=48:00:00
 #runtime=00:02:00
 datetime=`date +"%Y%m%d-%H%M"`
 batchscript=${SCRIPTDIR}/run_scripts/run_${machine}_${explabel}.sbatch
