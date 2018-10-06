@@ -135,9 +135,9 @@ dx=4000.    # zonal resolution in m
 dy=4000.    # meridional resolution in m
 dt=15.      # time increment in seconds
 #nstop=288000 # 50 days # number of time steps to run
-#nstop=576000 # 100 days
+nstop=576000 # 100 days
 #nstop=864000 # 150 days
-nstop=1152000 # 200 days
+#nstop=1152000 # 200 days
 #nstop=5760 # =1day
 #nstop=23040 # =4days
 #nstop=480 # 2h
@@ -258,10 +258,10 @@ fi
 #                       Create batch script                        #
 #------------------------------------------------------------------#
 
-qos=regular
-#qos=debug
-runtime=48:00:00
-#runtime=00:02:00
+#qos=regular
+qos=debug
+#runtime=48:00:00
+runtime=00:02:00
 datetime=`date +"%Y%m%d-%H%M"`
 exescript=SAM_${ADVDIR}_${SGSDIR}_${RADDIR}_${MICRODIR}
 # Save executable on a new name
