@@ -201,7 +201,9 @@ if [ "$setcase" == "true" ]; then
 
     # Set all physical parameters
     for keyword in dx dy dt nstop nelapse doseasons doperpetual \
-        dosmagor coefsmag tabs_s delta_sst ocean_type doradhomo; do
+        dosmagor coefsmag tabs_s delta_sst ocean_type doradhomo \
+        tkxyfac tkzfac tkxyfac_dry tkzfac_dry \
+        dochangemixing dochangemixingdry; do
         sed -i "s/${keyword} =.*/${keyword} = ${!keyword},/" ${prmfile}
     done
 
