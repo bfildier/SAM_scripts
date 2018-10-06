@@ -4,17 +4,18 @@
 restorefiles=true
 build=true
 setcaseandoutputs=true
-setrunscript=false
+setbatchscript=false
 run=false
 
-machine=tornado
+machine=coriknl
 CURRENTDIR=$PWD
 SCRIPTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 # Define MODELDIR and OUTPUTDIR
 . ${SCRIPTDIR}/../load_dirnames.sh ${machine}
 # Load functions
 . ${SCRIPTDIR}/../bash_util/string_operations.sh 
-
+. ${SCRIPTDIR}/../bash_util/machine_specs.sh
+. ${SCRIPTDIR}/../bash_util/experiment_specs.sh
 
 # Old simulation name
 simname_restart="MPDATAxTKExCAMxSAM1MOM_4000x4000x15_128x128x32_TKE-CS015-SST300-r1"
@@ -27,7 +28,7 @@ for keyword in caseid_restart casename_restart exescript_restart explabel_restar
 done
 
 # Branched/new simulation
-experiment="TKE-SST300-tkzf2-radhomo-r1"
+experiment="TKE-SST300-tkzf2-r1"
 restarttime=0000000200 # Time label of the restart files to use
 bday=`bc <<< "scale = 10; $restarttime/4/60/24"`
 bday=${bday%.*}
@@ -51,9 +52,9 @@ git checkout $branch
 #                        Restore run files                         #
 #------------------------------------------------------------------#
 
-restoreexecutable=false
-restoredomain=true # necessary to build a new model
-restorenamelist=false
+restoreexecutable=false # false because want to build a new model
+restoredomain=true # true because want to build a new model
+restorenamelist=false # will recreate its own
 restoreoutputs=false
 
 # Compute number or tasks (appears in filenames)
@@ -85,6 +86,9 @@ fi
 #                           Build model                            #
 #------------------------------------------------------------------#
 
+# File source file domain.f90 is copied from old run for new branch
+# run during the restoration phase
+
 #------------------------ Output directory ------------------------#
 SAM_SCR=${OUTPUTDIR}
 #----------------------------- Schemes ----------------------------#
@@ -107,6 +111,11 @@ set_SAM_proc_options
 
 # Build the model with new physics components
 if [ "$build" == "true" ]; then
+
+    if [ "$restorefiles" != "true" ]; then
+        echo "Must restore files from previous run in order to build new executable"
+        echo "Aborting branch script..."
+    fi
 
     #-- Modify Build script accordingly
     for keyword in SAM_SCR ADV_DIR SGS_DIR RAD_DIR MICRO_DIR; do
@@ -133,12 +142,14 @@ cd ${MODELDIR}
 
 #-------------------------- Run duration --------------------------#
 nstop=12000   # number of time steps of the overall simulation
+nelapse=$nstop  # stop the model in intermediate runs
 #------------------------ Standard output -------------------------#
-nprint=40      # frequency for prinouts in number of time steps 
+nprint=40      # frequency for prinouts in number of time steps
 #------------------------ Statistics file -------------------------#
 nstat=40       # frequency of statistics outputs in number of time steps
 nstatfrq=20    # sample size for computing statistics (number of samples per statistics calculations)
-dosatupdnconditionals='.false.'
+dosatupdnconditionals='.true.'
+doPWconditionals='.true.'
 #-------------------------- 2D-3D fields --------------------------#
 output_sep='.false.'
 nsave2D=40       # sampling period of 2D fields in model steps
@@ -152,19 +163,38 @@ fi
 echo "Set dosmagor to $dosmagor"
 # Define eddy diffusivity coefficient
 coefsmag=`getCsFromExpname $experiment`
+echo "eddy diffusivity coefficient Cs = $coefsmag"
 # Define SST
 tabs_s=`getSSTFromExpname $experiment`
+echo "SST = ${tabs_s}"
+delta_sst=`getValFromExpname $experiment deltaT 0`
+ocean_type=0
+if [ "$delta_sst" != '0' ]; then
+    ocean_type=1
+    echo "Delta SST = ${delta_sst}"
+fi
+# Define mixing factors
+tkxyfac=`getValFromExpname $experiment tkxyf 1`
+tkzfac=`getValFromExpname $experiment tkzf 1`
+dochangemixing='.false.'
+[ "$tkxyfac" == "1" ] && [ "$tkzfac" == "1" ] || dochangemixing='.true.'
+if [ "$dochangemixing" == '.true.' ]; then
+    echo "tkxyfac = $tkxyfac and tkzfac = $tkzfac"
+fi
+# Define mixing factors in dry region alone
+tkxyfac_dry=`getValFromExpname $experiment tkxyfd 1`
+tkzfac_dry=`getValFromExpname $experiment tkzfd 1`
+dochangemixingdry='.false.'
+[ "$tkxyfac_dry" == "1" ] && [ "$tkzfac_dry" == "1" ] || dochangemixingdry='.true.'
+if [ "$dochangemixingdry" == '.true.' ]; then
+    echo "tkxyfac_dry = $tkxyfac_dry and tkzfac_dry = $tkzfac_dry"
+fi
 # Choose whether to homogenize radiation
 doradhomo='.false.'
 if [[ "$experiment" =~ .*radhomo.* ]]; then
     doradhomo='.true.'
     echo "homogenize radiative heating rates"
 fi
-
-## DEFINE TKZFAC (use bash_util/experiment_specs.sh : getValFromExpname)
-## DEFINE TKXYFAC
-## BASED ON ITS VALUE DEFINE DOMIXING
-## REPEAT FOR DRY REGION ALONE
 
 #------------------------------ EDMF ------------------------------#
 doedmf=".false."
@@ -197,7 +227,9 @@ if [ "$setcaseandoutputs" == "true" ]; then
         nstop nelapse nprint \
         nstat nstatfrq dosatupdnconditionals doPWconditionals \
         output_sep nsave2D nsave3D \
-        dosmagor coefsmag tabs_s doradhomo; do
+        dosmagor coefsmag tabs_s delta_sst ocean_type doradhomo \
+        tkxyfac tkzfac tkxyfac_dry tkzfac_dry \
+        dochangemixing dochangemixingdry; do
         sed -i '' "s/${keyword} =.*/${keyword} = ${!keyword},/" $prmfile
     done
 
@@ -221,39 +253,67 @@ else
 fi
 
 #------------------------------------------------------------------#
-#                         Create run script                        #
+#                       Create batch script                        #
 #------------------------------------------------------------------#
 
-# Copy executable
+cd ${MODELDIR}
+
+#qos=regular
+qos=debug
+#runtime=48:00:00
+runtime=00:02:00
 datetime=`date +"%Y%m%d-%H%M"`
-stdoutlog=${SCRIPTDIR}/logs/${exescript}_${machine}_${datetime}.log
-stderrlog=${SCRIPTDIR}/logs/${exescript}_${machine}_${datetime}.err
-runscript=${SCRIPTDIR}/run_scripts/run_${machine}_${explabel}.sh
 
-if [ "$setrunscript" == "true" ]; then
-    
-    echo "set executable and run script"
-
-    cp ${exescript_restart} ${exescript}
-    # Copying and editing run script
-    cp ${SCRIPTDIR}/template_run_${machine}.sh ${runscript}
-    sed -i '' "s|RUNDIR|${MODELDIR}|" ${runscript}
-    sed -i '' "s|EXESCRIPT|${exescript}|g" ${runscript}
-    sed -i '' "s|STDOUT|${stdoutlog}|g" ${runscript}
-    sed -i '' "s|STDERR|${stderrlog}|g" ${runscript}
-
+# Copy/save executable under a new name
+if [ "$build" == "true" ]; then
+    echo "Use new executable script freshly build"
+    exescript=SAM_${ADV_DIR}_${SGS_DIR}_${RAD_DIR}_${MICRO_DIR}
+    newexescript=${exescript}_${explabel}
 else
-    echo "run script setup phase passed"
+    echo "Use old executable from previous run"
+    exescript=SAM_${ADV_DIR}_${SGS_DIR}_${RAD_DIR}_${MICRO_DIR}_${explabel_restart}
+    newexescript=SAM_${ADV_DIR}_${SGS_DIR}_${RAD_DIR}_${MICRO_DIR}_${explabel}
+fi
+cp $exescript $newexescript
+
+# Create bash script
+batchscript=${SCRIPTDIR}/run_scripts/run_${machine}_${explabel}.sbatch
+
+maxtaskspernode=64 # specific to cori
+N=$((tasks/maxtaskspernode))
+R=$((tasks%maxtaskspernode))
+if ((R>0)); then nodes=$((N+1)); else nodes=$N; fi
+
+echo nodes=$nodes
+echo tasks=$tasks
+
+if [ "$setbatch" == "true" ]; then
+
+    echo "create batch script"
+    # Copying and editing batch script
+    cp ${SCRIPTDIR}/template_run_${machine}.sbatch ${batchscript}
+    sed -i "s/--qos=.*/--qos=${qos}/" ${batchscript}
+    sed -i "s/--time=.*/--time=${runtime}/" ${batchscript}
+    sed -i "s/CASENAME/${casename}/g" ${batchscript}
+    sed -i "s/DATETIME/${datetime}/g" ${batchscript}
+    sed -i "s/--nodes=.*/--nodes=${nodes}/" ${batchscript}
+    sed -i "s/--ntasks=.*/--ntasks=${tasks}/" ${batchscript}
+    sed -i "s|SCRIPTDIR|${SCRIPTDIR}|" ${batchscript}
+    sed -i "s|EXESCRIPT|${newexescript}|" ${batchscript}
+    sed -i "s|MODELDIR|${MODELDIR}|" ${batchscript}
+
 fi
 
 #------------------------------------------------------------------#
 #                               Run                                #
 #------------------------------------------------------------------#
 
+cd ${MODELDIR}
+
 if [ "$run" == "true" ]; then
     
-    echo "Start run"
-    ${runscript}
+    echo "submit batch job"
+    sbatch ${batchscript}
 
 else
     echo "run phase passed"
