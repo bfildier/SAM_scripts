@@ -1,9 +1,9 @@
 #!/bin/bash 
 
-restoreexecutable=true
-restoredomain=false
-restorenamelist=true
-restoreoutputs=true
+restoreexecutable=false
+restoredomain=true
+restorenamelist=false
+restoreoutputs=false
 
 machine=coriknl
 tasks=128

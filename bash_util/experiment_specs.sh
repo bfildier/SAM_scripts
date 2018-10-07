@@ -32,6 +32,6 @@ function getValFromExpname()
   str=${experiment##*-$refstr}
   str=${str%%-*}
   val=`str2float $str`
-  [[ "$val" =~ [0-9].* ]] || val=$defval
+  [[ "${val:0:1}" =~ [0-9].* ]] || val=$defval
   echo $val
 }

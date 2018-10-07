@@ -4,7 +4,7 @@
 restorefiles=true
 build=true
 setcaseandoutputs=true
-setbatchscript=false
+setbatchscript=true
 run=false
 
 machine=coriknl
@@ -18,24 +18,29 @@ SCRIPTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 . ${SCRIPTDIR}/../bash_util/experiment_specs.sh
 
 # Old simulation name
-simname_restart="MPDATAxTKExCAMxSAM1MOM_4000x4000x15_128x128x32_TKE-CS015-SST300-r1"
+simname_restart="RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_128x128x64_TKE-SST300-r1"
 caseid_restart=`caseidFromSimname ${simname_restart}`
 case_restart=`casenameFromSimname ${simname_restart}`
 exescript_restart=`exescriptFromSimname ${simname_restart}`
-explabel_restart=`expnameFromSimname ${simname_restart}`
-for keyword in caseid_restart casename_restart exescript_restart explabel_restart; do
+#explabel_restart=`expnameFromSimname ${simname_restart}`
+echo "-old simulations specs"
+for keyword in simname_restart caseid_restart case_restart exescript_restart explabel_restart; do
     echo "${keyword}: ${!keyword}"
 done
 
 # Branched/new simulation
-experiment="TKE-SST300-tkzf2-r1"
-restarttime=0000000200 # Time label of the restart files to use
+experiment="TKE-SST300-tkzfd2-r1"
+restarttime=0000576000 # Time label of the restart files to use
 bday=`bc <<< "scale = 10; $restarttime/4/60/24"`
 bday=${bday%.*}
 explabel=${explabel_restart}-b${bday}-${experiment}
 # caseidroot=${caseid%_*}
 caseid=${caseid_restart}-${experiment}
-exescript=${exescript_restart}-${experiment}
+#exescript=${exescript_restart}-${experiment}
+echo "-new simulation specs"
+for keyword in experiment restarttime explabel caseid exescript; do
+    echo "${keyword}: ${!keyword}"
+done
 
 
 #------------- Activate the right version of the model ------------#
@@ -58,8 +63,8 @@ restorenamelist=false # will recreate its own
 restoreoutputs=false
 
 # Compute number or tasks (appears in filenames)
-nsubx=`cat ${ARCHIVEDIR}/${machine}/${simname}/domain.f90 | grep 'nsubdomains_x  =' | head -1 | tr -s ' ' | cut -d' ' -f7`
-nsuby=`cat ${ARCHIVEDIR}/${machine}/${simname}/domain.f90 | grep 'nsubdomains_y  =' | head -1 | tr -s ' ' | cut -d' ' -f7`
+nsubx=`cat ${ARCHIVEDIR}/${machine}/${simname_restart}/domain.f90 | grep 'nsubdomains_x  =' | head -1 | tr -s ' ' | cut -d' ' -f7`
+nsuby=`cat ${ARCHIVEDIR}/${machine}/${simname_restart}/domain.f90 | grep 'nsubdomains_y  =' | head -1 | tr -s ' ' | cut -d' ' -f7`
 tasks=$((nsubx*nsuby))
 
 restorescript=restore_restart_files.sh
@@ -68,13 +73,13 @@ cd ${SCRIPTDIR}
 
 if [ "$restorefiles" == "true" ]; then
 
-    echo "restore files from $simname"
+    echo "restore files from $simname_restart"
     # Choose to restore namelist and output file
     for keyword in restoreexecutable restoredomain restorenamelist restoreoutputs machine tasks; do
         sed -i "s/${keyword}=.*/${keyword}=${!keyword}/" ${restorescript}
     done
     # Restore all files
-    ./${restorescript} "$simname" $restarttime
+    ./${restorescript} "$simname_restart" $restarttime
 
 else
 
@@ -294,7 +299,7 @@ if [ "$setbatch" == "true" ]; then
     cp ${SCRIPTDIR}/template_run_${machine}.sbatch ${batchscript}
     sed -i "s/--qos=.*/--qos=${qos}/" ${batchscript}
     sed -i "s/--time=.*/--time=${runtime}/" ${batchscript}
-    sed -i "s/CASENAME/${casename}/g" ${batchscript}
+    sed -i "s/CASENAME/${caseid_restart}/g" ${batchscript}
     sed -i "s/DATETIME/${datetime}/g" ${batchscript}
     sed -i "s/--nodes=.*/--nodes=${nodes}/" ${batchscript}
     sed -i "s/--ntasks=.*/--ntasks=${tasks}/" ${batchscript}
