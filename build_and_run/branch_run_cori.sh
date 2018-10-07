@@ -202,6 +202,21 @@ if [[ "$experiment" =~ .*radhomo.* ]]; then
     doradhomo='.true.'
     echo "homogenize radiative heating rates"
 fi
+# Choose whether to prescribe radiation (with which file)
+doradforcing='.false.'
+dolongwave='.true.'
+doshortwave='.true.'
+if [[ "$experiment" =~ .*radagg.* ]] || [[ "$experiment" =~ .*raddisagg.* ]]; then
+    doradforcing='.true.'
+    dolongwave='.false.'
+    doshortwave='.false.'
+fi
+radfile=rad_${explabel}
+if [[ "$experiment" =~ .*radagg.* ]]; then
+    cp rad_from_TKE-SST${tabs_s}-r1 ${radfile}
+elif [[ "$experiment" =~ .*raddisagg.* ]]; then
+    cp rad_from_TKE-SST${tabs_s}-radhomo-r1 ${radfile}
+fi
 
 #------------------------------ EDMF ------------------------------#
 doedmf=".false."
@@ -236,7 +251,8 @@ if [ "$setcaseandoutputs" == "true" ]; then
         output_sep nsave2D nsave3D \
         dosmagor coefsmag tabs_s delta_sst ocean_type doradhomo \
         tkxyfac tkzfac tkxyfac_dry tkzfac_dry \
-        dochangemixing dochangemixingdry; do
+        dochangemixing dochangemixingdry \
+        doradforcing dolongwave doshortwave; do
         sed -i "s/${keyword} =.*/${keyword} = ${!keyword},/" $prmfile
     done
 
