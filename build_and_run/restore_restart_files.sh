@@ -1,6 +1,6 @@
 #!/bin/bash 
 
-restoreexecutable=false
+restoreexecutable=true
 restoredomain=true
 restorenamelist=false
 restoreoutputs=false

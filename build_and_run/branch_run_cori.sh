@@ -2,7 +2,7 @@
 
 # What to do in this script
 restorefiles=true
-build=true
+build=false
 setcaseandoutputs=true
 setbatchscript=true
 run=true
@@ -31,6 +31,7 @@ done
 # Branched/new simulation
 experiment="TKE-SST300-tkzfd2-r1"
 restarttime=0000576000 # Time label of the restart files to use
+#restarttime=0000564480
 bday=`bc <<< "scale = 10; $restarttime/4/60/24"`
 bday=${bday%.*}
 explabel=${explabel_restart}-b${bday}-${experiment}
@@ -58,6 +59,7 @@ git checkout $branch
 #------------------------------------------------------------------#
 
 restoreexecutable=false # false because want to build a new model
+[[ "$build" == "true" ]] || restoreexecutable=true
 restoredomain=true # true because want to build a new model
 restorenamelist=false # will recreate its own
 restoreoutputs=false
@@ -266,7 +268,7 @@ cd ${MODELDIR}
 #qos=regular
 qos=debug
 #runtime=48:00:00
-runtime=00:02:00
+runtime=00:04:00
 datetime=`date +"%Y%m%d-%H%M"`
 
 # Copy/save executable under a new name
@@ -299,7 +301,7 @@ if [ "$setbatchscript" == "true" ]; then
     cp ${SCRIPTDIR}/template_run_${machine}.sbatch ${batchscript}
     sed -i "s/--qos=.*/--qos=${qos}/" ${batchscript}
     sed -i "s/--time=.*/--time=${runtime}/" ${batchscript}
-    sed -i "s/CASENAME/${caseid_restart}/g" ${batchscript}
+    sed -i "s/CASENAME/${case_restart}/g" ${batchscript}
     sed -i "s/DATETIME/${datetime}/g" ${batchscript}
     sed -i "s/--nodes=.*/--nodes=${nodes}/" ${batchscript}
     sed -i "s/--ntasks=.*/--ntasks=${tasks}/" ${batchscript}
