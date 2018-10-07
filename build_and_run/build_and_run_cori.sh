@@ -15,7 +15,7 @@ realization=r1
 #experiment=EDMF
 #experiment=EDMF-SST300
 #experiment=SMAG-SST302-radhomo
-experiment=TKE-SST304-radhomo
+experiment=TKE-SST304-tkxyf3
 explabel=${experiment}-${realization}
 
 machine=coriknl
@@ -43,10 +43,10 @@ git checkout $branch
 
 cd ${MODELDIR}/SRC
 
-nx=256
-ny=256
+nx=128
+ny=128
 nz=64
-nsubx=64; nsuby=4
+nsubx=32; nsuby=4
 
 if [ "$setdomain" == "true" ]; then
 
@@ -314,10 +314,10 @@ cd ..
 #                       Create batch script                        #
 #------------------------------------------------------------------#
 
-#qos=regular
-qos=debug
-#runtime=48:00:00
-runtime=00:02:00
+qos=regular
+#qos=debug
+runtime=30:00:00
+#runtime=00:02:00
 datetime=`date +"%Y%m%d-%H%M"`
 exescript=SAM_${ADV_DIR}_${SGS_DIR}_${RAD_DIR}_${MICRO_DIR}
 # Save executable on a new name

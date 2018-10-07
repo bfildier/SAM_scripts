@@ -5,7 +5,7 @@ restorefiles=true
 build=true
 setcaseandoutputs=true
 setbatchscript=true
-run=false
+run=true
 
 machine=coriknl
 CURRENTDIR=$PWD
@@ -21,8 +21,8 @@ SCRIPTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 simname_restart="RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_128x128x64_TKE-SST300-r1"
 caseid_restart=`caseidFromSimname ${simname_restart}`
 case_restart=`casenameFromSimname ${simname_restart}`
-exescript_restart=`exescriptFromSimname ${simname_restart}`
-#explabel_restart=`expnameFromSimname ${simname_restart}`
+#exescript_restart=`exescriptFromSimname ${simname_restart}`
+explabel_restart=`expnameFromSimname ${simname_restart}`
 echo "-old simulations specs"
 for keyword in simname_restart caseid_restart case_restart exescript_restart explabel_restart; do
     echo "${keyword}: ${!keyword}"
@@ -35,7 +35,7 @@ bday=`bc <<< "scale = 10; $restarttime/4/60/24"`
 bday=${bday%.*}
 explabel=${explabel_restart}-b${bday}-${experiment}
 # caseidroot=${caseid%_*}
-caseid=${caseid_restart}-${experiment}
+caseid=${caseid_restart}-b${bday}-${experiment}
 #exescript=${exescript_restart}-${experiment}
 echo "-new simulation specs"
 for keyword in experiment restarttime explabel caseid exescript; do
@@ -216,7 +216,7 @@ nrestart=2
 if [ "$setcaseandoutputs" == "true" ]; then
 
     echo "edit outputs"
-    cd $casename
+    cd ${case_restart}
 
     cp prm_template ${prmfile}
 
@@ -224,7 +224,7 @@ if [ "$setcaseandoutputs" == "true" ]; then
     grep = ${oldprmfile} | while read line; do
         key=`echo $line | tr -d ' ' | cut -d'=' -f1`
         value=`echo $line | tr -d ' ' | cut -d'=' -f2`
-        sed -i '' "s/${key} =.*/${key} = ${value}/" $prmfile
+        sed -i "s/${key} =.*/${key} = ${value}/" $prmfile
     done
 
     # Options to replace -- no enclosing quotes
@@ -235,17 +235,17 @@ if [ "$setcaseandoutputs" == "true" ]; then
         dosmagor coefsmag tabs_s delta_sst ocean_type doradhomo \
         tkxyfac tkzfac tkxyfac_dry tkzfac_dry \
         dochangemixing dochangemixingdry; do
-        sed -i '' "s/${keyword} =.*/${keyword} = ${!keyword},/" $prmfile
+        sed -i "s/${keyword} =.*/${keyword} = ${!keyword},/" $prmfile
     done
 
     # Options to replace -- enclosing quotes
     for keyword in caseid_restart case_restart caseid; do
-        sed -i '' "s/${keyword} =.*/${keyword} = \"${!keyword}\",/" $prmfile
+        sed -i "s/${keyword} =.*/${keyword} = \"${!keyword}\",/" $prmfile
     done
 
     # Options to uncomment
     for keyword in caseid_restart case_restart; do
-        sed -i '' "s/!${keyword}/${keyword}/" $prmfile
+        sed -i "s/!${keyword}/${keyword}/" $prmfile
     done
 
     echo
@@ -292,7 +292,7 @@ if ((R>0)); then nodes=$((N+1)); else nodes=$N; fi
 echo nodes=$nodes
 echo tasks=$tasks
 
-if [ "$setbatch" == "true" ]; then
+if [ "$setbatchscript" == "true" ]; then
 
     echo "create batch script"
     # Copying and editing batch script
