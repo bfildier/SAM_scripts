@@ -17,7 +17,7 @@ SCRIPTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 . ${SCRIPTDIR}/../bash_util/machine_specs.sh
 . ${SCRIPTDIR}/../bash_util/experiment_specs.sh
 
-SST=308
+SST=300
 # Old simulation name
 simname_restart="RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_256x256x64_TKE-SST${SST}-r1"
 #simname_restart="RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_256x256x64_TKE-SST${SST}-radhomo-r1"
@@ -33,15 +33,13 @@ done
 # Branched/new simulation
 #experiment="radagg"
 #experiment="raddisagg"
-#experiment="tkzfd0d5"
+experiment="tkzfd4-dt5"
 #experiment="sfcagg"
-experiment="sfcdisagg"
-#experiment="sfchomo"
+#experiment="sfcdisagg"
 #experiment="radhomo-sfcdisagg"
 #experiment="radhomo-sfcagg"
 restarttime=0000864000 # Time label of the restart files to use
 #restarttime=0000564480
-#restarttime=0000576000
 bday=`bc <<< "scale = 10; $restarttime/4/60/24"`
 bday=${bday%.*}
 explabel=${explabel_restart}-b${bday}-${experiment}
@@ -159,29 +157,34 @@ cd ${MODELDIR}
 
 dx=4000.    # zonal resolution in m
 dy=4000.    # meridional resolution in m
-dt=15.      # time increment in seconds
-#dt=10.
+#dt=15.      # time increment in seconds
+dt=5.
 #ncycle_max=4
 ncycle_max=8
 #ncycle_max=12
 #-------------------------- Run duration --------------------------#
 #nstop=1152000   # number of time steps of the overall simulation
 #nstop=288000 # = 50 days
-nstop=576000 # = 100 days
+#nstop=576000 # = 100 days
 #nstop=864000 # = 150 days
 #nstop=480 # = 2h
+nstop=1728000 # = 100 days for dt=5s
 nelapse=$nstop  # stop the model in intermediate runs
 #------------------------ Standard output -------------------------#
-nprint=1440      # frequency for prinouts in number of time steps
+#nprint=1440      # frequency for prinouts in number of time steps
+nprint=4320 # 6h for dt=5s
 #------------------------ Statistics file -------------------------#
-nstat=240       # frequency of statistics outputs in number of time steps
+#nstat=240       # frequency of statistics outputs in number of time steps
+nstat=720 # 1h for dt=5s
 nstatfrq=30    # sample size for computing statistics (number of samples per statistics calculations)
 dosatupdnconditionals='.true.'
 doPWconditionals='.true.'
 #-------------------------- 2D-3D fields --------------------------#
 output_sep='.false.'
-nsave2D=240       # sampling period of 2D fields in model steps
-nsave3D=240       # sampling period of 3D fields in model 
+#nsave2D=240       # sampling period of 2D fields in model steps
+nsave2D=720 # 1h for dt=5s
+#nsave3D=240       # sampling period of 3D fields in model 
+nsave3D=720 # 1h for dt=5s
 #-------------------------- Restart files -------------------------#
 nrestart_skip=47
 dokeeprestart=.true.
@@ -232,12 +235,6 @@ doradhomo='.false.'
 if [[ "$experiment" =~ .*radhomo.* ]]; then
     doradhomo='.true.'
     echo "homogenize radiative heating rates"
-fi
-# Choose whether to homogenize surface fluxes
-dosfchomo='.false.'
-if [[ "$experiment" =~ .*sfchomo.* ]]; then
-    dosfchomo='.true.'
-    echo "homogenize surface fluxes"
 fi
 # Choose whether to prescribe radiation (with which file)
 doradforcing='.false.'
@@ -310,7 +307,6 @@ if [ "$setcaseandoutputs" == "true" ]; then
         nmovie nmoviestart nmovieend \
         dx dy dt doseasons doperpetual \
         dosmagor coefsmag tabs_s delta_sst ocean_type doradhomo \
-        dosfchomo \
         tkxyfac tkzfac tkxyfac_dry tkzfac_dry \
         dochangemixing dochangemixingdry \
         doradforcing dolongwave doshortwave \
@@ -343,8 +339,7 @@ fi
 
 cd ${MODELDIR}
 
-#qos=regular
-qos=premium
+qos=regular
 #qos=debug
 runtime=48:00:00
 #runtime=00:3:00

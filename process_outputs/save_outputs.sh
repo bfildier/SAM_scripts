@@ -18,12 +18,19 @@ EXESCRIPT=`exescriptFromSimname $simname`
 EXP=`expnameFromSimname $simname`
 
 mode=overwrite
-if [ "$mode" == "overwrite" ]; then
-    echo "NB: overwriting ${TARGETDIR}"
+#mode=newcopy
+    
     if [[ "$machinesource" == "$machinetarget" ]]; then
 
-        TARGETDIR=${ARCHIVEDIR}/${machinesource}/${simname}
-        [ -d $TARGETDIR ] || ( mkdir $TARGETDIR && echo "create $TARGETDIR" )
+        if [ "$mode" == "overwrite" ]; then
+            TARGETDIR=${ARCHIVEDIR}/${machinesource}/${simname}
+            [ -d $TARGETDIR ] || ( mkdir $TARGETDIR && echo "create $TARGETDIR" )
+            echo "NB: overwriting ${TARGETDIR}"
+        elif [ "$mode" == "newcopy" ]; then
+            TARGETDIR=${ARCHIVEDIR}/${machinesource}/${simname}_copy
+            [ -d $TARGETDIR ] || ( mkdir $TARGETDIR && echo "create $TARGETDIR" )
+            echo "NB: save in separate folder ${TARGERDIR}"
+        fi
 
         cd ${TARGETDIR}
 
@@ -70,5 +77,5 @@ if [ "$mode" == "overwrite" ]; then
 # elif [ "$mode" == "copy" ]; then
 # elif [ "$mode" == "append" ]; then
 #   for dir in "OUT_* RESTART"
-fi
+
 

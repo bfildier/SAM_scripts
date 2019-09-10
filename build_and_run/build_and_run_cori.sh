@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # What to do in this script
-setdomain=false
-build=false
+setdomain=true
+build=true
 setinicond=true
 setcase=true
 setbatch=true
@@ -15,7 +15,10 @@ realization=r1
 #experiment=EDMF
 #experiment=EDMF-SST300
 #experiment=SMAG-SST302-radhomo
-experiment=TKE-SST300
+#experiment=TKE-SST300-radhomo-tkxyf3
+#experiment=TKE-SST304-radhomo-sfchomo
+experiment=TKE-SST308
+#experiment=TKE-SST308-radhomo
 explabel=${experiment}-${realization}
 
 machine=coriknl
@@ -43,10 +46,10 @@ git checkout $branch
 
 cd ${MODELDIR}/SRC
 
-nx=128
-ny=128
+nx=256
+ny=256
 nz=64
-nsubx=32; nsuby=4
+nsubx=64; nsuby=4
 
 if [ "$setdomain" == "true" ]; then
 
@@ -86,6 +89,7 @@ RAD=CAM
 RAD_DIR=RAD_${RAD}        # Radiation scheme
 #MICRO=M2005
 MICRO=SAM1MOM
+#MICRO=THOM
 MICRO_DIR=MICRO_${MICRO}  # Microphysics scheme
 
 #Set up the model for single/multi processor when switching machine
@@ -96,7 +100,7 @@ if [ "$build" == "true" ]; then
 
     #-- Modify Build script accordingly
     for keyword in SAM_SCR ADV_DIR SGS_DIR RAD_DIR MICRO_DIR; do
-        echo "set ${keyword} to ${!keywort}"
+        echo "set ${keyword} to ${!keyword}"
         sed -i "s|setenv ${keyword}.*|setenv ${keyword} ${!keyword}|" Build
     done
 
@@ -121,6 +125,8 @@ fi
 dx=4000.    # zonal resolution in m
 dy=4000.    # meridional resolution in m
 dt=15.      # time increment in seconds
+#ncycle_max=4
+ncycle_max=8
 #nstop=288000 # 50 days # number of time steps to run
 nstop=576000 # 100 days
 #nstop=864000 # 150 days
@@ -172,6 +178,12 @@ if [[ "$experiment" =~ .*radhomo.* ]]; then
     doradhomo='.true.'
     echo "homogenize radiative heating rates"
 fi
+# Choose whether to homogenize surface fluxes
+dosfchomo='.false.'
+if [[ "$experiment" =~ .*sfchomo.* ]]; then
+    dosfchomo='.true.'
+    echo "homogenize surface fluxes"
+fi
 # Choose whether to prescribe radiation (with which file)
 doradforcing='.false.'
 dolongwave='.true.'
@@ -186,6 +198,19 @@ if [[ "$experiment" =~ .*radagg.* ]]; then
     cp rad_from_TKE-SST${tabs_s}-r1 ${radfile}
 elif [[ "$experiment" =~ .*raddisagg.* ]]; then
     cp rad_from_TKE-SST${tabs_s}-radhomo-r1 ${radfile}
+fi
+# Choose whether to prescribe surface fluxes (with which file)
+dosfcforcing='.false.'
+SFC_FLX_FXD='.false.'
+if [[ "$experiment" =~ .*sfcagg.* ]] || [[ "$experiment" =~ .*sfcdisagg.* ]]; then
+    dosfcforcing='.true.'
+    SFC_FLX_FXD='.true.'
+fi
+sfcfile=sfc_${explabel}
+if [[ "$experiment" =~ .*sfcagg.* ]]; then
+    cp sfc_from_TKE-SST${tabs_s}-r1 ${sfcfile}
+elif [[ "$experiment" =~ .*sfcdisagg.* ]]; then
+    cp sfc_from_TKE-SST${tabs_s}-radhomo-r1 ${sfcfile}
 fi
 
 #------------------------------ EDMF ------------------------------#
@@ -217,9 +242,12 @@ if [ "$setcase" == "true" ]; then
     # Set all physical parameters
     for keyword in dx dy dt nstop nelapse doseasons doperpetual \
         dosmagor coefsmag tabs_s delta_sst ocean_type doradhomo \
+        ncycle_max \
+        dosfchomo \
         tkxyfac tkzfac tkxyfac_dry tkzfac_dry \
         dochangemixing dochangemixingdry \
-        doradforcing dolongwave doshortwave; do
+        doradforcing dolongwave doshortwave \
+        dosfcforcing SFC_FLX_FXD; do
         sed -i "s/${keyword} =.*/${keyword} = ${!keyword},/" ${prmfile}
     done
 
@@ -330,10 +358,11 @@ cd ..
 #                       Create batch script                        #
 #------------------------------------------------------------------#
 
-qos=regular
+#qos=regular
+qos=premium
 #qos=debug
-runtime=30:00:00
-#runtime=00:02:00
+runtime=48:00:00
+#runtime=00:03:00
 datetime=`date +"%Y%m%d-%H%M"`
 exescript=SAM_${ADV_DIR}_${SGS_DIR}_${RAD_DIR}_${MICRO_DIR}
 # Save executable on a new name

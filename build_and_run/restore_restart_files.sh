@@ -1,12 +1,12 @@
 #!/bin/bash 
 
-restoreexecutable=true
+restoreexecutable=false
 restoredomain=true
 restorenamelist=false
 restoreoutputs=false
 
 machine=coriknl
-tasks=128
+tasks=256
 CURRENTDIR=$PWD
 SCRIPTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 # Define MODELDIR and OUTPUTDIR

@@ -2,9 +2,9 @@
 
 # What to do in this script
 restorefiles=true
-editoutputs=false
+editoutputs=true
 setbatch=true
-run=false
+run=true
 
 machine=coriknl
 CURRENTDIR=$PWD
@@ -14,10 +14,10 @@ SCRIPTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 # Load functions
 . ${SCRIPTDIR}/../bash_util/string_operations.sh 
 
-
+#SST=300
 # simulation name
-#simname="RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_128x128x32_TKE-CS015-SST300-radhomo-r1"
-simname="RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_128x128x32_TKE-CS015-SST300-r1"
+#simname="RCE_MPDATAxTKExCAMxM2005_4000x4000x15_256x256x64_TKE-SST302-radhomo-r1"
+simname="RCE_MPDATAxTKExCAMxSAM1MOM_4000x4000x15_256x256x64_TKE-SST308-r1"
 casename=`casenameFromSimname $simname`
 exescript=`exescriptFromSimname $simname`
 explabel=`expnameFromSimname $simname`
@@ -30,11 +30,14 @@ done
 #------------------------------------------------------------------#
 
 restoreexecutable=true
-restoredomain=false
+restoredomain=true
 restorenamelist=true
 restoreoutputs=true
-#restarttime=0000576000 # Time label of the restart files to use
-restarttime=0001981440
+restarttime=0000576000 # Time label of the restart files to use
+#restarttime=0000864000 # 150 days
+#restarttime=0001152000 # 200 days
+#restarttime=0000288000 # 50 days
+#restarttime=0000276480
 
 nsubx=`cat ${ARCHIVEDIR}/${machine}/${simname}/domain.f90 | grep 'nsubdomains_x  =' | head -1 | tr -s ' ' | cut -d' ' -f7`
 nsuby=`cat ${ARCHIVEDIR}/${machine}/${simname}/domain.f90 | grep 'nsubdomains_y  =' | head -1 | tr -s ' ' | cut -d' ' -f7`
@@ -71,7 +74,13 @@ cd ${MODELDIR}
 
 #-------------------------- Run duration --------------------------#
 #nstop=1152000 # 200 days # number of time steps of the overall simulation
-nstop=2304000 # 400 days
+#nstop=2304000 # 400 days
+#nstop=1440000 # 250 days
+nstop=864000 # 150 days
+#nstop=748800 # 130 days
+#nstop=633600 # 110 days
+#nstop=518400 # 90 days
+#nstop=576000 # 100 days
 nelapse=$nstop
 #------------------------ Standard output -------------------------#
 nprint=1440      # frequency for prinouts in number of time steps 
@@ -117,7 +126,7 @@ fi
 
 qos=regular
 #qos=debug
-runtime=48:00:00
+runtime=24:00:00
 #runtime=00:02:00
 datetime=`date +"%Y%m%d-%H%M"`
 batchscript=${SCRIPTDIR}/run_scripts/run_${machine}_${explabel}.sbatch
