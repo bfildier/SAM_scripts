@@ -21,5 +21,10 @@ elif [[ "$machine" == "coriknl" ]]; then
     export OUTPUTDIR=/global/cscratch1/sd/bfildier/${model}/current_run
     export UTILDIR=${MODELDIR}/UTIL
     export ARCHIVEDIR=/global/cscratch1/sd/bfildier/${model}/archive
+elif [["$machine" == "puccini"]]; then
+    export MODELDIR=/Users/bfildier/Code/${model}
+    export OUTPUTDIR=/Users/bfildier/Data/simulations/${model}/current_run
+    export ARCHIVEDIR=/Users/bfildier/Data/simulations/${model}/archive
+    export UTILDIR=${MODELDIR}/UTIL 
 fi
 
