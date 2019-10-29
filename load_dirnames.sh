@@ -26,5 +26,10 @@ elif [[ "$machine" == "puccini" ]]; then
     export OUTPUTDIR=/home/bfildier/Data/simulations/${model}/current_run
     export ARCHIVEDIR=/home/bfildier/Data/simulations/${model}/archive
     export UTILDIR=${MODELDIR}/UTIL 
+elif [[ "$machine" == "clarity" ]]; then
+    export MODELDIR=/Users/bfildier/Code/models/${model}
+    export OUTPUTDIR=/Users/bfildier/Data/simulations/${model}/current_run
+    export ARCHIVEDIR=/Users/bfildier/Data/simulations/${model}/archive
+    export UTILDIR=${MODELDIR}/UTIL 
 fi
 

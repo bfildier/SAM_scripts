@@ -2,7 +2,7 @@
 
 function set_SAM_proc_options()
 {
-    if [[ "$HOSTNAME" == "tornado" || "$HOSTNAME" == "puccini" ]]; then
+    if [[ "$HOSTNAME" == "tornado" || "$HOSTNAME" == "puccini" || "$HOSTNAME" == "clarity" ]]; then
         echo "switch SRC/task_util* scripts to run in serial"
         mv SRC/task_util_NOMPI.f9000 SRC/task_util_NOMPI.f90 2> /dev/null
         mv SRC/task_util_MPI.f90 SRC/task_util_MPI.f9000 2> /dev/null
